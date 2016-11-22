@@ -144,7 +144,7 @@ typedef struct {
 
 FILE *    input_file;         //the named pipe handle
 char *    command_line;       //current command line
-char *    named_pipe_file;    //holds named pipe file name 
+char *    named_pipe_file;    //holds named pipe file name
 int       command_index;      //current position
 int       command_line_size;  //max bytes in command line
 int       exit_program=0;     //set to 1 to exit the program
@@ -161,13 +161,13 @@ struct sockaddr_in serv_addr, cli_addr;
 
 //for TCP/IP multithreading
 char *       thread_data=NULL;         //holds command to execute in separate thread (TCP/IP only)
-int          thread_read_index=0;      //read position 
+int          thread_read_index=0;      //read position
 int          thread_write_index=0;     //write position
 int          thread_data_size=0;       //buffer size
 volatile int thread_running=0;         //becomes 1 there is a thread running
 int          write_to_thread_buffer=0; //becomes 1 if we need to write to thread buffer
 int          start_thread=0;           //becomes 1 after the thread_stop command and tells the program to start the thread on disconnect of the TCP/IP connection
-//pthread_mutex_t mutex_fifo_queue; 
+//pthread_mutex_t mutex_fifo_queue;
 pthread_t thread; //a thread that will repeat code after client closed connection
 
 void process_character(char c);
@@ -252,7 +252,7 @@ void setup_ledstring(char * args){
     int key_index, value_index;
 
     if (ledstring.device!=NULL) ws2811_fini(&ledstring);
-    
+
     ledstring.device = NULL;
     ledstring.freq = WS2811_TARGET_FREQ;
     ledstring.dmanum = 5;
@@ -260,16 +260,16 @@ void setup_ledstring(char * args){
     ledstring.channel[0].invert = 0;
     ledstring.channel[0].count = 1;
     ledstring.channel[0].brightness = 255;
-    
+
     ledstring.channel[1].gpionum = 0;
     ledstring.channel[1].invert = 0;
     ledstring.channel[1].count = 0;
     ledstring.channel[1].brightness = 0;
-    
+
     //char * key = strtok(args, " =");
     //char c = args;
     if (debug) printf("Setup\n");
-    
+
     if (args!=NULL){
         while (*args){
             //first we get the key
@@ -278,9 +278,9 @@ void setup_ledstring(char * args){
             //now read the value part
             args = read_val(args, value,MAX_VAL_LEN);
             if (*args!=0) *args++;
-            
+
             if (debug) printf("Setting %s=%s\n", key, value);
-            
+
             if (strlen(key)>0 && strlen(value) > 0){
                 if (strcmp(key,"freq")==0){
                     ledstring.freq = atoi(value);
@@ -296,7 +296,7 @@ void setup_ledstring(char * args){
                         ledstring.channel[1].gpionum=0;
                         ledstring.channel[1].invert = 0;
                         ledstring.channel[1].count = 1;
-                        ledstring.channel[1].brightness = 255;              
+                        ledstring.channel[1].brightness = 255;
                     }
                 }else if (strcmp(key, "channel_1_gpio")==0){
                     ledstring.channel[0].gpionum=atoi(value);
@@ -319,7 +319,7 @@ void setup_ledstring(char * args){
             //args++;
         }
     }
-    
+
     int size = ledstring.channel[0].count;
     if (ledstring.channel[1].count> size) size= ledstring.channel[1].count;
     malloc_command_line(DEFAULT_COMMAND_LINE_SIZE + size * 6); //allocate memory for full render data
@@ -328,7 +328,7 @@ void setup_ledstring(char * args){
         perror("Initialization failed.\n");
         return;
     }
-    
+
 }
 
 
@@ -361,14 +361,14 @@ void render(char * args){
     int start;
     char value[MAX_VAL_LEN];
     char color_string[6];
-    
+
     if (debug) printf("Render %s\n", args);
-    
+
     if (ledstring.device==NULL){
         printf("Error you must call setup first!\n");
         return;
     }
-    
+
     if (args!=NULL){
         args = read_val(args, value, MAX_VAL_LEN);
         channel = atoi(value)-1;
@@ -378,9 +378,9 @@ void render(char * args){
             args = read_val(args, value, MAX_VAL_LEN); //read start position
             start = atoi(value);
             while (*args!=0 && (*args==' ' || *args==',')) args++; //skip white space
-            
+
             if (debug) printf("Render channel %d selected start at %d leds %d\n", channel, start, ledstring.channel[channel].count);
-            
+
             size = strlen(args);
             led_index = start % ledstring.channel[channel].count;
 
@@ -409,12 +409,13 @@ void render(char * args){
 }
 
 //shifts all colors 1 position
-//rotate <channel>,<places>,<direction>,<new_color>
+//rotate <channel>,<places>,<direction>,<start>,<length>,<new_color>
 //if new color is set then the last led will have this color instead of the color of the first led
 void rotate(char * args){
     char value[MAX_VAL_LEN];
     int channel=0, nplaces=1, direction=1, new_color=-1;
-    
+    int start=0, tmpNumPixels = 0;
+
     if (args!=NULL){
         args = read_val(args, value, MAX_VAL_LEN);
         channel = atoi(value)-1;
@@ -429,38 +430,53 @@ void rotate(char * args){
                 if (*args!=0){
                     args++;
                     args = read_val(args, value, MAX_VAL_LEN);
-                    if (strlen(value)==6){
-                        new_color = color((hextable[(int)value[0]]<<4) + hextable[(int)value[1]],(hextable[(int)value[2]]<<4) + hextable[(int)value[3]], (hextable[(int)value[4]]<<4) + hextable[(int)value[5]]);
-                    }else{
-                        printf("Invalid color\n");
+                    start = atoi(value);
+                    if (*args!=0){
+                        args++;
+                        args = read_val(args, value, MAX_VAL_LEN);
+                        tmpNumPixels = atoi(value);
+                        if (*args!=0){
+                            args++;
+                            args = read_val(args, value, MAX_VAL_LEN);
+                            if (strlen(value)==6){
+                                new_color = color((hextable[(int)value[0]]<<4) + hextable[(int)value[1]],(hextable[(int)value[2]]<<4) + hextable[(int)value[3]], (hextable[(int)value[4]]<<4) + hextable[(int)value[5]]);
+                            }else{
+                                printf("Invalid color\n");
+                            }
+                        }
                     }
                 }
             }
         }
     }
-    
+
+    int numPixels = tmpNumPixels;
+    if ( numPixels == 0 ) {
+        numPixels = ledstring.channel[channel].count;
+    }
+
     if (debug) printf("Rotate %d %d %d %d\n", channel, nplaces, direction, new_color);
-    
+
     int tmp,i,n;
     for(n=0;n<nplaces;n++){
         if (direction==1){
-            tmp = ledstring.channel[channel].leds[0];
-            for(i=1;i<ledstring.channel[channel].count;i++){
-                ledstring.channel[channel].leds[i-1] = ledstring.channel[channel].leds[i]; 
+            tmp = ledstring.channel[channel].leds[start];
+            for(i=1+start;i<numPixels+start;i++){
+                ledstring.channel[channel].leds[i-1] = ledstring.channel[channel].leds[i];
             }
             if (new_color!=-1)
-                ledstring.channel[channel].leds[ledstring.channel[channel].count-1]=new_color;
+                ledstring.channel[channel].leds[numPixels-1+start]=new_color;
             else
-                ledstring.channel[channel].leds[ledstring.channel[channel].count-1]=tmp;
+                ledstring.channel[channel].leds[numPixels-1+start]=tmp;
         }else{
-            tmp = ledstring.channel[channel].leds[ledstring.channel[channel].count-1];
-            for(i=ledstring.channel[channel].count-1;i>0;i--){
-                ledstring.channel[channel].leds[i] = ledstring.channel[channel].leds[i-1]; 
+            tmp = ledstring.channel[channel].leds[numPixels-1+start];
+            for(i=numPixels-1+start;i>0+start;i--){
+                ledstring.channel[channel].leds[i] = ledstring.channel[channel].leds[i-1];
             }
             if (new_color!=-1)
-                ledstring.channel[channel].leds[0]=new_color;       
+                ledstring.channel[channel].leds[0+start]=new_color;
             else
-                ledstring.channel[channel].leds[0]=tmp;     
+                ledstring.channel[channel].leds[0+start]=tmp;
         }
     }
 }
@@ -472,8 +488,8 @@ void rotate(char * args){
 void rainbow(char * args) {
     char value[MAX_VAL_LEN];
     int channel=0, count=1,start=0,stop=255,startPixel=0;
-    int numPixels = ledstring.channel[channel].count;
-    
+    int tmpNumPixels = 0;
+
     if (args!=NULL){
         args = read_val(args, value, MAX_VAL_LEN);
         channel = atoi(value)-1;
@@ -488,28 +504,33 @@ void rainbow(char * args) {
             if (*args!=0){
                 args++;
                 args = read_val(args, value, MAX_VAL_LEN);
-                numPixels = atoi(value);
-				if (*args!=0){
-					args++;
-					args = read_val(args, value, MAX_VAL_LEN);
-					start = atoi(value);
-						if (*args!=0){
-							args++;
-							args = read_val(args, value, MAX_VAL_LEN);
-							stop = atoi(value);
-						}
-					}
+                tmpNumPixels = atoi(value);
+                if (*args!=0){
+                    args++;
+                    args = read_val(args, value, MAX_VAL_LEN);
+                    start = atoi(value);
+                        if (*args!=0){
+                            args++;
+                            args = read_val(args, value, MAX_VAL_LEN);
+                            stop = atoi(value);
+                        }
+                    }
                 }
             }
         }
-    }   
-    
+    }
+
+    int numPixels = tmpNumPixels;
+    if ( numPixels == 0 ) {
+        numPixels = ledstring.channel[channel].count;
+    }
+
     if (channel!=0 && channel!=1) channel=0;
     if (start<0 || start > 255) start=0;
     if (stop<0 || stop > 255) stop = 255;
-    
+
     if (debug) printf("Rainbow %d,%d\n", channel, count);
-    
+
     int i, j;
     for(i=0; i<numPixels; i++) {
         ledstring.channel[channel].leds[startPixel+i] = deg2color(abs(stop-start) * i * count / numPixels + start);
@@ -521,7 +542,7 @@ void rainbow(char * args) {
 void fill(char * args){
     char value[MAX_VAL_LEN];
     int channel=0, fill_color=0,start=0,len=-1;
-    
+
     if (args!=NULL){
         args = read_val(args, value, MAX_VAL_LEN);
         channel = atoi(value)-1;
@@ -546,13 +567,13 @@ void fill(char * args){
             }
         }
     }
-    
+
     if (channel!=0 && channel!=1) channel=0;
     if (len<=0 || len>ledstring.channel[channel].count) len=ledstring.channel[channel].count;
     if (start<0 || start>=ledstring.channel[channel].count) start=0;
-    
+
     if (debug) printf("fill %d,%d,%d,%d\n", channel, fill_color, start, len);
-    
+
     int i;
     for (i=start;i<start+len;i++){
         ledstring.channel[channel].leds[i]=fill_color;
@@ -564,7 +585,7 @@ void fill(char * args){
 void candycane(char * args){
     char value[MAX_VAL_LEN];
     int channel=0, fill_color_1=0,fill_color_2=0,count_1=0,count_2=0,start=0,len=-1;
-    
+
     if (args!=NULL){
         args = read_val(args, value, MAX_VAL_LEN);
         channel = atoi(value)-1;
@@ -608,13 +629,13 @@ void candycane(char * args){
             }
         }
     }
-    
+
     if (channel!=0 && channel!=1) channel=0;
     if (len<=0 || len>ledstring.channel[channel].count) len=ledstring.channel[channel].count;
     if (start<0 || start>=ledstring.channel[channel].count) start=0;
-    
+
     if (debug) printf("candycane %d,%06x,%d,%06x,%d,%d,%d\n", channel, fill_color_1, count_1, fill_color_2, count_2, start, len);
-    
+
     int i;
     int color_1_remaining = count_1,color_2_remaining = 0;
     int tempColor = fill_color_1;
@@ -650,7 +671,7 @@ void candycane(char * args){
 void tricolor(char * args){
     char value[MAX_VAL_LEN];
     int channel=0, fill_color_1=0,fill_color_2=0,fill_color_3=0,count_1=0,count_2=0,count_3=0,start=0,len=-1;
-    
+
     if (args!=NULL){
         args = read_val(args, value, MAX_VAL_LEN);
         channel = atoi(value)-1;
@@ -708,13 +729,13 @@ void tricolor(char * args){
             }
         }
     }
-    
+
     if (channel!=0 && channel!=1) channel=0;
     if (len<=0 || len>ledstring.channel[channel].count) len=ledstring.channel[channel].count;
     if (start<0 || start>=ledstring.channel[channel].count) start=0;
-    
+
     if (debug) printf("tricolor %d,%06x,%d,%06x,%d,%d,%d\n", channel, fill_color_1, count_1, fill_color_2, count_2, start, len);
-    
+
     int i;
     int color_1_remaining = count_1,color_2_remaining = 0,color_3_remaining = 0;
     int tempColor = fill_color_1;
@@ -761,7 +782,7 @@ void tricolor(char * args){
 void brightness(char * args){
     char value[MAX_VAL_LEN];
     int channel=0, brightness=255;
-    
+
     if (args!=NULL){
         args = read_val(args, value, MAX_VAL_LEN);
         channel = atoi(value)-1;
@@ -771,12 +792,12 @@ void brightness(char * args){
             brightness = atoi(value);
         }
     }
-    
+
     if (channel!=0 && channel!=1) channel=0;
     if (brightness<0 || brightness>0xFF) brightness=255;
-    
+
     if (debug) printf("Changing brightness %d, %d\n", channel, brightness);
-    
+
     ledstring.channel[channel].brightness=brightness;
 
 }
@@ -824,14 +845,14 @@ void end_loop(char * args){
     }else if (mode==MODE_TCP){
         if (debug) printf("loop %d\n", thread_read_index);
         if (loop_index==0){
-            thread_read_index=0; 
+            thread_read_index=0;
         }else{
             loops[loop_index-1].n_loops++;
             if (max_loops==0 || loops[loop_index-1].n_loops<max_loops){ //if number of loops is 0 = loop forever
                 thread_read_index = loops[loop_index-1].do_pos;
             }else{
                 if (loop_index>0) loop_index--; //exit loop
-            }       
+            }
         }
     }
 }
@@ -841,7 +862,7 @@ void init_thread(char * data){
     if (thread_data==NULL){
         thread_data = (char *) malloc(DEFAULT_BUFFER_SIZE);
         thread_data_size = DEFAULT_BUFFER_SIZE;
-    }                
+    }
     start_thread=0;
     thread_read_index=0;
     thread_write_index=0;
@@ -858,7 +879,7 @@ void expand_thread_data_buffer(){
     thread_data = tmp_buffer;
 }
 
-//adds data to the thread buffer 
+//adds data to the thread buffer
 void write_thread_buffer (char c){
     thread_data[thread_write_index] = c;
     thread_write_index++;
@@ -883,16 +904,16 @@ void thread_func (void * param){
 
 //executes 1 command line
 void execute_command(char * command_line){
-    
+
     if (command_line[0]=='#') return; //=comments
-    
+
     if (write_to_thread_buffer){
         if (strncmp(command_line, "thread_stop", 11)==0){
             if (mode==MODE_TCP){
                 write_to_thread_buffer=0;
                 if (debug) printf("Thread stop.\n");
                 if (thread_write_index>0) start_thread=1; //remember to start the thread when client closes the TCP/IP connection
-            }        
+            }
         }else{
             if (debug) printf("Write to thread buffer: %s\n", command_line);
             while (*command_line!=0){
@@ -902,12 +923,12 @@ void execute_command(char * command_line){
             write_thread_buffer(';');
         }
     }else{
- 
+
         char * arg = strchr(command_line, ' ');
-        char * command =  strtok(command_line, " \r\n");    
-        
+        char * command =  strtok(command_line, " \r\n");
+
         if (arg!=NULL) arg++;
-        
+
         if (strcmp(command, "render")==0){
             render(arg);
         }else if (strcmp(command, "rotate")==0){
@@ -918,11 +939,11 @@ void execute_command(char * command_line){
             brightness(arg);
         }else if (strcmp(command, "rainbow")==0){
             rainbow(arg);
-        }else if (strcmp(command, "fill")==0){  
+        }else if (strcmp(command, "fill")==0){
             fill(arg);
-        }else if (strcmp(command, "candycane")==0){ 
+        }else if (strcmp(command, "candycane")==0){
             candycane(arg);
-        }else if (strcmp(command, "tricolor")==0){  
+        }else if (strcmp(command, "tricolor")==0){
             tricolor(arg);
         }else if (strcmp(command, "do")==0){
             start_loop(arg);
@@ -969,30 +990,30 @@ void tcp_wait_connection (){
     socklen_t clilen;
     int sock_opt = 1;
     socklen_t optlen = sizeof (sock_opt);
-    
+
     if (start_thread){
         if (debug) printf("Running thread.\n");
         thread_running=1; //thread will run untill thread_running becomes 0 (this is after a new client has connected)
 //        pthread_create(& thread, NULL, (void* (*)(void*)) & thread_func, NULL);
-    }    
-    
+    }
+
     printf("Waiting for client to connect.\n");
-    
+
     clilen = sizeof(cli_addr);
     active_socket = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
-    
+
     if (setsockopt(active_socket, SOL_SOCKET, SO_KEEPALIVE, &sock_opt, optlen)) printf("Error set SO_KEEPALIVE\n");
-    
-    if (thread_running){//if there is a thread active we exit it 
+
+    if (thread_running){//if there is a thread active we exit it
         thread_running=0;
 //        pthread_join(thread,NULL); //wait for thread to finish and exit
     }
-    
+
     write_to_thread_buffer=0;
     thread_write_index=0;
     thread_read_index=0;
     start_thread=0;
-     
+
     printf("Client connected.\n");
 }
 
@@ -1035,7 +1056,7 @@ int main(int argc, char *argv[]){
 
     input_file = stdin; //by default we read from console, stdin
     mode = MODE_STDIN;
-    
+
     if (argc>1){
         if (strcmp(argv[1], "-p")==0){ //use a named pipe, creates a file (by default in /dev/ws281x) which you can write commands to: echo "command..." > /dev/ws281x
             if (argc>2){
@@ -1073,14 +1094,14 @@ int main(int argc, char *argv[]){
             mode = MODE_TCP;
         }
     }
-    
+
     if ((mode == MODE_FILE || mode == MODE_NAMED_PIPE) && input_file==NULL){
         perror("Error opening file!");
         exit(1);
     }
-    
+
     int c;
-    
+
     while (exit_program==0) {
         if (mode==MODE_TCP){
             c = 0;
@@ -1088,7 +1109,7 @@ int main(int argc, char *argv[]){
         }else{
             c = fgetc (input_file); //doesn't work with tcp
         }
-        
+
         if (c!=EOF){
             process_character(c);
         }else{
@@ -1109,7 +1130,7 @@ int main(int argc, char *argv[]){
             }
         }
     }
-    
+
     if (mode==MODE_TCP){
         shutdown(active_socket,SHUT_RDWR);
         shutdown(sockfd,SHUT_RDWR);
@@ -1118,7 +1139,7 @@ int main(int argc, char *argv[]){
     }else{
         fclose(input_file);
     }
-        
+
     if (named_pipe_file!=NULL){
         remove(named_pipe_file);
         free(named_pipe_file);

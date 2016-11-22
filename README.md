@@ -134,6 +134,8 @@ rotate
     <channel>,         #channel to rotate (default 1)
     <places>,          #number of places to move each color value (default 1)
     <direction>,       #direction (0 or 1) for forward and backwards rotating (default 0)
+    <start>,           #at which led should we start (default is 0)
+    <len>              #number of leds to fill with the given color after start (default all leds)
     <RRGGBB>           #first led(s) get this color instead of the color of the last led
 ```
 

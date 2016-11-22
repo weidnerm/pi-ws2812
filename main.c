@@ -467,11 +467,12 @@ void rotate(char * args){
 
 //fills pixels with rainbow effect
 //count tells how many rainbows you want
-//rainbow <channel>,<count>,<start>,<stop>
+//rainbow <channel>,<count>,<startPixel>,<numPixels>,<start>,<stop>
 //start and stop = color values on color wheel (0-255)
 void rainbow(char * args) {
     char value[MAX_VAL_LEN];
-    int channel=0, count=1,start=0,stop=255;
+    int channel=0, count=1,start=0,stop=255,startPixel=0;
+    int numPixels = ledstring.channel[channel].count;
     
     if (args!=NULL){
         args = read_val(args, value, MAX_VAL_LEN);
@@ -483,11 +484,21 @@ void rainbow(char * args) {
             if (*args!=0){
                 args++;
                 args = read_val(args, value, MAX_VAL_LEN);
-                start = atoi(value);
-                if (*args!=0){
-                    args++;
-                    args = read_val(args, value, MAX_VAL_LEN);
-                    stop = atoi(value);
+                startPixel = atoi(value);
+            if (*args!=0){
+                args++;
+                args = read_val(args, value, MAX_VAL_LEN);
+                numPixels = atoi(value);
+				if (*args!=0){
+					args++;
+					args = read_val(args, value, MAX_VAL_LEN);
+					start = atoi(value);
+						if (*args!=0){
+							args++;
+							args = read_val(args, value, MAX_VAL_LEN);
+							stop = atoi(value);
+						}
+					}
                 }
             }
         }
@@ -499,10 +510,9 @@ void rainbow(char * args) {
     
     if (debug) printf("Rainbow %d,%d\n", channel, count);
     
-    int numPixels = ledstring.channel[channel].count;
     int i, j;
     for(i=0; i<numPixels; i++) {
-        ledstring.channel[channel].leds[i] = deg2color(abs(stop-start) * i * count / numPixels + start);
+        ledstring.channel[channel].leds[startPixel+i] = deg2color(abs(stop-start) * i * count / numPixels + start);
     }
 }
 

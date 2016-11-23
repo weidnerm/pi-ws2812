@@ -1,0 +1,240 @@
+setup channel_1_count=150
+#https://github.com/tom-2015/rpi-ws2812-server
+brightness 1,128
+# r,g,b
+fill 1,000000,0,150
+do
+    rotate 1,2,0,0,150,ff0000
+    render
+    delay 10
+loop 80
+fill 1,ffffff,125,25
+render
+delay 30
+fill 1,ff0000,0,150
+render
+delay 30
+
+do
+    rotate 1,2,1,0,150,00ff00
+    render
+    delay 10
+loop 80
+fill 1,ffffff,0,25
+render
+delay 30
+fill 1,00ff00,0,150
+render
+delay 30
+
+do
+    rotate 1,2,0,0,150,0000ff
+    render
+    delay 10
+loop 80
+fill 1,ffffff,125,25
+render
+delay 30
+fill 1,0000ff,0,150
+render
+delay 30
+
+do
+    rotate 1,2,1,0,150,ff0000
+    render
+    delay 10
+loop 80
+fill 1,ffffff,0,25
+render
+delay 30
+fill 1,ff0000,0,150
+render
+delay 30
+
+do
+    rotate 1,2,0,0,150,00ff00
+    render
+    delay 10
+loop 80
+fill 1,ffffff,125,25
+render
+delay 30
+fill 1,00ff00,0,150
+render
+delay 30
+
+do
+    rotate 1,2,1,0,150,0000ff
+    render
+    delay 10
+loop 80
+fill 1,ffffff,0,150
+render
+delay 30
+fill 1,0000ff,0,150
+render
+delay 30
+
+
+fill 1,ff0000,147,2
+fill 1,00ff00,1,2
+render
+delay 12
+fill 1,ff0000,145,4
+fill 1,00ff00,1,4
+render
+delay 14
+fill 1,ff0000,143,6
+fill 1,00ff00,1,6
+render
+delay 16
+fill 1,ff0000,141,8
+fill 1,00ff00,1,8
+render
+delay 18
+fill 1,ff0000,139,10
+fill 1,00ff00,1,10
+render
+delay 20
+fill 1,ff0000,137,12
+fill 1,00ff00,1,12
+render
+delay 22
+fill 1,ff0000,135,14
+fill 1,00ff00,1,14
+render
+delay 24
+fill 1,ff0000,133,16
+fill 1,00ff00,1,16
+render
+delay 26
+fill 1,ff0000,131,18
+fill 1,00ff00,1,18
+render
+delay 28
+fill 1,ff0000,129,20
+fill 1,00ff00,1,20
+render
+delay 30
+fill 1,ff0000,127,22
+fill 1,00ff00,1,22
+render
+delay 32
+fill 1,ff0000,125,24
+fill 1,00ff00,1,24
+render
+delay 34
+fill 1,ff0000,123,26
+fill 1,00ff00,1,26
+render
+delay 36
+fill 1,ff0000,121,28
+fill 1,00ff00,1,28
+render
+delay 38
+fill 1,ff0000,119,30
+fill 1,00ff00,1,30
+render
+delay 40
+fill 1,ff0000,117,32
+fill 1,00ff00,1,32
+render
+delay 42
+fill 1,ff0000,115,34
+fill 1,00ff00,1,34
+render
+delay 44
+fill 1,ff0000,113,36
+fill 1,00ff00,1,36
+render
+delay 46
+fill 1,ff0000,111,38
+fill 1,00ff00,1,38
+render
+delay 48
+fill 1,ff0000,109,40
+fill 1,00ff00,1,40
+render
+delay 50
+fill 1,ff0000,107,42
+fill 1,00ff00,1,42
+render
+delay 52
+fill 1,ff0000,105,44
+fill 1,00ff00,1,44
+render
+delay 54
+fill 1,ff0000,103,46
+fill 1,00ff00,1,46
+render
+delay 56
+fill 1,ff0000,101,48
+fill 1,00ff00,1,48
+render
+delay 58
+fill 1,ff0000,99,50
+fill 1,00ff00,1,50
+render
+delay 60
+fill 1,ff0000,97,52
+fill 1,00ff00,1,52
+render
+delay 62
+fill 1,ff0000,95,54
+fill 1,00ff00,1,54
+render
+delay 64
+fill 1,ff0000,93,56
+fill 1,00ff00,1,56
+render
+delay 66
+fill 1,ff0000,91,58
+fill 1,00ff00,1,58
+render
+delay 68
+fill 1,ff0000,89,60
+fill 1,00ff00,1,60
+render
+delay 70
+fill 1,ff0000,87,62
+fill 1,00ff00,1,62
+render
+delay 72
+fill 1,ff0000,85,64
+fill 1,00ff00,1,64
+render
+delay 74
+fill 1,ff0000,83,66
+fill 1,00ff00,1,66
+render
+delay 76
+fill 1,ff0000,81,68
+fill 1,00ff00,1,68
+render
+delay 78
+fill 1,ff0000,79,70
+fill 1,00ff00,1,70
+render
+delay 80
+fill 1,ff0000,77,72
+fill 1,00ff00,1,72
+render
+delay 82
+fill 1,ff0000,75,74
+fill 1,00ff00,1,74
+render
+delay 84
+
+
+do
+    fill 1,000000,0,150
+    render
+    delay 30
+    fill 1,ffffff,0,150
+    render
+    delay 30
+loop 2
+fill 1,000000,0,150
+render
+
+

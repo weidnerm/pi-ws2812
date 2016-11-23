@@ -455,7 +455,7 @@ void rotate(char * args){
         numPixels = ledstring.channel[channel].count;
     }
 
-    if (debug) printf("Rotate %d %d %d %d\n", channel, nplaces, direction, new_color);
+    if (debug) printf("Rotate %d %d %d %d %d %06x\n", channel, nplaces, direction, start, tmpNumPixels, new_color);
 
     int tmp,i,n;
     for(n=0;n<nplaces;n++){

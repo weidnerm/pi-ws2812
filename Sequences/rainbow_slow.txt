@@ -1,0 +1,69 @@
+setup channel_1_count=150
+#https://github.com/tom-2015/rpi-ws2812-server
+brightness 1,128
+# r,g,b
+rainbow 1,1,0,150
+do
+    do
+        rotate 1,1
+        render
+        delay 50
+    loop 200
+
+    do
+        rotate 1,1
+        render
+        delay 40
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 30
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 20
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 10
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 7
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 3
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 7
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 10
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 20
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 30
+    loop 200
+    do
+        rotate 1,1
+        render
+        delay 40
+    loop 200
+loop
+

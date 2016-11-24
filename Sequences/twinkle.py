@@ -109,13 +109,13 @@ if __name__ == '__main__':
 	#colorList.append( int("ffffff",16) ); countList.append( 20 ); colorList.append( int("ff0000",16) ); countList.append( 20 ); colorList.append( int("0000ff",16) ); countList.append( 20 );
 	
 	# xmas
-	#colorList.append( int("ff0000",16) ); countList.append( 20 ); colorList.append( int("00ff00",16) ); countList.append( 20 );
+	colorList.append( int("ff0000",16) ); countList.append( 20 ); colorList.append( int("00ff00",16) ); countList.append( 20 );
 	
 	# ligthtning bugs
 	#colorList.append( int("a0ff00",16) ); countList.append( 30 );
 
 	# stars
-	colorList.append( int("ffffff",16) ); countList.append( 40 );
+	#colorList.append( int("ffffff",16) ); countList.append( 40 );
 	
 	myTwinkler = Twinkler( colorList, countList );
 	myTwinkler.main()

@@ -12,7 +12,7 @@ class Moon:
 		self.x = 0; # sideways distance sort of. 
 		self.y = 0; # distance from earth sort of.
 		
-		self.pixelScaleFactor = 1882709/40;   # max orbit radius in km/ display radius in pixels
+		self.pixelScaleFactor = 1882709/30;   # max orbit radius in km/ display radius in pixels
 
 		
 	def calculatePos(self, time):
@@ -40,7 +40,7 @@ class Twinkler:
 		self.objectList = objectList;
 		self.daysPerTick = daysPerTick;
 		
-		self.center = 80;
+		self.center = 48;
 		
 	def dumpSystem(self):
 		output = [];
@@ -81,7 +81,7 @@ class Twinkler:
 			
 #			self.sendSequence(sequence);
 			self.dumpSystem();
-			time.sleep(0.025);
+			time.sleep(0.050);
 			
 
 if __name__ == '__main__':

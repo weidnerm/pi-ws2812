@@ -3,7 +3,7 @@ import math;
 
 f = open("/dev/rgbled", "w")
 f.write("setup channel_1_count=150\n")
-f.write("brightness 1,64\n")
+f.write("brightness 1,128\n")
 f.close()
 
 

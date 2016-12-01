@@ -226,6 +226,31 @@ char * read_val(char * args, char * value, size_t size){
     return args;
 }
 
+// Converts ascii representation of number to an integer.  
+// Handles special text sequences too.
+int parsed_atoi(char * text, int channel)
+{
+    int returnVal = atoi(text);
+    int length = strlen(text);
+    
+    if( length == 3)
+    {
+        if ( (text[0] == 'L') && (text[1] == 'E') && (text[2] == 'N') )
+        {
+            returnVal = ledstring.channel[channel].count;
+        }
+    }
+    else if( length == 4)
+    {
+        if ( (text[1] == 'L') && (text[2] == 'E') && (text[3] == 'N') )
+        {
+            returnVal = ledstring.channel[0].count * ((int)text[0] - '0');
+        }
+    }
+    
+    return returnVal;
+}
+
 //returns a color from RGB value
 //note that the ws281x stores colors as GRB
 int color (unsigned char r, unsigned char g, unsigned char b){
@@ -422,7 +447,7 @@ void rotate(char * args){
         if (*args!=0){
             args++;
             args = read_val(args, value, MAX_VAL_LEN);
-            nplaces = atoi(value);
+            nplaces = parsed_atoi(value,channel);
             if (*args!=0){
                 args++;
                 args = read_val(args, value, MAX_VAL_LEN);
@@ -430,11 +455,11 @@ void rotate(char * args){
                 if (*args!=0){
                     args++;
                     args = read_val(args, value, MAX_VAL_LEN);
-                    start = atoi(value);
+                    start = parsed_atoi(value,channel);
                     if (*args!=0){
                         args++;
                         args = read_val(args, value, MAX_VAL_LEN);
-                        tmpNumPixels = atoi(value);
+                        tmpNumPixels = parsed_atoi(value,channel);
                         if (*args!=0){
                             args++;
                             args = read_val(args, value, MAX_VAL_LEN);
@@ -496,23 +521,23 @@ void rainbow(char * args) {
         if (*args!=0){
             args++;
             args = read_val(args, value, MAX_VAL_LEN);
-            count = atoi(value);
+            count = parsed_atoi(value,channel);
             if (*args!=0){
                 args++;
                 args = read_val(args, value, MAX_VAL_LEN);
-                startPixel = atoi(value);
+                startPixel = parsed_atoi(value,channel);
             if (*args!=0){
                 args++;
                 args = read_val(args, value, MAX_VAL_LEN);
-                tmpNumPixels = atoi(value);
+                tmpNumPixels = parsed_atoi(value,channel);
                 if (*args!=0){
                     args++;
                     args = read_val(args, value, MAX_VAL_LEN);
-                    start = atoi(value);
+                    start = parsed_atoi(value,channel);
                         if (*args!=0){
                             args++;
                             args = read_val(args, value, MAX_VAL_LEN);
-                            stop = atoi(value);
+                            stop = parsed_atoi(value,channel);
                         }
                     }
                 }
@@ -558,11 +583,11 @@ void fill(char * args){
             if (*args!=0){
                 args++;
                 args = read_val(args, value, MAX_VAL_LEN);
-                start = atoi(value);
+                start = parsed_atoi(value,channel);
                 if (*args!=0){
                     args++;
                     args = read_val(args, value, MAX_VAL_LEN);
-                    len = atoi(value);
+                    len = parsed_atoi(value,channel);
                 }
             }
         }
@@ -600,7 +625,7 @@ void candycane(char * args){
             if (*args!=0){
                 args++;
                 args = read_val(args, value, MAX_VAL_LEN);
-                count_1 = atoi(value);
+                count_1 = parsed_atoi(value,channel);
                 if (*args!=0){
                     args++;
                     args = read_val(args, value, MAX_VAL_LEN);
@@ -612,16 +637,16 @@ void candycane(char * args){
                     if (*args!=0){
                         args++;
                         args = read_val(args, value, MAX_VAL_LEN);
-                        count_2 = atoi(value);
+                        count_2 = parsed_atoi(value,channel);
                         if (debug) printf(args);
                         if (*args!=0){
                             args++;
                             args = read_val(args, value, MAX_VAL_LEN);
-                            start = atoi(value);
+                            start = parsed_atoi(value,channel);
                             if (*args!=0){
                                 args++;
                                 args = read_val(args, value, MAX_VAL_LEN);
-                                len = atoi(value);
+                                len = parsed_atoi(value,channel);
                             }
                         }
                     }
@@ -686,7 +711,7 @@ void tricolor(char * args){
             if (*args!=0){
                 args++;
                 args = read_val(args, value, MAX_VAL_LEN);
-                count_1 = atoi(value);
+                count_1 = parsed_atoi(value,channel);
                 if (*args!=0){
                     args++;
                     args = read_val(args, value, MAX_VAL_LEN);
@@ -698,7 +723,7 @@ void tricolor(char * args){
                     if (*args!=0){
                         args++;
                         args = read_val(args, value, MAX_VAL_LEN);
-                        count_2 = atoi(value);
+                        count_2 = parsed_atoi(value,channel);
                         if (*args!=0){
                             args++;
                             args = read_val(args, value, MAX_VAL_LEN);
@@ -710,16 +735,16 @@ void tricolor(char * args){
                             if (*args!=0){
                                 args++;
                                 args = read_val(args, value, MAX_VAL_LEN);
-                                count_3 = atoi(value);
+                                count_3 = parsed_atoi(value,channel);
                                 if (debug) printf(args);
                                 if (*args!=0){
                                     args++;
                                     args = read_val(args, value, MAX_VAL_LEN);
-                                    start = atoi(value);
+                                    start = parsed_atoi(value,channel);
                                     if (*args!=0){
                                         args++;
                                         args = read_val(args, value, MAX_VAL_LEN);
-                                        len = atoi(value);
+                                        len = parsed_atoi(value,channel);
                                     }
                                 }
                             }
@@ -796,7 +821,7 @@ void quadcolor(char * args){
             if (*args!=0){
                 args++;
                 args = read_val(args, value, MAX_VAL_LEN);
-                count_1 = atoi(value);
+                count_1 = parsed_atoi(value,channel);
                 if (*args!=0){
                     args++;
                     args = read_val(args, value, MAX_VAL_LEN);
@@ -808,7 +833,7 @@ void quadcolor(char * args){
                     if (*args!=0){
                         args++;
                         args = read_val(args, value, MAX_VAL_LEN);
-                        count_2 = atoi(value);
+                        count_2 = parsed_atoi(value,channel);
                         if (*args!=0){
                             args++;
                             args = read_val(args, value, MAX_VAL_LEN);
@@ -820,7 +845,7 @@ void quadcolor(char * args){
                             if (*args!=0){
                                 args++;
                                 args = read_val(args, value, MAX_VAL_LEN);
-                                count_3 = atoi(value);
+                                count_3 = parsed_atoi(value,channel);
                                 if (*args!=0){
                                     args++;
                                     args = read_val(args, value, MAX_VAL_LEN);
@@ -832,16 +857,16 @@ void quadcolor(char * args){
                                     if (*args!=0){
                                         args++;
                                         args = read_val(args, value, MAX_VAL_LEN);
-                                        count_4 = atoi(value);
+                                        count_4 = parsed_atoi(value,channel);
                                         if (debug) printf(args);
                                         if (*args!=0){
                                             args++;
                                             args = read_val(args, value, MAX_VAL_LEN);
-                                            start = atoi(value);
+                                            start = parsed_atoi(value,channel);
                                             if (*args!=0){
                                                 args++;
                                                 args = read_val(args, value, MAX_VAL_LEN);
-                                                len = atoi(value);
+                                                len = parsed_atoi(value,channel);
                                             }
                                         }
                                     }
@@ -896,18 +921,18 @@ void quadcolor(char * args){
                         tempColor = fill_color_4;
                     }
                 }
-				else
-				{
-					if ( color_4_remaining > 0)
-					{
-						color_4_remaining --;
-						if(color_4_remaining == 0)
-						{
-							color_1_remaining = count_1;
-							tempColor = fill_color_1;
-						}
-					}
-				}
+                else
+                {
+                    if ( color_4_remaining > 0)
+                    {
+                        color_4_remaining --;
+                        if(color_4_remaining == 0)
+                        {
+                            color_1_remaining = count_1;
+                            tempColor = fill_color_1;
+                        }
+                    }
+                }
             }
         }
     }
@@ -964,7 +989,7 @@ void start_loop (char * args){
 void end_loop(char * args){
     int max_loops = 0; //number of wanted loops
     if (args!=NULL){
-        max_loops = atoi(args);
+        max_loops = parsed_atoi(args,0);
     }
     if (mode==MODE_FILE){
         if (debug) printf ("loop %d \n", (int)ftell(input_file));

@@ -6,28 +6,28 @@ do
 fill
 render
 do
-    rotate 1,1,0,0,450,ff0000
+    rotate 1,1,0,0,LEN,ff0000
     render
     delay 25
-loop 450
+loop LEN
 do
-    rotate 1,1,0,0,450,00ff00
+    rotate 1,1,0,0,LEN,00ff00
     render
     delay 25
-loop 450
+loop LEN
 do
-     rotate 1,1,0,0,450,0000ff
+     rotate 1,1,0,0,LEN,0000ff
      render
      delay 25
-loop 450
+loop LEN
 do
     do
-      rotate 1,1,0,0,450,ff0000
+      rotate 1,1,0,0,LEN,ff0000
       render
       delay 25
     loop 10
     do
-      rotate 1,1,0,0,450,00ff00
+      rotate 1,1,0,0,LEN,00ff00
       render
       delay 25
     loop 10

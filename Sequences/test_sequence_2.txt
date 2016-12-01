@@ -8,7 +8,7 @@ fill 1,000000,50,5
 fill 1,ff8c00,75,5
 fill 1,000000,100,5
 fill 1,ff8c00,125,5
-candycane 1,000000,45,ff8c00,5,0,450
+candycane 1,000000,45,ff8c00,5,0,LEN
 render
 delay 1000
 do
@@ -26,7 +26,7 @@ fill 1,ff0000,50,5
 fill 1,00ff00,75,5
 fill 1,ff0000,100,5
 fill 1,00ff00,125,5
-quadcolor 1,000000,45,ff0000,5,000000,45,00ff00,5,0,450
+quadcolor 1,000000,45,ff0000,5,000000,45,00ff00,5,0,LEN
 fill 1,ff0000,0,2
 fill 1,ffffff,2,2
 fill 1,ff0000,4,2
@@ -46,16 +46,16 @@ do
     delay 50
 loop 120
 do
-    fill 1,000000,0,450
+    fill 1,000000,0,LEN
     render
     delay 50
-    fill 1,00ff00,0,450
+    fill 1,00ff00,0,LEN
     render
     delay 50
-    fill 1,000000,0,450
+    fill 1,000000,0,LEN
     render
     delay 50
-    fill 1,ff0000,0,450
+    fill 1,ff0000,0,LEN
     render
     delay 50
 loop 20

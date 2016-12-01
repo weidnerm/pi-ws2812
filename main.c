@@ -705,7 +705,7 @@ void tricolor(char * args){
                             if (strlen(value)==6){
                                 fill_color_3 = color((hextable[value[0]]<<4) + hextable[value[1]],(hextable[value[2]]<<4) + hextable[value[3]], (hextable[value[4]]<<4) + hextable[value[5]]);
                             }else{
-                                printf("Invalid color in tricolor color 2\n");
+                                printf("Invalid color in tricolor color 3\n");
                             }
                             if (*args!=0){
                                 args++;
@@ -777,6 +777,142 @@ void tricolor(char * args){
     }
 }
 
+void quadcolor(char * args){
+    char value[MAX_VAL_LEN];
+    int channel=0, fill_color_1=0,fill_color_2=0,fill_color_3=0,count_1=0,count_2=0,count_3=0,start=0,len=-1;
+    int fill_color_4=0,count_4=0;
+    
+    if (args!=NULL){
+        args = read_val(args, value, MAX_VAL_LEN);
+        channel = atoi(value)-1;
+        if (*args!=0){
+            args++;
+            args = read_val(args, value, MAX_VAL_LEN);
+            if (strlen(value)==6){
+                fill_color_1 = color((hextable[value[0]]<<4) + hextable[value[1]],(hextable[value[2]]<<4) + hextable[value[3]], (hextable[value[4]]<<4) + hextable[value[5]]);
+            }else{
+                printf("Invalid color in quadcolor color 1\n");
+            }
+            if (*args!=0){
+                args++;
+                args = read_val(args, value, MAX_VAL_LEN);
+                count_1 = atoi(value);
+                if (*args!=0){
+                    args++;
+                    args = read_val(args, value, MAX_VAL_LEN);
+                    if (strlen(value)==6){
+                        fill_color_2 = color((hextable[value[0]]<<4) + hextable[value[1]],(hextable[value[2]]<<4) + hextable[value[3]], (hextable[value[4]]<<4) + hextable[value[5]]);
+                    }else{
+                        printf("Invalid color in quadcolor color 2\n");
+                    }
+                    if (*args!=0){
+                        args++;
+                        args = read_val(args, value, MAX_VAL_LEN);
+                        count_2 = atoi(value);
+                        if (*args!=0){
+                            args++;
+                            args = read_val(args, value, MAX_VAL_LEN);
+                            if (strlen(value)==6){
+                                fill_color_3 = color((hextable[value[0]]<<4) + hextable[value[1]],(hextable[value[2]]<<4) + hextable[value[3]], (hextable[value[4]]<<4) + hextable[value[5]]);
+                            }else{
+                                printf("Invalid color in quadcolor color 3\n");
+                            }
+                            if (*args!=0){
+                                args++;
+                                args = read_val(args, value, MAX_VAL_LEN);
+                                count_3 = atoi(value);
+                                if (*args!=0){
+                                    args++;
+                                    args = read_val(args, value, MAX_VAL_LEN);
+                                    if (strlen(value)==6){
+                                        fill_color_4 = color((hextable[value[0]]<<4) + hextable[value[1]],(hextable[value[2]]<<4) + hextable[value[3]], (hextable[value[4]]<<4) + hextable[value[5]]);
+                                    }else{
+                                        printf("Invalid color in quadcolor color 4\n");
+                                    }
+                                    if (*args!=0){
+                                        args++;
+                                        args = read_val(args, value, MAX_VAL_LEN);
+                                        count_4 = atoi(value);
+                                        if (debug) printf(args);
+                                        if (*args!=0){
+                                            args++;
+                                            args = read_val(args, value, MAX_VAL_LEN);
+                                            start = atoi(value);
+                                            if (*args!=0){
+                                                args++;
+                                                args = read_val(args, value, MAX_VAL_LEN);
+                                                len = atoi(value);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if (channel!=0 && channel!=1) channel=0;
+    if (len<=0 || len>ledstring.channel[channel].count) len=ledstring.channel[channel].count;
+    if (start<0 || start>=ledstring.channel[channel].count) start=0;
+
+    if (debug) printf("tricolor %d,%06x,%d,%06x,%d,%d,%d\n", channel, fill_color_1, count_1, fill_color_2, count_2, start, len);
+
+    int i;
+    int color_1_remaining = count_1,color_2_remaining = 0,color_3_remaining = 0,color_4_remaining = 0;
+    int tempColor = fill_color_1;
+    for (i=start;i<start+len;i++){
+        ledstring.channel[channel].leds[i]=tempColor;
+        if ( color_1_remaining > 0)
+        {
+            color_1_remaining --;
+            if(color_1_remaining == 0)
+            {
+                color_2_remaining = count_2;
+                tempColor = fill_color_2;
+            }
+        }
+        else
+        {
+            if ( color_2_remaining > 0)
+            {
+                color_2_remaining --;
+                if(color_2_remaining == 0)
+                {
+                    color_3_remaining = count_3;
+                    tempColor = fill_color_3;
+                }
+            }
+            else
+            {
+                if ( color_3_remaining > 0)
+                {
+                    color_3_remaining --;
+                    if(color_3_remaining == 0)
+                    {
+                        color_4_remaining = count_4;
+                        tempColor = fill_color_4;
+                    }
+                }
+				else
+				{
+					if ( color_4_remaining > 0)
+					{
+						color_4_remaining --;
+						if(color_4_remaining == 0)
+						{
+							color_1_remaining = count_1;
+							tempColor = fill_color_1;
+						}
+					}
+				}
+            }
+        }
+    }
+}
+
 //dims leds (adjust brightness of all on channel)
 //brightness <channel>,<brightness> (brightness: 0-255)
 void brightness(char * args){
@@ -809,7 +945,7 @@ void start_loop (char * args){
             printf("Warning max nested loops reached!\n");
             return;
         }
-        if (debug) printf ("do %d\n", ftell(input_file));
+        if (debug) printf ("do %d\n", (int)ftell(input_file));
         loops[loop_index].do_pos = ftell(input_file);
         loops[loop_index].n_loops=0;
         loop_index++;
@@ -831,7 +967,7 @@ void end_loop(char * args){
         max_loops = atoi(args);
     }
     if (mode==MODE_FILE){
-        if (debug) printf ("loop %d \n", ftell(input_file));
+        if (debug) printf ("loop %d \n", (int)ftell(input_file));
         if (loop_index==0){ //no do found!
             fseek(input_file, 0, SEEK_SET);
         }else{
@@ -945,6 +1081,8 @@ void execute_command(char * command_line){
             candycane(arg);
         }else if (strcmp(command, "tricolor")==0){
             tricolor(arg);
+        }else if (strcmp(command, "quadcolor")==0){
+            quadcolor(arg);
         }else if (strcmp(command, "do")==0){
             start_loop(arg);
         }else if (strcmp(command, "loop")==0){

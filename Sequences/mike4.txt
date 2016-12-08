@@ -10,6 +10,7 @@ fill 1
 #fill 1,00ff00,126,24
 #render
  
+
 do
     # put back red/green
     fill 1,ff0000,51,75
@@ -29,6 +30,9 @@ do
         render
         delay 50
     loop 24
+
+
+
 
 
 

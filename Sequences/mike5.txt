@@ -1,6 +1,6 @@
 setup channel_1_count=150
 #https://github.com/tom-2015/rpi-ws2812-server
-brightness 1,128
+brightness 1,64
 # r,g,b
 fill 1
 #render
@@ -32,9 +32,9 @@ do
         delay 500
     loop 10
     
-	fill 1,000000,0,150
-	render
-	delay 2000
+    fill 1,000000,0,150
+    render
+    delay 2000
 loop
 
  

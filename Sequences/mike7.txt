@@ -1,0 +1,162 @@
+setup channel_1_count=150
+#https://github.com/tom-2015/rpi-ws2812-server
+brightness 1,128
+# r,g,b
+fill 1
+#render
+
+#fill 1,ff00ff,51,75
+#fill 1,00ff00,0,51
+#fill 1,00ff00,126,24
+#render
+ 
+candycane 1,ff0000,3,ffffff,3,0,15
+candycane 1,00ff00,3,ffffff,3,50,15
+candycane 1,00ff00,3,ffffff,3,100,15
+candycane 1,ff0000,3,ffffff,3,0,15
+candycane 1,ff0000,3,ffffff,3,50,15
+candycane 1,ff0000,3,ffffff,3,100,15
+
+fill 1,00ff00,6,3
+fill 1,00ff00,56,3
+fill 1,00ff00,106,3
+render
+
+do
+    do
+        rotate 1,1,0,0,15
+        rotate 1,1,0,50,15
+        rotate 1,1,0,100,15
+        render
+        delay 50
+    loop 30
+
+    do
+        rotate 1,1,0
+        render
+        delay 100
+    loop 25
+    do
+        rotate 1,1,0
+        render
+        delay 50
+    loop 50
+
+    do
+        rotate 1,1,0
+        render
+        delay 32
+    loop 100
+
+    do
+        rotate 1,1,0
+        render
+        delay 25
+    loop 100
+
+    do
+        rotate 1,2,0
+        render
+        delay 25
+    loop 200
+    
+    do
+        rotate 1,1,0
+        render
+        delay 25
+    loop 100
+
+    do
+        rotate 1,1,0
+        render
+        delay 32
+    loop 100
+
+    do
+        rotate 1,1,0
+        render
+        delay 50
+    loop 50
+
+    do
+        rotate 1,1,0
+        render
+        delay 100
+    loop 25
+
+    delay 1000
+
+
+
+
+
+
+
+    do
+        rotate 1,1,1,0,15
+        rotate 1,1,1,50,15
+        rotate 1,1,1,100,15
+        render
+        delay 50
+    loop 30
+
+    do
+        rotate 1,1,1
+        render
+        delay 100
+    loop 25
+    do
+        rotate 1,1,1
+        render
+        delay 50
+    loop 50
+
+    do
+        rotate 1,1,1
+        render
+        delay 32
+    loop 100
+
+    do
+        rotate 1,1,1
+        render
+        delay 25
+    loop 100
+
+    do
+        rotate 1,2,1
+        render
+        delay 25
+    loop 200
+    
+    do
+        rotate 1,1,1
+        render
+        delay 25
+    loop 100
+
+    do
+        rotate 1,1,1
+        render
+        delay 32
+    loop 100
+
+    do
+        rotate 1,1,1
+        render
+        delay 50
+    loop 50
+
+    do
+        rotate 1,1,1
+        render
+        delay 100
+    loop 25
+
+    delay 1000
+
+loop
+
+
+
+

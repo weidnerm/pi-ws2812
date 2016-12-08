@@ -1,0 +1,167 @@
+setup channel_1_count=150
+#https://github.com/tom-2015/rpi-ws2812-server
+brightness 1,256
+# r,g,b
+fill 1
+#render
+
+fill 1
+#fill 1, 0000ff,30,10
+#fill 1, 0000ff,40,10
+#fill 1, ff0000,52,10
+#fill 1, ff0000,62,10
+render
+
+# blink all on/off 
+do
+    do
+        fill 1
+        fill 1, 0000ff,30,10
+        fill 1, 0000ff,40,10
+        fill 1, ff0000,52,10
+        fill 1, ff0000,62,10
+        render
+        delay 60
+
+        fill 1
+        render
+        delay 60
+
+        fill 1
+        fill 1, 0000ff,30,10
+        fill 1, 0000ff,40,10
+        fill 1, ff0000,52,10
+        fill 1, ff0000,62,10
+        render
+        delay 60
+
+        fill 1
+        render
+        delay 60
+    loop 2
+    delay 100
+loop 4
+
+
+
+
+# left/right  then right/left
+do
+    do
+        fill 1
+#        fill 1, 0000ff,30,10
+        fill 1, 0000ff,40,10
+        fill 1, ff0000,52,10
+#        fill 1, ff0000,62,10
+        render
+        delay 40
+
+        fill 1
+        render
+        delay 40
+    loop 2
+        delay 100
+    do
+
+        fill 1
+        fill 1, 0000ff,30,10
+#        fill 1, 0000ff,40,10
+#        fill 1, ff0000,52,10
+        fill 1, ff0000,62,10
+        render
+        delay 40
+
+        fill 1
+        render
+        delay 40
+    loop 2
+        delay 100
+loop 5
+
+# blink all on/off 
+do
+    do
+        fill 1
+        fill 1, 0000ff,30,10
+        fill 1, 0000ff,40,10
+        fill 1, ff0000,52,10
+        fill 1, ff0000,62,10
+        render
+        delay 60
+
+        fill 1
+        render
+        delay 60
+
+        fill 1
+        fill 1, 0000ff,30,10
+        fill 1, 0000ff,40,10
+        fill 1, ff0000,52,10
+        fill 1, ff0000,62,10
+        render
+        delay 60
+
+        fill 1
+        render
+        delay 60
+    loop 3
+loop 1
+
+
+#left/left then right/right
+do
+    do
+        fill 1
+        fill 1, 0000ff,30,10
+    #   fill 1, 0000ff,40,10
+        fill 1, ff0000,52,10
+    #   fill 1, ff0000,62,10
+        render
+        delay 40
+
+        fill 1
+        render
+        delay 40
+
+        fill 1
+        fill 1, 0000ff,30,10
+    #   fill 1, 0000ff,40,10
+        fill 1, ff0000,52,10
+    #   fill 1, ff0000,62,10
+        render
+        delay 40
+
+        fill 1
+        render
+        delay 40
+    loop 3
+
+    do
+        fill 1
+    #    fill 1, 0000ff,30,10
+       fill 1, 0000ff,40,10
+    #    fill 1, ff0000,52,10
+       fill 1, ff0000,62,10
+        render
+        delay 40
+
+        fill 1
+        render
+        delay 40
+
+        fill 1
+    #    fill 1, 0000ff,30,10
+       fill 1, 0000ff,40,10
+    #    fill 1, ff0000,52,10
+       fill 1, ff0000,62,10
+        render
+        delay 40
+
+        fill 1
+        render
+        delay 40
+    loop 3
+loop 10
+
+
+

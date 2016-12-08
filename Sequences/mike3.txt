@@ -7,6 +7,41 @@ render
 
 do
     do
+       rotate 1,1,0,0,150,ff0000
+       render
+       delay 50
+    loop 150
+    do
+       rotate 1,1,1,0,150,00ff00
+       render
+       delay 50
+    loop 150
+    do
+       rotate 1,1,0,0,150,0000ff
+       render
+       delay 50
+    loop 150
+    do
+        do
+           rotate 1,1,0,0,150,ff0000
+           render
+           delay 50
+        loop 10
+        do
+           rotate 1,1,0,0,150,00ff00
+           render
+           delay 50
+        loop 10
+    loop 20
+    do
+       rotate 1,1,0,0,150,000000
+       render
+       delay 50
+    loop 150
+
+
+
+    do
        rotate 1,1,1,0,150,ff0000
        render
        delay 50
@@ -38,4 +73,5 @@ do
        render
        delay 50
     loop 150
+
 loop

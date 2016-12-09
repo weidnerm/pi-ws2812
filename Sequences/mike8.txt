@@ -3,95 +3,88 @@ setup channel_1_count=150
 brightness 1,128
 # r,g,b
 fill 1
-#render
-
-#fill 1,ff00ff,51,75
-#fill 1,00ff00,0,51
-#fill 1,00ff00,126,24
-#render
 
 do
     do
         do
             # transform reds->green and green->red
-            candycane 1,FF0000,10,00FF00,10,0,150
-            render
-            delay 100
-            candycane 1,EF1000,10,10EF00,10,0,150
-            render
-            delay 100
-            candycane 1,DF2000,10,20DF00,10,0,150
-            render
-            delay 100
-            candycane 1,CF3000,10,30CF00,10,0,150
-            render
-            delay 100
-            candycane 1,BF4000,10,40BF00,10,0,150
-            render
-            delay 100
-            candycane 1,AF5000,10,50AF00,10,0,150
-            render
-            delay 100
-            candycane 1,9F6000,10,609F00,10,0,150
-            render
-            delay 100
-            candycane 1,8F7000,10,708F00,10,0,150
-            render
-            delay 100
-            candycane 1,7F8000,10,807F00,10,0,150
-            render
-            delay 100
-            candycane 1,6F9000,10,906F00,10,0,150
-            render
-            delay 100
-            candycane 1,5FA000,10,A05F00,10,0,150
-            render
-            delay 100
-            candycane 1,4FB000,10,B04F00,10,0,150
-            render
-            delay 100
-            candycane 1,3FC000,10,C03F00,10,0,150
-            render
-            delay 100
-            candycane 1,2FD000,10,D02F00,10,0,150
-            render
-            delay 100
-            candycane 1,1FE000,10,E01F00,10,0,150
-            render
-            delay 100
-            candycane 1,0FF000,10,F00F00,10,0,150
-            render
-            delay 100
-            candycane 1,00FF00,10,FF0000,10,0,150
-            render
-            delay 100
-
+candycane 1,FF0000,12,00FF00,12,3,144
+render
+delay 100
+candycane 1,EF1000,12,10EF00,12,3,144
+render
+delay 100
+candycane 1,DF2000,12,20DF00,12,3,144
+render
+delay 100
+candycane 1,CF3000,12,30CF00,12,3,144
+render
+delay 100
+candycane 1,BF4000,12,40BF00,12,3,144
+render
+delay 100
+candycane 1,AF5000,12,50AF00,12,3,144
+render
+delay 100
+candycane 1,9F6000,12,609F00,12,3,144
+render
+delay 100
+candycane 1,8F7000,12,708F00,12,3,144
+render
+delay 100
+candycane 1,7F8000,12,807F00,12,3,144
+render
+delay 100
+candycane 1,6F9000,12,906F00,12,3,144
+render
+delay 100
+candycane 1,5FA000,12,A05F00,12,3,144
+render
+delay 100
+candycane 1,4FB000,12,B04F00,12,3,144
+render
+delay 100
+candycane 1,3FC000,12,C03F00,12,3,144
+render
+delay 100
+candycane 1,2FD000,12,D02F00,12,3,144
+render
+delay 100
+candycane 1,1FE000,12,E01F00,12,3,144
+render
+delay 100
+candycane 1,0FF000,12,F00F00,12,3,144
+render
+delay 100
+candycane 1,00FF00,12,FF0000,12,3,144
+render
+delay 100
         loop 1
 
         # go back and forth 
         do
-            rotate 1,1,0
+            rotate 1,1,0,3,144
             render
             delay 50
-        loop 10
+        loop 12
         do
-            rotate 1,1,1
+            rotate 1,1,1,3,144
             render
             delay 50
-        loop 10
+        loop 12
         do
-            rotate 1,1,0
+            rotate 1,1,0,3,144
             render
             delay 50
-        loop 10
+        loop 12
     loop 3
 
     # rotate the whole thing quickly
     do
-        rotate 1,1,0
+        rotate 1,1,0,3,144
         render
         delay 25
-    loop 70
+    loop 72
 loop
 
 

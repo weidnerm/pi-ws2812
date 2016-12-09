@@ -8,57 +8,57 @@ do
     do
         do
             # transform reds->green and green->red
-candycane 1,FF0000,12,00FF00,12,3,144
-render
-delay 100
-candycane 1,EF1000,12,10EF00,12,3,144
-render
-delay 100
-candycane 1,DF2000,12,20DF00,12,3,144
-render
-delay 100
-candycane 1,CF3000,12,30CF00,12,3,144
-render
-delay 100
-candycane 1,BF4000,12,40BF00,12,3,144
-render
-delay 100
-candycane 1,AF5000,12,50AF00,12,3,144
-render
-delay 100
-candycane 1,9F6000,12,609F00,12,3,144
-render
-delay 100
-candycane 1,8F7000,12,708F00,12,3,144
-render
-delay 100
-candycane 1,7F8000,12,807F00,12,3,144
-render
-delay 100
-candycane 1,6F9000,12,906F00,12,3,144
-render
-delay 100
-candycane 1,5FA000,12,A05F00,12,3,144
-render
-delay 100
-candycane 1,4FB000,12,B04F00,12,3,144
-render
-delay 100
-candycane 1,3FC000,12,C03F00,12,3,144
-render
-delay 100
-candycane 1,2FD000,12,D02F00,12,3,144
-render
-delay 100
-candycane 1,1FE000,12,E01F00,12,3,144
-render
-delay 100
-candycane 1,0FF000,12,F00F00,12,3,144
-render
-delay 100
-candycane 1,00FF00,12,FF0000,12,3,144
-render
-delay 100
+            candycane 1,FF0000,12,00FF00,12,3,144
+            render
+            delay 100
+            candycane 1,EF1000,12,10EF00,12,3,144
+            render
+            delay 100
+            candycane 1,DF2000,12,20DF00,12,3,144
+            render
+            delay 100
+            candycane 1,CF3000,12,30CF00,12,3,144
+            render
+            delay 100
+            candycane 1,BF4000,12,40BF00,12,3,144
+            render
+            delay 100
+            candycane 1,AF5000,12,50AF00,12,3,144
+            render
+            delay 100
+            candycane 1,9F6000,12,609F00,12,3,144
+            render
+            delay 100
+            candycane 1,8F7000,12,708F00,12,3,144
+            render
+            delay 100
+            candycane 1,7F8000,12,807F00,12,3,144
+            render
+            delay 100
+            candycane 1,6F9000,12,906F00,12,3,144
+            render
+            delay 100
+            candycane 1,5FA000,12,A05F00,12,3,144
+            render
+            delay 100
+            candycane 1,4FB000,12,B04F00,12,3,144
+            render
+            delay 100
+            candycane 1,3FC000,12,C03F00,12,3,144
+            render
+            delay 100
+            candycane 1,2FD000,12,D02F00,12,3,144
+            render
+            delay 100
+            candycane 1,1FE000,12,E01F00,12,3,144
+            render
+            delay 100
+            candycane 1,0FF000,12,F00F00,12,3,144
+            render
+            delay 100
+            candycane 1,00FF00,12,FF0000,12,3,144
+            render
+            delay 100
         loop 1
 
         # go back and forth 

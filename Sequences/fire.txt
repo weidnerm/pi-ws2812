@@ -1,0 +1,5 @@
+setup channel_1_count=450
+brightness 1,128
+#fire
+#fire 1,250,25,15,0,450,10000
+fire 1,100,10,15,0,450

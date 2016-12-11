@@ -141,6 +141,157 @@ typedef struct {
     int n_loops;
 } do_loop;
 
+typedef int byte;
+void showStrip()
+{
+    if (ledstring.device!=NULL) ws2811_render(&ledstring);
+}
+
+void setPixel(int Pixel, byte red, byte green, byte blue)
+{
+
+    ledstring.channel[0].leds[Pixel] = (green<<16)+(red<<8)+blue;
+//  ledstring.channel[0].leds[Pixel] =  (green<<8) ;
+
+}
+
+void setAll(byte red, byte green, byte blue)
+{
+    int i;
+    for( i = 0; i < ledstring.channel[0].count; i++ )
+    {
+        setPixel(i, red, green, blue);
+    }
+    showStrip();
+}
+int randomRange(int low, int high)
+{
+    int range = high-low;
+    int returnVal = low + (rand() % range);
+
+    return returnVal;
+}
+
+void setPixelHeatColor (int Pixel, int temperature)
+{
+    // Scale 'heat' down from 0-255 to 0-191
+    int t192 = (temperature * 3)/4;
+
+    // calculate ramp up from
+    byte heatramp = t192 & 0x3F; // 0..63
+    heatramp <<= 2; // scale up to 0..252
+
+    // figure out which third of the spectrum we're in:
+    if( t192 > 0x80)
+    {                     // hottest
+        setPixel(Pixel, 255, 255, heatramp);
+    }
+    else if( t192 > 0x40 )
+    {             // middle
+        setPixel(Pixel, 255, heatramp, 0);
+    }
+    else
+    {                               // coolest
+        setPixel(Pixel, heatramp, 0, 0);
+    }
+}
+
+void Fire(int Cooling, int Sparking, int start, int numLeds)
+{
+    static byte heat[450];
+    int cooldown;
+
+    // Step 1.  Cool down every cell a little
+    int i;
+    for( i = 0; i < numLeds; i++)
+    {
+        cooldown = randomRange(0, ((Cooling * 10) / numLeds) + 2);
+
+        if(cooldown>heat[i])
+        {
+            heat[i]=0;
+        } else
+        {
+            heat[i]=heat[i]-cooldown;
+        }
+    }
+
+    // Step 2.  Heat from each cell drifts 'up' and diffuses a little
+    int k;
+    for( k= numLeds - 1; k >= 2; k--)
+    {
+        heat[k] = (heat[k - 1] + heat[k - 2] + heat[k - 2]) / 3;
+    }
+
+    // Step 3.  Randomly ignite new 'sparks' near the bottom
+    if( randomRange(0, 255) < Sparking )
+    {
+        //~ int y = randomRange(0, 7);
+        int y = randomRange(0, numLeds);
+        y = y*y*y/(numLeds*numLeds)/2;
+        heat[y] = heat[y] + randomRange(160,255);
+        //heat[y] = randomRange(160,255);
+    }
+
+    // Step 4.  Convert heat to LED colors
+    int j;
+    for( j = 0; j < numLeds; j++)
+    {
+        setPixelHeatColor(j, heat[j] );
+    }
+
+    showStrip();
+}
+
+void fireloop(int iterations, int cooling, int sparkling, int SpeedDelay, int start, int numLeds)
+{
+    int index;
+
+    if (iterations == -1)
+    {
+        while(1)
+        {
+            Fire(cooling,sparkling, start, numLeds);
+
+            //~ delay(SpeedDelay);
+            usleep((SpeedDelay)*1000);
+        }
+    }
+    else
+    {
+
+        for(index=0; index<iterations; index++)
+        {
+            Fire(cooling,sparkling, start, numLeds);
+
+            //~ delay(SpeedDelay);
+            usleep((SpeedDelay)*1000);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 FILE *    input_file;         //the named pipe handle
 char *    command_line;       //current command line
@@ -226,13 +377,13 @@ char * read_val(char * args, char * value, size_t size){
     return args;
 }
 
-// Converts ascii representation of number to an integer.  
+// Converts ascii representation of number to an integer.
 // Handles special text sequences too.
 int parsed_atoi(char * text, int channel)
 {
     int returnVal = atoi(text);
     int length = strlen(text);
-    
+
     if( length == 3)
     {
         if ( (text[0] == 'L') && (text[1] == 'E') && (text[2] == 'N') )
@@ -247,7 +398,7 @@ int parsed_atoi(char * text, int channel)
             returnVal = ledstring.channel[0].count * ((int)text[0] - '0');
         }
     }
-    
+
     return returnVal;
 }
 
@@ -562,6 +713,49 @@ void rainbow(char * args) {
     }
 }
 
+void fireHandler(char * args){
+    char value[MAX_VAL_LEN];
+    int channel=0, cooling=55,sparkling=120,delay=15,iterations=-1,start=0,len=-1;
+
+    if (args!=NULL){
+        args = read_val(args, value, MAX_VAL_LEN);
+        channel = atoi(value)-1;
+        if (*args!=0){
+            args++;
+            args = read_val(args, value, MAX_VAL_LEN);
+            cooling = atoi(value);
+            if (*args!=0){
+                args++;
+                args = read_val(args, value, MAX_VAL_LEN);
+                sparkling = atoi(value);
+                if (*args!=0){
+                    args++;
+                    args = read_val(args, value, MAX_VAL_LEN);
+                    delay = atoi(value);
+                    if (*args!=0){
+                        args++;
+                        args = read_val(args, value, MAX_VAL_LEN);
+                        start = atoi(value);
+                        if (*args!=0){
+                            args++;
+                            args = read_val(args, value, MAX_VAL_LEN);
+                            len = atoi(value);
+                            if (*args!=0){
+                                args++;
+                                args = read_val(args, value, MAX_VAL_LEN);
+                                iterations = atoi(value);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    printf("channel=%d cooling=%d sparkling=%d delay=%d iterations=%d start=%d len=%d\n",channel,cooling,sparkling,delay,iterations,start,len);
+
+    fireloop( iterations, cooling, sparkling, delay, start, len);
+}
+
 //fills leds with certain color
 //fill <channel>,<color>,<start>,<len>
 void fill(char * args){
@@ -806,7 +1000,7 @@ void quadcolor(char * args){
     char value[MAX_VAL_LEN];
     int channel=0, fill_color_1=0,fill_color_2=0,fill_color_3=0,count_1=0,count_2=0,count_3=0,start=0,len=-1;
     int fill_color_4=0,count_4=0;
-    
+
     if (args!=NULL){
         args = read_val(args, value, MAX_VAL_LEN);
         channel = atoi(value)-1;
@@ -1104,6 +1298,8 @@ void execute_command(char * command_line){
             fill(arg);
         }else if (strcmp(command, "candycane")==0){
             candycane(arg);
+        }else if (strcmp(command, "fire")==0){
+            fireHandler(arg);
         }else if (strcmp(command, "tricolor")==0){
             tricolor(arg);
         }else if (strcmp(command, "quadcolor")==0){

@@ -147,12 +147,23 @@ void showStrip()
     if (ledstring.device!=NULL) ws2811_render(&ledstring);
 }
 
+int fireEffectPixelLength = 1;
+
 void setPixel(int Pixel, byte red, byte green, byte blue)
 {
 
-    ledstring.channel[0].leds[Pixel] = (green<<16)+(red<<8)+blue;
-//  ledstring.channel[0].leds[Pixel] =  (green<<8) ;
+    //~ ledstring.channel[0].leds[Pixel] = (green<<16)+(red<<8)+blue;
 
+    int index;
+    int pixelGap = ledstring.channel[0].count/fireEffectPixelLength;
+    for(index=0;index<pixelGap;index++)
+    {
+        int PixelIndex = Pixel*pixelGap+index;
+        if ( PixelIndex < 450 )
+        {
+            ledstring.channel[0].leds[PixelIndex] = (green<<16)+(red<<8)+blue;
+        }
+    }
 }
 
 void setAll(byte red, byte green, byte blue)
@@ -200,6 +211,8 @@ void Fire(int Cooling, int Sparking, int start, int numLeds)
 {
     static byte heat[450];
     int cooldown;
+    
+    fireEffectPixelLength = numLeds;
 
     // Step 1.  Cool down every cell a little
     int i;
@@ -226,9 +239,9 @@ void Fire(int Cooling, int Sparking, int start, int numLeds)
     // Step 3.  Randomly ignite new 'sparks' near the bottom
     if( randomRange(0, 255) < Sparking )
     {
-        //~ int y = randomRange(0, 7);
-        int y = randomRange(0, numLeds);
-        y = y*y*y/(numLeds*numLeds)/2;
+        int y = randomRange(0, 7);
+        //~ int y = randomRange(0, numLeds);
+        //~ y = y*y*y/(numLeds*numLeds)/2;
         heat[y] = heat[y] + randomRange(160,255);
         //heat[y] = randomRange(160,255);
     }

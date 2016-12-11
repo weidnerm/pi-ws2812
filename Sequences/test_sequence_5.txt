@@ -32,4 +32,9 @@ do
       delay 25
     loop 10
 loop 90
+do
+     rotate 1,1,1,0,LEN,000000
+     render
+     delay 25 
+loop LEN
 loop

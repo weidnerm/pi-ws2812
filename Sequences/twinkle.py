@@ -9,7 +9,10 @@ class StarObject:
 		self.brighteningRemaining = 0;
 		self.dimmingRemaining = 0;
 		self.onRemaining = 0;
-		self.baseColor = baseColor;
+		if baseColor == 0:
+			self.baseColor = deg2color( random.randint(0,255))
+		else:
+			self.baseColor = baseColor;
 		self.currentBrightness = 0;
 		self.rampUpTicks = rampUpTicks;
 		self.onTicks = onTicks;
@@ -58,6 +61,7 @@ class StarObject:
 
 		if ( relocate == 1) : 
 			self.position = random.randint(0,149); # move to new random position.
+			self.baseColor = deg2color( random.randint(0,255))
 
 		return retVal;
 
@@ -71,7 +75,7 @@ class Twinkler:
 	def __init__(self,colorList, countList):
 		f = open("/dev/rgbled", "w")
 		f.write("setup channel_1_count=150\n")
-		f.write("brightness 1,128\n")
+		f.write("brightness 1,255\n")
 		f.close()
 		
 		self.m_stars = []
@@ -81,7 +85,7 @@ class Twinkler:
 		for index in xrange(len(colorList)):
 			self.m_numStars = self.m_numStars + countList[index]
 			for starIndex in xrange(countList[index]):
-				star = StarObject(20,random.randint(20,60),20,random.randint(20,40),colorList[index], starIndex*10, random.randint(0,149) , 1)
+				star = StarObject(random.randint(10,60),random.randint(20,60),20,random.randint(20,60),colorList[index], starIndex*10, random.randint(0,149) , 1)
 				self.m_stars.append(star);
 
 	def sendSequence(self,sequence):
@@ -92,24 +96,44 @@ class Twinkler:
 		f.close()
 		
 	def main(self):		
-		for tick in xrange(1000):
+		while(True):
 			sequence = []
 			for star in xrange(self.m_numStars):
 				sequence.append( self.m_stars[star].handleTick() );
 			
 			self.sendSequence(sequence);
 			time.sleep(0.05);
-			
+
+
+def color (r, g, b):
+	return (g << 16) + (r << 8) + b;
+
+#returns a color from a 'color wheel' where wheelpos is the 'angle' 0-255
+def deg2color(WheelPos):
+	if(WheelPos < 85):
+		return color(255 - WheelPos * 3,WheelPos * 3 , 0);
+	elif(WheelPos < 170):
+		WheelPos -= 85;
+		return color(0, 255 - WheelPos * 3, WheelPos * 3);
+	else:
+		WheelPos -= 170;
+		return color(WheelPos * 3, 0, 255 - WheelPos * 3);
+
+
 
 if __name__ == '__main__':
 	colorList = [];
 	countList = [];
 	
+	# random rainbow
+	colorList.append( 0 ); countList.append( 80 );
+
+	
 	# forth of july
-	#colorList.append( int("ffffff",16) ); countList.append( 20 ); colorList.append( int("ff0000",16) ); countList.append( 20 ); colorList.append( int("0000ff",16) ); countList.append( 20 );
+	#colorList.append( int("00ff00",16) ); countList.append( 20 );colorList.append( int("ffffff",16) ); countList.append( 20 ); colorList.append( int("ff0000",16) ); countList.append( 20 ); colorList.append( int("0000ff",16) ); countList.append( 20 );
 	
 	# xmas
-	colorList.append( int("ff0000",16) ); countList.append( 20 ); colorList.append( int("00ff00",16) ); countList.append( 20 );
+#	colorList.append( int("ff0000",16) ); countList.append( 20 ); colorList.append( int("00ff00",16) ); countList.append( 20 );
 	
 	# ligthtning bugs
 	#colorList.append( int("a0ff00",16) ); countList.append( 30 );

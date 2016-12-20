@@ -167,9 +167,9 @@ class Fire:
 
 
 if __name__ == '__main__':
-	fire = Fire(50)
+	fire = Fire(75)
 	while(True):
-#		fire.fire(55,120,15)
+		# cooling, sparkling, speed
 		fire.fire(150,75,15)
 	
 

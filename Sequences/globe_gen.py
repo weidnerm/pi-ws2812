@@ -61,6 +61,48 @@ def main2():
 
 			print("    render")
 			print("    delay 25")
+
+
+		for index in xrange(255,0,-1):
+			ledBrightnesses = []
+			for ledindex in xrange(len(leds)):
+				ledBrightnesses.append(0)
+				
+			#~ if index >= 0 and index < 64:
+				#~ ledBrightnesses[0] = 255
+			#~ if index >= 64 and index < 128:
+				#~ ledBrightnesses[1] = 255
+			#~ if index >= 128 and index < 192:
+				#~ ledBrightnesses[2] = 255
+
+
+			if index >= 0 and index < 64:
+				ledBrightnesses[0] = (index-0)*4
+			if index >= 64 and index < 128:
+				ledBrightnesses[0] = (128-index)*4
+				ledBrightnesses[1] = (index-64)*4
+			if index >= 128 and index < 192:
+				ledBrightnesses[1] = (192-index)*4
+				ledBrightnesses[2] = (index-128)*4
+			if index >= 192 and index < 256:
+				ledBrightnesses[2] = (256-index)*4
+			
+			for ledindex in xrange(len(leds)):
+				if ledBrightnesses[ledindex] >= 256:
+					ledBrightnesses[ledindex] = 255 # cap the brightness
+						
+			for ledindex in xrange(len(leds)):
+				print("    fill 1,%02x%02x%02x,%d,1" % ( 
+					ledBrightnesses[ledindex],
+					ledBrightnesses[ledindex],
+					ledBrightnesses[ledindex],
+					leds[ledindex]
+					))
+
+			print("    render")
+			print("    delay 25")
+
+
 	print("loop")
 
 def setup():

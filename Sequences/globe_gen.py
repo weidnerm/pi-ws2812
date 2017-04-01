@@ -20,7 +20,12 @@ def main():
 
 
 def main2():
-	
+	base = 1.0
+	logBright = []
+	for index in xrange(64):
+		logBright.append(base)
+		base = base * 1.09044
+
 	print("do")
 	for reps in xrange(10):
 		for index in xrange(255):
@@ -37,15 +42,15 @@ def main2():
 
 
 			if index >= 0 and index < 64:
-				ledBrightnesses[0] = (index-0)*4
+				ledBrightnesses[0] = logBright[index-0]
 			if index >= 64 and index < 128:
-				ledBrightnesses[0] = (128-index)*4
-				ledBrightnesses[1] = (index-64)*4
+				ledBrightnesses[0] = logBright[127-index]
+				ledBrightnesses[1] = logBright[index-64]
 			if index >= 128 and index < 192:
-				ledBrightnesses[1] = (192-index)*4
-				ledBrightnesses[2] = (index-128)*4
+				ledBrightnesses[1] = logBright[191-index]
+				ledBrightnesses[2] = logBright[index-128]
 			if index >= 192 and index < 256:
-				ledBrightnesses[2] = (256-index)*4
+				ledBrightnesses[2] = logBright[255-index]
 			
 			for ledindex in xrange(len(leds)):
 				if ledBrightnesses[ledindex] >= 256:

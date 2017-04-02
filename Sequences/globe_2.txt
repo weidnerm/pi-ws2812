@@ -1,0 +1,1009 @@
+setup channel_1_count=150
+brightness 1,255
+fill 1
+render
+do
+brightness 1,255
+fill 1
+#
+# Ramp up spotlight over 1.000000 seconds
+    fill 1,000000,68,1;render;delay 25
+    fill 1,060606,68,1;render;delay 25
+    fill 1,0c0c0c,68,1;render;delay 25
+    fill 1,131313,68,1;render;delay 25
+    fill 1,191919,68,1;render;delay 25
+    fill 1,202020,68,1;render;delay 25
+    fill 1,262626,68,1;render;delay 25
+    fill 1,2c2c2c,68,1;render;delay 25
+    fill 1,333333,68,1;render;delay 25
+    fill 1,393939,68,1;render;delay 25
+    fill 1,404040,68,1;render;delay 25
+    fill 1,464646,68,1;render;delay 25
+    fill 1,4c4c4c,68,1;render;delay 25
+    fill 1,535353,68,1;render;delay 25
+    fill 1,595959,68,1;render;delay 25
+    fill 1,606060,68,1;render;delay 25
+    fill 1,666666,68,1;render;delay 25
+    fill 1,6c6c6c,68,1;render;delay 25
+    fill 1,737373,68,1;render;delay 25
+    fill 1,797979,68,1;render;delay 25
+    fill 1,808080,68,1;render;delay 25
+    fill 1,868686,68,1;render;delay 25
+    fill 1,8c8c8c,68,1;render;delay 25
+    fill 1,939393,68,1;render;delay 25
+    fill 1,999999,68,1;render;delay 25
+    fill 1,a0a0a0,68,1;render;delay 25
+    fill 1,a6a6a6,68,1;render;delay 25
+    fill 1,acacac,68,1;render;delay 25
+    fill 1,b3b3b3,68,1;render;delay 25
+    fill 1,b9b9b9,68,1;render;delay 25
+    fill 1,c0c0c0,68,1;render;delay 25
+    fill 1,c6c6c6,68,1;render;delay 25
+    fill 1,cccccc,68,1;render;delay 25
+    fill 1,d3d3d3,68,1;render;delay 25
+    fill 1,d9d9d9,68,1;render;delay 25
+    fill 1,e0e0e0,68,1;render;delay 25
+    fill 1,e6e6e6,68,1;render;delay 25
+    fill 1,ececec,68,1;render;delay 25
+    fill 1,f3f3f3,68,1;render;delay 25
+    fill 1,f9f9f9,68,1;render;delay 25
+#
+# sweep spotlight over 3.000000 seconds 4 times
+do
+    fill 1,000000,47,1;fill 1,ffffff,68,1;render;delay 25
+    fill 1,060606,47,1;fill 1,f9f9f9,68,1;render;delay 25
+    fill 1,0c0c0c,47,1;fill 1,f3f3f3,68,1;render;delay 25
+    fill 1,131313,47,1;fill 1,ececec,68,1;render;delay 25
+    fill 1,191919,47,1;fill 1,e6e6e6,68,1;render;delay 25
+    fill 1,202020,47,1;fill 1,e0e0e0,68,1;render;delay 25
+    fill 1,262626,47,1;fill 1,d9d9d9,68,1;render;delay 25
+    fill 1,2c2c2c,47,1;fill 1,d3d3d3,68,1;render;delay 25
+    fill 1,333333,47,1;fill 1,cccccc,68,1;render;delay 25
+    fill 1,393939,47,1;fill 1,c6c6c6,68,1;render;delay 25
+    fill 1,404040,47,1;fill 1,c0c0c0,68,1;render;delay 25
+    fill 1,464646,47,1;fill 1,b9b9b9,68,1;render;delay 25
+    fill 1,4c4c4c,47,1;fill 1,b3b3b3,68,1;render;delay 25
+    fill 1,535353,47,1;fill 1,acacac,68,1;render;delay 25
+    fill 1,595959,47,1;fill 1,a6a6a6,68,1;render;delay 25
+    fill 1,606060,47,1;fill 1,a0a0a0,68,1;render;delay 25
+    fill 1,666666,47,1;fill 1,999999,68,1;render;delay 25
+    fill 1,6c6c6c,47,1;fill 1,939393,68,1;render;delay 25
+    fill 1,737373,47,1;fill 1,8c8c8c,68,1;render;delay 25
+    fill 1,797979,47,1;fill 1,868686,68,1;render;delay 25
+    fill 1,808080,47,1;fill 1,808080,68,1;render;delay 25
+    fill 1,868686,47,1;fill 1,797979,68,1;render;delay 25
+    fill 1,8c8c8c,47,1;fill 1,737373,68,1;render;delay 25
+    fill 1,939393,47,1;fill 1,6c6c6c,68,1;render;delay 25
+    fill 1,999999,47,1;fill 1,666666,68,1;render;delay 25
+    fill 1,a0a0a0,47,1;fill 1,606060,68,1;render;delay 25
+    fill 1,a6a6a6,47,1;fill 1,595959,68,1;render;delay 25
+    fill 1,acacac,47,1;fill 1,535353,68,1;render;delay 25
+    fill 1,b3b3b3,47,1;fill 1,4c4c4c,68,1;render;delay 25
+    fill 1,b9b9b9,47,1;fill 1,464646,68,1;render;delay 25
+    fill 1,c0c0c0,47,1;fill 1,404040,68,1;render;delay 25
+    fill 1,c6c6c6,47,1;fill 1,393939,68,1;render;delay 25
+    fill 1,cccccc,47,1;fill 1,333333,68,1;render;delay 25
+    fill 1,d3d3d3,47,1;fill 1,2c2c2c,68,1;render;delay 25
+    fill 1,d9d9d9,47,1;fill 1,262626,68,1;render;delay 25
+    fill 1,e0e0e0,47,1;fill 1,202020,68,1;render;delay 25
+    fill 1,e6e6e6,47,1;fill 1,191919,68,1;render;delay 25
+    fill 1,ececec,47,1;fill 1,131313,68,1;render;delay 25
+    fill 1,f3f3f3,47,1;fill 1,0c0c0c,68,1;render;delay 25
+    fill 1,f9f9f9,47,1;fill 1,060606,68,1;render;delay 25
+    fill 1,000000,79,1;fill 1,ffffff,47,1;render;delay 25
+    fill 1,060606,79,1;fill 1,f9f9f9,47,1;render;delay 25
+    fill 1,0c0c0c,79,1;fill 1,f3f3f3,47,1;render;delay 25
+    fill 1,131313,79,1;fill 1,ececec,47,1;render;delay 25
+    fill 1,191919,79,1;fill 1,e6e6e6,47,1;render;delay 25
+    fill 1,202020,79,1;fill 1,e0e0e0,47,1;render;delay 25
+    fill 1,262626,79,1;fill 1,d9d9d9,47,1;render;delay 25
+    fill 1,2c2c2c,79,1;fill 1,d3d3d3,47,1;render;delay 25
+    fill 1,333333,79,1;fill 1,cccccc,47,1;render;delay 25
+    fill 1,393939,79,1;fill 1,c6c6c6,47,1;render;delay 25
+    fill 1,404040,79,1;fill 1,c0c0c0,47,1;render;delay 25
+    fill 1,464646,79,1;fill 1,b9b9b9,47,1;render;delay 25
+    fill 1,4c4c4c,79,1;fill 1,b3b3b3,47,1;render;delay 25
+    fill 1,535353,79,1;fill 1,acacac,47,1;render;delay 25
+    fill 1,595959,79,1;fill 1,a6a6a6,47,1;render;delay 25
+    fill 1,606060,79,1;fill 1,a0a0a0,47,1;render;delay 25
+    fill 1,666666,79,1;fill 1,999999,47,1;render;delay 25
+    fill 1,6c6c6c,79,1;fill 1,939393,47,1;render;delay 25
+    fill 1,737373,79,1;fill 1,8c8c8c,47,1;render;delay 25
+    fill 1,797979,79,1;fill 1,868686,47,1;render;delay 25
+    fill 1,808080,79,1;fill 1,808080,47,1;render;delay 25
+    fill 1,868686,79,1;fill 1,797979,47,1;render;delay 25
+    fill 1,8c8c8c,79,1;fill 1,737373,47,1;render;delay 25
+    fill 1,939393,79,1;fill 1,6c6c6c,47,1;render;delay 25
+    fill 1,999999,79,1;fill 1,666666,47,1;render;delay 25
+    fill 1,a0a0a0,79,1;fill 1,606060,47,1;render;delay 25
+    fill 1,a6a6a6,79,1;fill 1,595959,47,1;render;delay 25
+    fill 1,acacac,79,1;fill 1,535353,47,1;render;delay 25
+    fill 1,b3b3b3,79,1;fill 1,4c4c4c,47,1;render;delay 25
+    fill 1,b9b9b9,79,1;fill 1,464646,47,1;render;delay 25
+    fill 1,c0c0c0,79,1;fill 1,404040,47,1;render;delay 25
+    fill 1,c6c6c6,79,1;fill 1,393939,47,1;render;delay 25
+    fill 1,cccccc,79,1;fill 1,333333,47,1;render;delay 25
+    fill 1,d3d3d3,79,1;fill 1,2c2c2c,47,1;render;delay 25
+    fill 1,d9d9d9,79,1;fill 1,262626,47,1;render;delay 25
+    fill 1,e0e0e0,79,1;fill 1,202020,47,1;render;delay 25
+    fill 1,e6e6e6,79,1;fill 1,191919,47,1;render;delay 25
+    fill 1,ececec,79,1;fill 1,131313,47,1;render;delay 25
+    fill 1,f3f3f3,79,1;fill 1,0c0c0c,47,1;render;delay 25
+    fill 1,f9f9f9,79,1;fill 1,060606,47,1;render;delay 25
+    fill 1,000000,68,1;fill 1,ffffff,79,1;render;delay 25
+    fill 1,060606,68,1;fill 1,f9f9f9,79,1;render;delay 25
+    fill 1,0c0c0c,68,1;fill 1,f3f3f3,79,1;render;delay 25
+    fill 1,131313,68,1;fill 1,ececec,79,1;render;delay 25
+    fill 1,191919,68,1;fill 1,e6e6e6,79,1;render;delay 25
+    fill 1,202020,68,1;fill 1,e0e0e0,79,1;render;delay 25
+    fill 1,262626,68,1;fill 1,d9d9d9,79,1;render;delay 25
+    fill 1,2c2c2c,68,1;fill 1,d3d3d3,79,1;render;delay 25
+    fill 1,333333,68,1;fill 1,cccccc,79,1;render;delay 25
+    fill 1,393939,68,1;fill 1,c6c6c6,79,1;render;delay 25
+    fill 1,404040,68,1;fill 1,c0c0c0,79,1;render;delay 25
+    fill 1,464646,68,1;fill 1,b9b9b9,79,1;render;delay 25
+    fill 1,4c4c4c,68,1;fill 1,b3b3b3,79,1;render;delay 25
+    fill 1,535353,68,1;fill 1,acacac,79,1;render;delay 25
+    fill 1,595959,68,1;fill 1,a6a6a6,79,1;render;delay 25
+    fill 1,606060,68,1;fill 1,a0a0a0,79,1;render;delay 25
+    fill 1,666666,68,1;fill 1,999999,79,1;render;delay 25
+    fill 1,6c6c6c,68,1;fill 1,939393,79,1;render;delay 25
+    fill 1,737373,68,1;fill 1,8c8c8c,79,1;render;delay 25
+    fill 1,797979,68,1;fill 1,868686,79,1;render;delay 25
+    fill 1,808080,68,1;fill 1,808080,79,1;render;delay 25
+    fill 1,868686,68,1;fill 1,797979,79,1;render;delay 25
+    fill 1,8c8c8c,68,1;fill 1,737373,79,1;render;delay 25
+    fill 1,939393,68,1;fill 1,6c6c6c,79,1;render;delay 25
+    fill 1,999999,68,1;fill 1,666666,79,1;render;delay 25
+    fill 1,a0a0a0,68,1;fill 1,606060,79,1;render;delay 25
+    fill 1,a6a6a6,68,1;fill 1,595959,79,1;render;delay 25
+    fill 1,acacac,68,1;fill 1,535353,79,1;render;delay 25
+    fill 1,b3b3b3,68,1;fill 1,4c4c4c,79,1;render;delay 25
+    fill 1,b9b9b9,68,1;fill 1,464646,79,1;render;delay 25
+    fill 1,c0c0c0,68,1;fill 1,404040,79,1;render;delay 25
+    fill 1,c6c6c6,68,1;fill 1,393939,79,1;render;delay 25
+    fill 1,cccccc,68,1;fill 1,333333,79,1;render;delay 25
+    fill 1,d3d3d3,68,1;fill 1,2c2c2c,79,1;render;delay 25
+    fill 1,d9d9d9,68,1;fill 1,262626,79,1;render;delay 25
+    fill 1,e0e0e0,68,1;fill 1,202020,79,1;render;delay 25
+    fill 1,e6e6e6,68,1;fill 1,191919,79,1;render;delay 25
+    fill 1,ececec,68,1;fill 1,131313,79,1;render;delay 25
+    fill 1,f3f3f3,68,1;fill 1,0c0c0c,79,1;render;delay 25
+    fill 1,f9f9f9,68,1;fill 1,060606,79,1;render;delay 25
+loop 4
+#
+# Ramp down spotlight over 1.000000 seconds
+    fill 1,ffffff,68,1;render;delay 25
+    fill 1,f9f9f9,68,1;render;delay 25
+    fill 1,f3f3f3,68,1;render;delay 25
+    fill 1,ececec,68,1;render;delay 25
+    fill 1,e6e6e6,68,1;render;delay 25
+    fill 1,e0e0e0,68,1;render;delay 25
+    fill 1,d9d9d9,68,1;render;delay 25
+    fill 1,d3d3d3,68,1;render;delay 25
+    fill 1,cccccc,68,1;render;delay 25
+    fill 1,c6c6c6,68,1;render;delay 25
+    fill 1,c0c0c0,68,1;render;delay 25
+    fill 1,b9b9b9,68,1;render;delay 25
+    fill 1,b3b3b3,68,1;render;delay 25
+    fill 1,acacac,68,1;render;delay 25
+    fill 1,a6a6a6,68,1;render;delay 25
+    fill 1,a0a0a0,68,1;render;delay 25
+    fill 1,999999,68,1;render;delay 25
+    fill 1,939393,68,1;render;delay 25
+    fill 1,8c8c8c,68,1;render;delay 25
+    fill 1,868686,68,1;render;delay 25
+    fill 1,808080,68,1;render;delay 25
+    fill 1,797979,68,1;render;delay 25
+    fill 1,737373,68,1;render;delay 25
+    fill 1,6c6c6c,68,1;render;delay 25
+    fill 1,666666,68,1;render;delay 25
+    fill 1,606060,68,1;render;delay 25
+    fill 1,595959,68,1;render;delay 25
+    fill 1,535353,68,1;render;delay 25
+    fill 1,4c4c4c,68,1;render;delay 25
+    fill 1,464646,68,1;render;delay 25
+    fill 1,404040,68,1;render;delay 25
+    fill 1,393939,68,1;render;delay 25
+    fill 1,333333,68,1;render;delay 25
+    fill 1,2c2c2c,68,1;render;delay 25
+    fill 1,262626,68,1;render;delay 25
+    fill 1,202020,68,1;render;delay 25
+    fill 1,191919,68,1;render;delay 25
+    fill 1,131313,68,1;render;delay 25
+    fill 1,0c0c0c,68,1;render;delay 25
+    fill 1,060606,68,1;render;delay 25
+#
+# Fade color ff0000 In over 1.000000 seconds
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,2;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,2;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,4;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,5;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,6;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,6;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,7;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,9;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,10;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,12;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,13;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,15;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,18;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,21;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,24;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,27;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,31;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,36;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,42;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,48;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,55;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,63;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,73;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,84;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,96;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,111;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,127;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,146;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,168;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,193;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,222;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,255;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+#
+# Rainbow for 5.000000 seconds repeated 3 times
+brightness 1,255;
+do
+    rainbow 1,1,68,1,0,0;rainbow 1,1,47,1,0,0;rainbow 1,1,79,1,0,0;render;delay 25
+    rainbow 1,1,68,1,1,1;rainbow 1,1,47,1,1,1;rainbow 1,1,79,1,1,1;render;delay 25
+    rainbow 1,1,68,1,2,2;rainbow 1,1,47,1,2,2;rainbow 1,1,79,1,2,2;render;delay 25
+    rainbow 1,1,68,1,3,3;rainbow 1,1,47,1,3,3;rainbow 1,1,79,1,3,3;render;delay 25
+    rainbow 1,1,68,1,5,5;rainbow 1,1,47,1,5,5;rainbow 1,1,79,1,5,5;render;delay 25
+    rainbow 1,1,68,1,6,6;rainbow 1,1,47,1,6,6;rainbow 1,1,79,1,6,6;render;delay 25
+    rainbow 1,1,68,1,7,7;rainbow 1,1,47,1,7,7;rainbow 1,1,79,1,7,7;render;delay 25
+    rainbow 1,1,68,1,8,8;rainbow 1,1,47,1,8,8;rainbow 1,1,79,1,8,8;render;delay 25
+    rainbow 1,1,68,1,10,10;rainbow 1,1,47,1,10,10;rainbow 1,1,79,1,10,10;render;delay 25
+    rainbow 1,1,68,1,11,11;rainbow 1,1,47,1,11,11;rainbow 1,1,79,1,11,11;render;delay 25
+    rainbow 1,1,68,1,12,12;rainbow 1,1,47,1,12,12;rainbow 1,1,79,1,12,12;render;delay 25
+    rainbow 1,1,68,1,14,14;rainbow 1,1,47,1,14,14;rainbow 1,1,79,1,14,14;render;delay 25
+    rainbow 1,1,68,1,15,15;rainbow 1,1,47,1,15,15;rainbow 1,1,79,1,15,15;render;delay 25
+    rainbow 1,1,68,1,16,16;rainbow 1,1,47,1,16,16;rainbow 1,1,79,1,16,16;render;delay 25
+    rainbow 1,1,68,1,17,17;rainbow 1,1,47,1,17,17;rainbow 1,1,79,1,17,17;render;delay 25
+    rainbow 1,1,68,1,19,19;rainbow 1,1,47,1,19,19;rainbow 1,1,79,1,19,19;render;delay 25
+    rainbow 1,1,68,1,20,20;rainbow 1,1,47,1,20,20;rainbow 1,1,79,1,20,20;render;delay 25
+    rainbow 1,1,68,1,21,21;rainbow 1,1,47,1,21,21;rainbow 1,1,79,1,21,21;render;delay 25
+    rainbow 1,1,68,1,23,23;rainbow 1,1,47,1,23,23;rainbow 1,1,79,1,23,23;render;delay 25
+    rainbow 1,1,68,1,24,24;rainbow 1,1,47,1,24,24;rainbow 1,1,79,1,24,24;render;delay 25
+    rainbow 1,1,68,1,25,25;rainbow 1,1,47,1,25,25;rainbow 1,1,79,1,25,25;render;delay 25
+    rainbow 1,1,68,1,26,26;rainbow 1,1,47,1,26,26;rainbow 1,1,79,1,26,26;render;delay 25
+    rainbow 1,1,68,1,28,28;rainbow 1,1,47,1,28,28;rainbow 1,1,79,1,28,28;render;delay 25
+    rainbow 1,1,68,1,29,29;rainbow 1,1,47,1,29,29;rainbow 1,1,79,1,29,29;render;delay 25
+    rainbow 1,1,68,1,30,30;rainbow 1,1,47,1,30,30;rainbow 1,1,79,1,30,30;render;delay 25
+    rainbow 1,1,68,1,32,32;rainbow 1,1,47,1,32,32;rainbow 1,1,79,1,32,32;render;delay 25
+    rainbow 1,1,68,1,33,33;rainbow 1,1,47,1,33,33;rainbow 1,1,79,1,33,33;render;delay 25
+    rainbow 1,1,68,1,34,34;rainbow 1,1,47,1,34,34;rainbow 1,1,79,1,34,34;render;delay 25
+    rainbow 1,1,68,1,35,35;rainbow 1,1,47,1,35,35;rainbow 1,1,79,1,35,35;render;delay 25
+    rainbow 1,1,68,1,37,37;rainbow 1,1,47,1,37,37;rainbow 1,1,79,1,37,37;render;delay 25
+    rainbow 1,1,68,1,38,38;rainbow 1,1,47,1,38,38;rainbow 1,1,79,1,38,38;render;delay 25
+    rainbow 1,1,68,1,39,39;rainbow 1,1,47,1,39,39;rainbow 1,1,79,1,39,39;render;delay 25
+    rainbow 1,1,68,1,40,40;rainbow 1,1,47,1,40,40;rainbow 1,1,79,1,40,40;render;delay 25
+    rainbow 1,1,68,1,42,42;rainbow 1,1,47,1,42,42;rainbow 1,1,79,1,42,42;render;delay 25
+    rainbow 1,1,68,1,43,43;rainbow 1,1,47,1,43,43;rainbow 1,1,79,1,43,43;render;delay 25
+    rainbow 1,1,68,1,44,44;rainbow 1,1,47,1,44,44;rainbow 1,1,79,1,44,44;render;delay 25
+    rainbow 1,1,68,1,46,46;rainbow 1,1,47,1,46,46;rainbow 1,1,79,1,46,46;render;delay 25
+    rainbow 1,1,68,1,47,47;rainbow 1,1,47,1,47,47;rainbow 1,1,79,1,47,47;render;delay 25
+    rainbow 1,1,68,1,48,48;rainbow 1,1,47,1,48,48;rainbow 1,1,79,1,48,48;render;delay 25
+    rainbow 1,1,68,1,49,49;rainbow 1,1,47,1,49,49;rainbow 1,1,79,1,49,49;render;delay 25
+    rainbow 1,1,68,1,51,51;rainbow 1,1,47,1,51,51;rainbow 1,1,79,1,51,51;render;delay 25
+    rainbow 1,1,68,1,52,52;rainbow 1,1,47,1,52,52;rainbow 1,1,79,1,52,52;render;delay 25
+    rainbow 1,1,68,1,53,53;rainbow 1,1,47,1,53,53;rainbow 1,1,79,1,53,53;render;delay 25
+    rainbow 1,1,68,1,55,55;rainbow 1,1,47,1,55,55;rainbow 1,1,79,1,55,55;render;delay 25
+    rainbow 1,1,68,1,56,56;rainbow 1,1,47,1,56,56;rainbow 1,1,79,1,56,56;render;delay 25
+    rainbow 1,1,68,1,57,57;rainbow 1,1,47,1,57,57;rainbow 1,1,79,1,57,57;render;delay 25
+    rainbow 1,1,68,1,58,58;rainbow 1,1,47,1,58,58;rainbow 1,1,79,1,58,58;render;delay 25
+    rainbow 1,1,68,1,60,60;rainbow 1,1,47,1,60,60;rainbow 1,1,79,1,60,60;render;delay 25
+    rainbow 1,1,68,1,61,61;rainbow 1,1,47,1,61,61;rainbow 1,1,79,1,61,61;render;delay 25
+    rainbow 1,1,68,1,62,62;rainbow 1,1,47,1,62,62;rainbow 1,1,79,1,62,62;render;delay 25
+    rainbow 1,1,68,1,64,64;rainbow 1,1,47,1,64,64;rainbow 1,1,79,1,64,64;render;delay 25
+    rainbow 1,1,68,1,65,65;rainbow 1,1,47,1,65,65;rainbow 1,1,79,1,65,65;render;delay 25
+    rainbow 1,1,68,1,66,66;rainbow 1,1,47,1,66,66;rainbow 1,1,79,1,66,66;render;delay 25
+    rainbow 1,1,68,1,67,67;rainbow 1,1,47,1,67,67;rainbow 1,1,79,1,67,67;render;delay 25
+    rainbow 1,1,68,1,69,69;rainbow 1,1,47,1,69,69;rainbow 1,1,79,1,69,69;render;delay 25
+    rainbow 1,1,68,1,70,70;rainbow 1,1,47,1,70,70;rainbow 1,1,79,1,70,70;render;delay 25
+    rainbow 1,1,68,1,71,71;rainbow 1,1,47,1,71,71;rainbow 1,1,79,1,71,71;render;delay 25
+    rainbow 1,1,68,1,72,72;rainbow 1,1,47,1,72,72;rainbow 1,1,79,1,72,72;render;delay 25
+    rainbow 1,1,68,1,74,74;rainbow 1,1,47,1,74,74;rainbow 1,1,79,1,74,74;render;delay 25
+    rainbow 1,1,68,1,75,75;rainbow 1,1,47,1,75,75;rainbow 1,1,79,1,75,75;render;delay 25
+    rainbow 1,1,68,1,76,76;rainbow 1,1,47,1,76,76;rainbow 1,1,79,1,76,76;render;delay 25
+    rainbow 1,1,68,1,78,78;rainbow 1,1,47,1,78,78;rainbow 1,1,79,1,78,78;render;delay 25
+    rainbow 1,1,68,1,79,79;rainbow 1,1,47,1,79,79;rainbow 1,1,79,1,79,79;render;delay 25
+    rainbow 1,1,68,1,80,80;rainbow 1,1,47,1,80,80;rainbow 1,1,79,1,80,80;render;delay 25
+    rainbow 1,1,68,1,81,81;rainbow 1,1,47,1,81,81;rainbow 1,1,79,1,81,81;render;delay 25
+    rainbow 1,1,68,1,83,83;rainbow 1,1,47,1,83,83;rainbow 1,1,79,1,83,83;render;delay 25
+    rainbow 1,1,68,1,84,84;rainbow 1,1,47,1,84,84;rainbow 1,1,79,1,84,84;render;delay 25
+    rainbow 1,1,68,1,85,85;rainbow 1,1,47,1,85,85;rainbow 1,1,79,1,85,85;render;delay 25
+    rainbow 1,1,68,1,87,87;rainbow 1,1,47,1,87,87;rainbow 1,1,79,1,87,87;render;delay 25
+    rainbow 1,1,68,1,88,88;rainbow 1,1,47,1,88,88;rainbow 1,1,79,1,88,88;render;delay 25
+    rainbow 1,1,68,1,89,89;rainbow 1,1,47,1,89,89;rainbow 1,1,79,1,89,89;render;delay 25
+    rainbow 1,1,68,1,90,90;rainbow 1,1,47,1,90,90;rainbow 1,1,79,1,90,90;render;delay 25
+    rainbow 1,1,68,1,92,92;rainbow 1,1,47,1,92,92;rainbow 1,1,79,1,92,92;render;delay 25
+    rainbow 1,1,68,1,93,93;rainbow 1,1,47,1,93,93;rainbow 1,1,79,1,93,93;render;delay 25
+    rainbow 1,1,68,1,94,94;rainbow 1,1,47,1,94,94;rainbow 1,1,79,1,94,94;render;delay 25
+    rainbow 1,1,68,1,96,96;rainbow 1,1,47,1,96,96;rainbow 1,1,79,1,96,96;render;delay 25
+    rainbow 1,1,68,1,97,97;rainbow 1,1,47,1,97,97;rainbow 1,1,79,1,97,97;render;delay 25
+    rainbow 1,1,68,1,98,98;rainbow 1,1,47,1,98,98;rainbow 1,1,79,1,98,98;render;delay 25
+    rainbow 1,1,68,1,99,99;rainbow 1,1,47,1,99,99;rainbow 1,1,79,1,99,99;render;delay 25
+    rainbow 1,1,68,1,101,101;rainbow 1,1,47,1,101,101;rainbow 1,1,79,1,101,101;render;delay 25
+    rainbow 1,1,68,1,102,102;rainbow 1,1,47,1,102,102;rainbow 1,1,79,1,102,102;render;delay 25
+    rainbow 1,1,68,1,103,103;rainbow 1,1,47,1,103,103;rainbow 1,1,79,1,103,103;render;delay 25
+    rainbow 1,1,68,1,104,104;rainbow 1,1,47,1,104,104;rainbow 1,1,79,1,104,104;render;delay 25
+    rainbow 1,1,68,1,106,106;rainbow 1,1,47,1,106,106;rainbow 1,1,79,1,106,106;render;delay 25
+    rainbow 1,1,68,1,107,107;rainbow 1,1,47,1,107,107;rainbow 1,1,79,1,107,107;render;delay 25
+    rainbow 1,1,68,1,108,108;rainbow 1,1,47,1,108,108;rainbow 1,1,79,1,108,108;render;delay 25
+    rainbow 1,1,68,1,110,110;rainbow 1,1,47,1,110,110;rainbow 1,1,79,1,110,110;render;delay 25
+    rainbow 1,1,68,1,111,111;rainbow 1,1,47,1,111,111;rainbow 1,1,79,1,111,111;render;delay 25
+    rainbow 1,1,68,1,112,112;rainbow 1,1,47,1,112,112;rainbow 1,1,79,1,112,112;render;delay 25
+    rainbow 1,1,68,1,113,113;rainbow 1,1,47,1,113,113;rainbow 1,1,79,1,113,113;render;delay 25
+    rainbow 1,1,68,1,115,115;rainbow 1,1,47,1,115,115;rainbow 1,1,79,1,115,115;render;delay 25
+    rainbow 1,1,68,1,116,116;rainbow 1,1,47,1,116,116;rainbow 1,1,79,1,116,116;render;delay 25
+    rainbow 1,1,68,1,117,117;rainbow 1,1,47,1,117,117;rainbow 1,1,79,1,117,117;render;delay 25
+    rainbow 1,1,68,1,119,119;rainbow 1,1,47,1,119,119;rainbow 1,1,79,1,119,119;render;delay 25
+    rainbow 1,1,68,1,120,120;rainbow 1,1,47,1,120,120;rainbow 1,1,79,1,120,120;render;delay 25
+    rainbow 1,1,68,1,121,121;rainbow 1,1,47,1,121,121;rainbow 1,1,79,1,121,121;render;delay 25
+    rainbow 1,1,68,1,122,122;rainbow 1,1,47,1,122,122;rainbow 1,1,79,1,122,122;render;delay 25
+    rainbow 1,1,68,1,124,124;rainbow 1,1,47,1,124,124;rainbow 1,1,79,1,124,124;render;delay 25
+    rainbow 1,1,68,1,125,125;rainbow 1,1,47,1,125,125;rainbow 1,1,79,1,125,125;render;delay 25
+    rainbow 1,1,68,1,126,126;rainbow 1,1,47,1,126,126;rainbow 1,1,79,1,126,126;render;delay 25
+    rainbow 1,1,68,1,128,128;rainbow 1,1,47,1,128,128;rainbow 1,1,79,1,128,128;render;delay 25
+    rainbow 1,1,68,1,129,129;rainbow 1,1,47,1,129,129;rainbow 1,1,79,1,129,129;render;delay 25
+    rainbow 1,1,68,1,130,130;rainbow 1,1,47,1,130,130;rainbow 1,1,79,1,130,130;render;delay 25
+    rainbow 1,1,68,1,131,131;rainbow 1,1,47,1,131,131;rainbow 1,1,79,1,131,131;render;delay 25
+    rainbow 1,1,68,1,133,133;rainbow 1,1,47,1,133,133;rainbow 1,1,79,1,133,133;render;delay 25
+    rainbow 1,1,68,1,134,134;rainbow 1,1,47,1,134,134;rainbow 1,1,79,1,134,134;render;delay 25
+    rainbow 1,1,68,1,135,135;rainbow 1,1,47,1,135,135;rainbow 1,1,79,1,135,135;render;delay 25
+    rainbow 1,1,68,1,136,136;rainbow 1,1,47,1,136,136;rainbow 1,1,79,1,136,136;render;delay 25
+    rainbow 1,1,68,1,138,138;rainbow 1,1,47,1,138,138;rainbow 1,1,79,1,138,138;render;delay 25
+    rainbow 1,1,68,1,139,139;rainbow 1,1,47,1,139,139;rainbow 1,1,79,1,139,139;render;delay 25
+    rainbow 1,1,68,1,140,140;rainbow 1,1,47,1,140,140;rainbow 1,1,79,1,140,140;render;delay 25
+    rainbow 1,1,68,1,142,142;rainbow 1,1,47,1,142,142;rainbow 1,1,79,1,142,142;render;delay 25
+    rainbow 1,1,68,1,143,143;rainbow 1,1,47,1,143,143;rainbow 1,1,79,1,143,143;render;delay 25
+    rainbow 1,1,68,1,144,144;rainbow 1,1,47,1,144,144;rainbow 1,1,79,1,144,144;render;delay 25
+    rainbow 1,1,68,1,145,145;rainbow 1,1,47,1,145,145;rainbow 1,1,79,1,145,145;render;delay 25
+    rainbow 1,1,68,1,147,147;rainbow 1,1,47,1,147,147;rainbow 1,1,79,1,147,147;render;delay 25
+    rainbow 1,1,68,1,148,148;rainbow 1,1,47,1,148,148;rainbow 1,1,79,1,148,148;render;delay 25
+    rainbow 1,1,68,1,149,149;rainbow 1,1,47,1,149,149;rainbow 1,1,79,1,149,149;render;delay 25
+    rainbow 1,1,68,1,151,151;rainbow 1,1,47,1,151,151;rainbow 1,1,79,1,151,151;render;delay 25
+    rainbow 1,1,68,1,152,152;rainbow 1,1,47,1,152,152;rainbow 1,1,79,1,152,152;render;delay 25
+    rainbow 1,1,68,1,153,153;rainbow 1,1,47,1,153,153;rainbow 1,1,79,1,153,153;render;delay 25
+    rainbow 1,1,68,1,154,154;rainbow 1,1,47,1,154,154;rainbow 1,1,79,1,154,154;render;delay 25
+    rainbow 1,1,68,1,156,156;rainbow 1,1,47,1,156,156;rainbow 1,1,79,1,156,156;render;delay 25
+    rainbow 1,1,68,1,157,157;rainbow 1,1,47,1,157,157;rainbow 1,1,79,1,157,157;render;delay 25
+    rainbow 1,1,68,1,158,158;rainbow 1,1,47,1,158,158;rainbow 1,1,79,1,158,158;render;delay 25
+    rainbow 1,1,68,1,160,160;rainbow 1,1,47,1,160,160;rainbow 1,1,79,1,160,160;render;delay 25
+    rainbow 1,1,68,1,161,161;rainbow 1,1,47,1,161,161;rainbow 1,1,79,1,161,161;render;delay 25
+    rainbow 1,1,68,1,162,162;rainbow 1,1,47,1,162,162;rainbow 1,1,79,1,162,162;render;delay 25
+    rainbow 1,1,68,1,163,163;rainbow 1,1,47,1,163,163;rainbow 1,1,79,1,163,163;render;delay 25
+    rainbow 1,1,68,1,165,165;rainbow 1,1,47,1,165,165;rainbow 1,1,79,1,165,165;render;delay 25
+    rainbow 1,1,68,1,166,166;rainbow 1,1,47,1,166,166;rainbow 1,1,79,1,166,166;render;delay 25
+    rainbow 1,1,68,1,167,167;rainbow 1,1,47,1,167,167;rainbow 1,1,79,1,167,167;render;delay 25
+    rainbow 1,1,68,1,168,168;rainbow 1,1,47,1,168,168;rainbow 1,1,79,1,168,168;render;delay 25
+    rainbow 1,1,68,1,170,170;rainbow 1,1,47,1,170,170;rainbow 1,1,79,1,170,170;render;delay 25
+    rainbow 1,1,68,1,171,171;rainbow 1,1,47,1,171,171;rainbow 1,1,79,1,171,171;render;delay 25
+    rainbow 1,1,68,1,172,172;rainbow 1,1,47,1,172,172;rainbow 1,1,79,1,172,172;render;delay 25
+    rainbow 1,1,68,1,174,174;rainbow 1,1,47,1,174,174;rainbow 1,1,79,1,174,174;render;delay 25
+    rainbow 1,1,68,1,175,175;rainbow 1,1,47,1,175,175;rainbow 1,1,79,1,175,175;render;delay 25
+    rainbow 1,1,68,1,176,176;rainbow 1,1,47,1,176,176;rainbow 1,1,79,1,176,176;render;delay 25
+    rainbow 1,1,68,1,177,177;rainbow 1,1,47,1,177,177;rainbow 1,1,79,1,177,177;render;delay 25
+    rainbow 1,1,68,1,179,179;rainbow 1,1,47,1,179,179;rainbow 1,1,79,1,179,179;render;delay 25
+    rainbow 1,1,68,1,180,180;rainbow 1,1,47,1,180,180;rainbow 1,1,79,1,180,180;render;delay 25
+    rainbow 1,1,68,1,181,181;rainbow 1,1,47,1,181,181;rainbow 1,1,79,1,181,181;render;delay 25
+    rainbow 1,1,68,1,183,183;rainbow 1,1,47,1,183,183;rainbow 1,1,79,1,183,183;render;delay 25
+    rainbow 1,1,68,1,184,184;rainbow 1,1,47,1,184,184;rainbow 1,1,79,1,184,184;render;delay 25
+    rainbow 1,1,68,1,185,185;rainbow 1,1,47,1,185,185;rainbow 1,1,79,1,185,185;render;delay 25
+    rainbow 1,1,68,1,186,186;rainbow 1,1,47,1,186,186;rainbow 1,1,79,1,186,186;render;delay 25
+    rainbow 1,1,68,1,188,188;rainbow 1,1,47,1,188,188;rainbow 1,1,79,1,188,188;render;delay 25
+    rainbow 1,1,68,1,189,189;rainbow 1,1,47,1,189,189;rainbow 1,1,79,1,189,189;render;delay 25
+    rainbow 1,1,68,1,190,190;rainbow 1,1,47,1,190,190;rainbow 1,1,79,1,190,190;render;delay 25
+    rainbow 1,1,68,1,192,192;rainbow 1,1,47,1,192,192;rainbow 1,1,79,1,192,192;render;delay 25
+    rainbow 1,1,68,1,193,193;rainbow 1,1,47,1,193,193;rainbow 1,1,79,1,193,193;render;delay 25
+    rainbow 1,1,68,1,194,194;rainbow 1,1,47,1,194,194;rainbow 1,1,79,1,194,194;render;delay 25
+    rainbow 1,1,68,1,195,195;rainbow 1,1,47,1,195,195;rainbow 1,1,79,1,195,195;render;delay 25
+    rainbow 1,1,68,1,197,197;rainbow 1,1,47,1,197,197;rainbow 1,1,79,1,197,197;render;delay 25
+    rainbow 1,1,68,1,198,198;rainbow 1,1,47,1,198,198;rainbow 1,1,79,1,198,198;render;delay 25
+    rainbow 1,1,68,1,199,199;rainbow 1,1,47,1,199,199;rainbow 1,1,79,1,199,199;render;delay 25
+    rainbow 1,1,68,1,200,200;rainbow 1,1,47,1,200,200;rainbow 1,1,79,1,200,200;render;delay 25
+    rainbow 1,1,68,1,202,202;rainbow 1,1,47,1,202,202;rainbow 1,1,79,1,202,202;render;delay 25
+    rainbow 1,1,68,1,203,203;rainbow 1,1,47,1,203,203;rainbow 1,1,79,1,203,203;render;delay 25
+    rainbow 1,1,68,1,204,204;rainbow 1,1,47,1,204,204;rainbow 1,1,79,1,204,204;render;delay 25
+    rainbow 1,1,68,1,206,206;rainbow 1,1,47,1,206,206;rainbow 1,1,79,1,206,206;render;delay 25
+    rainbow 1,1,68,1,207,207;rainbow 1,1,47,1,207,207;rainbow 1,1,79,1,207,207;render;delay 25
+    rainbow 1,1,68,1,208,208;rainbow 1,1,47,1,208,208;rainbow 1,1,79,1,208,208;render;delay 25
+    rainbow 1,1,68,1,209,209;rainbow 1,1,47,1,209,209;rainbow 1,1,79,1,209,209;render;delay 25
+    rainbow 1,1,68,1,211,211;rainbow 1,1,47,1,211,211;rainbow 1,1,79,1,211,211;render;delay 25
+    rainbow 1,1,68,1,212,212;rainbow 1,1,47,1,212,212;rainbow 1,1,79,1,212,212;render;delay 25
+    rainbow 1,1,68,1,213,213;rainbow 1,1,47,1,213,213;rainbow 1,1,79,1,213,213;render;delay 25
+    rainbow 1,1,68,1,215,215;rainbow 1,1,47,1,215,215;rainbow 1,1,79,1,215,215;render;delay 25
+    rainbow 1,1,68,1,216,216;rainbow 1,1,47,1,216,216;rainbow 1,1,79,1,216,216;render;delay 25
+    rainbow 1,1,68,1,217,217;rainbow 1,1,47,1,217,217;rainbow 1,1,79,1,217,217;render;delay 25
+    rainbow 1,1,68,1,218,218;rainbow 1,1,47,1,218,218;rainbow 1,1,79,1,218,218;render;delay 25
+    rainbow 1,1,68,1,220,220;rainbow 1,1,47,1,220,220;rainbow 1,1,79,1,220,220;render;delay 25
+    rainbow 1,1,68,1,221,221;rainbow 1,1,47,1,221,221;rainbow 1,1,79,1,221,221;render;delay 25
+    rainbow 1,1,68,1,222,222;rainbow 1,1,47,1,222,222;rainbow 1,1,79,1,222,222;render;delay 25
+    rainbow 1,1,68,1,224,224;rainbow 1,1,47,1,224,224;rainbow 1,1,79,1,224,224;render;delay 25
+    rainbow 1,1,68,1,225,225;rainbow 1,1,47,1,225,225;rainbow 1,1,79,1,225,225;render;delay 25
+    rainbow 1,1,68,1,226,226;rainbow 1,1,47,1,226,226;rainbow 1,1,79,1,226,226;render;delay 25
+    rainbow 1,1,68,1,227,227;rainbow 1,1,47,1,227,227;rainbow 1,1,79,1,227,227;render;delay 25
+    rainbow 1,1,68,1,229,229;rainbow 1,1,47,1,229,229;rainbow 1,1,79,1,229,229;render;delay 25
+    rainbow 1,1,68,1,230,230;rainbow 1,1,47,1,230,230;rainbow 1,1,79,1,230,230;render;delay 25
+    rainbow 1,1,68,1,231,231;rainbow 1,1,47,1,231,231;rainbow 1,1,79,1,231,231;render;delay 25
+    rainbow 1,1,68,1,232,232;rainbow 1,1,47,1,232,232;rainbow 1,1,79,1,232,232;render;delay 25
+    rainbow 1,1,68,1,234,234;rainbow 1,1,47,1,234,234;rainbow 1,1,79,1,234,234;render;delay 25
+    rainbow 1,1,68,1,235,235;rainbow 1,1,47,1,235,235;rainbow 1,1,79,1,235,235;render;delay 25
+    rainbow 1,1,68,1,236,236;rainbow 1,1,47,1,236,236;rainbow 1,1,79,1,236,236;render;delay 25
+    rainbow 1,1,68,1,238,238;rainbow 1,1,47,1,238,238;rainbow 1,1,79,1,238,238;render;delay 25
+    rainbow 1,1,68,1,239,239;rainbow 1,1,47,1,239,239;rainbow 1,1,79,1,239,239;render;delay 25
+    rainbow 1,1,68,1,240,240;rainbow 1,1,47,1,240,240;rainbow 1,1,79,1,240,240;render;delay 25
+    rainbow 1,1,68,1,241,241;rainbow 1,1,47,1,241,241;rainbow 1,1,79,1,241,241;render;delay 25
+    rainbow 1,1,68,1,243,243;rainbow 1,1,47,1,243,243;rainbow 1,1,79,1,243,243;render;delay 25
+    rainbow 1,1,68,1,244,244;rainbow 1,1,47,1,244,244;rainbow 1,1,79,1,244,244;render;delay 25
+    rainbow 1,1,68,1,245,245;rainbow 1,1,47,1,245,245;rainbow 1,1,79,1,245,245;render;delay 25
+    rainbow 1,1,68,1,247,247;rainbow 1,1,47,1,247,247;rainbow 1,1,79,1,247,247;render;delay 25
+    rainbow 1,1,68,1,248,248;rainbow 1,1,47,1,248,248;rainbow 1,1,79,1,248,248;render;delay 25
+    rainbow 1,1,68,1,249,249;rainbow 1,1,47,1,249,249;rainbow 1,1,79,1,249,249;render;delay 25
+    rainbow 1,1,68,1,250,250;rainbow 1,1,47,1,250,250;rainbow 1,1,79,1,250,250;render;delay 25
+    rainbow 1,1,68,1,252,252;rainbow 1,1,47,1,252,252;rainbow 1,1,79,1,252,252;render;delay 25
+    rainbow 1,1,68,1,253,253;rainbow 1,1,47,1,253,253;rainbow 1,1,79,1,253,253;render;delay 25
+    rainbow 1,1,68,1,254,254;rainbow 1,1,47,1,254,254;rainbow 1,1,79,1,254,254;render;delay 25
+loop 3
+#
+# Fade color ff0000 Out over 1.000000 seconds
+brightness 1,255;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,222;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,193;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,168;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,146;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,127;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,111;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,96;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,84;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,73;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,63;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,55;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,48;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,42;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,36;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,31;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,27;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,24;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,21;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,18;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,15;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,13;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,12;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,10;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,9;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,7;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,6;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,6;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,5;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,4;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,2;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,2;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+#
+# Fade color ff0000 In over 1.000000 seconds
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,2;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,2;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,4;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,5;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,6;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,6;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,7;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,9;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,10;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,12;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,13;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,15;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,18;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,21;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,24;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,27;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,31;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,36;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,42;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,48;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,55;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,63;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,73;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,84;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,96;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,111;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,127;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,146;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,168;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,193;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,222;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,255;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+#
+# Fade color ff0000 Out over 1.000000 seconds
+brightness 1,255;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,222;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,193;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,168;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,146;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,127;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,111;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,96;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,84;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,73;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,63;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,55;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,48;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,42;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,36;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,31;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,27;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,24;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,21;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,18;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,15;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,13;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,12;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,10;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,9;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,7;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,6;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,6;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,5;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,4;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,3;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,2;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,2;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+brightness 1,1;fill 1,ff0000,68,1;fill 1,ff0000,47,1;fill 1,ff0000,79,1;render;delay 25
+#
+# Fade color ed3000 In over 1.000000 seconds
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,2;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,2;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,3;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,3;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,3;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,4;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,5;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,6;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,6;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,7;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,9;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,10;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,12;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,13;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,15;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,18;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,21;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,24;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,27;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,31;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,36;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,42;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,48;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,55;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,63;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,73;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,84;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,96;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,111;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,127;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,146;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,168;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,193;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,222;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,255;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+#
+# Fade color ed3000 Out over 1.000000 seconds
+brightness 1,255;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,222;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,193;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,168;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,146;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,127;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,111;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,96;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,84;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,73;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,63;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,55;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,48;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,42;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,36;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,31;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,27;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,24;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,21;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,18;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,15;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,13;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,12;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,10;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,9;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,7;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,6;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,6;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,5;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,4;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,3;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,3;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,3;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,2;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,2;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+brightness 1,1;fill 1,ed3000,68,1;fill 1,ed3000,47,1;fill 1,ed3000,79,1;render;delay 25
+#
+# Fade color ffc000 In over 1.000000 seconds
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,2;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,2;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,3;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,3;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,3;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,4;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,5;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,6;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,6;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,7;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,9;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,10;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,12;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,13;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,15;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,18;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,21;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,24;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,27;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,31;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,36;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,42;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,48;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,55;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,63;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,73;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,84;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,96;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,111;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,127;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,146;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,168;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,193;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,222;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,255;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+#
+# Fade color ffc000 Out over 1.000000 seconds
+brightness 1,255;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,222;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,193;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,168;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,146;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,127;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,111;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,96;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,84;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,73;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,63;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,55;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,48;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,42;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,36;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,31;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,27;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,24;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,21;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,18;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,15;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,13;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,12;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,10;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,9;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,7;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,6;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,6;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,5;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,4;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,3;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,3;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,3;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,2;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,2;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+brightness 1,1;fill 1,ffc000,68,1;fill 1,ffc000,47,1;fill 1,ffc000,79,1;render;delay 25
+#
+# Fade color 00ff00 In over 1.000000 seconds
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,2;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,2;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,3;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,3;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,3;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,4;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,5;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,6;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,6;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,7;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,9;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,10;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,12;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,13;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,15;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,18;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,21;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,24;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,27;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,31;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,36;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,42;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,48;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,55;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,63;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,73;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,84;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,96;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,111;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,127;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,146;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,168;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,193;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,222;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,255;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+#
+# Fade color 00ff00 Out over 1.000000 seconds
+brightness 1,255;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,222;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,193;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,168;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,146;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,127;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,111;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,96;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,84;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,73;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,63;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,55;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,48;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,42;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,36;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,31;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,27;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,24;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,21;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,18;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,15;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,13;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,12;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,10;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,9;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,7;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,6;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,6;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,5;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,4;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,3;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,3;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,3;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,2;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,2;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+brightness 1,1;fill 1,00ff00,68,1;fill 1,00ff00,47,1;fill 1,00ff00,79,1;render;delay 25
+#
+# Fade color 0000ff In over 1.000000 seconds
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,2;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,2;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,3;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,3;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,3;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,4;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,5;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,6;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,6;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,7;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,9;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,10;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,12;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,13;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,15;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,18;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,21;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,24;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,27;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,31;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,36;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,42;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,48;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,55;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,63;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,73;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,84;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,96;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,111;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,127;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,146;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,168;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,193;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,222;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,255;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+#
+# Fade color 0000ff Out over 1.000000 seconds
+brightness 1,255;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,222;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,193;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,168;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,146;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,127;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,111;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,96;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,84;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,73;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,63;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,55;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,48;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,42;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,36;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,31;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,27;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,24;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,21;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,18;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,15;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,13;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,12;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,10;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,9;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,7;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,6;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,6;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,5;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,4;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,3;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,3;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,3;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,2;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,2;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+brightness 1,1;fill 1,0000ff,68,1;fill 1,0000ff,47,1;fill 1,0000ff,79,1;render;delay 25
+#
+# Fade color ff00ff In over 1.000000 seconds
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,2;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,2;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,3;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,3;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,3;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,4;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,5;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,6;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,6;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,7;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,9;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,10;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,12;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,13;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,15;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,18;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,21;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,24;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,27;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,31;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,36;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,42;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,48;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,55;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,63;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,73;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,84;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,96;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,111;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,127;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,146;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,168;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,193;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,222;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,255;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+#
+# Fade color ff00ff Out over 1.000000 seconds
+brightness 1,255;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,222;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,193;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,168;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,146;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,127;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,111;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,96;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,84;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,73;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,63;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,55;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,48;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,42;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,36;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,31;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,27;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,24;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,21;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,18;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,15;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,13;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,12;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,10;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,9;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,7;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,6;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,6;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,5;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,4;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,3;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,3;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,3;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,2;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,2;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+brightness 1,1;fill 1,ff00ff,68,1;fill 1,ff00ff,47,1;fill 1,ff00ff,79,1;render;delay 25
+loop

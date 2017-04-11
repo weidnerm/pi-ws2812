@@ -1,0 +1,36 @@
+setup channel_1_count=19
+brightness 1,20
+fill 1
+render
+
+fill 1,ff0000,12,1;render;delay 1000
+fill 1
+fill 1,ff0000,13,6;render;delay 1000
+fill 1
+fill 1,ff0000,0,12;render;delay 1000
+
+fill 1;render
+
+fill 1,ff0000,0,1 ;render;delay 1000
+fill 1,ff0000,1,1 ;render;delay 1000
+fill 1,ff0000,2,1 ;render;delay 1000
+fill 1,ff0000,3,1 ;render;delay 1000
+fill 1,ff0000,4,1 ;render;delay 1000
+fill 1,ff0000,5,1 ;render;delay 1000
+fill 1,ff0000,6,1 ;render;delay 1000
+fill 1,ff0000,7,1 ;render;delay 1000
+fill 1,ff0000,8,1 ;render;delay 1000
+fill 1,ff0000,9,1 ;render;delay 1000
+fill 1,ff0000,10,1;render;delay 1000
+fill 1,ff0000,11,1;render;delay 1000
+
+fill 1,ff0000,18,1;render;delay 1000
+fill 1,ff0000,13,1;render;delay 1000
+fill 1,ff0000,14,1;render;delay 1000
+fill 1,ff0000,15,1;render;delay 1000
+fill 1,ff0000,16,1;render;delay 1000
+fill 1,ff0000,17,1;render;delay 1000
+
+fill 1,ff0000,12,1;render;delay 1000
+
+render

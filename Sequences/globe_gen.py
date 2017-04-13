@@ -1,6 +1,6 @@
 import math
 
-leds = [68, 47, 79]
+leds = [0,1,2,3,4,5,6,7,8,9,10,11,  18,13,14,15,16,17, 12]
 
 def fadeColor(colorRGB, duration, fadeIn):
 	base = 1.0
@@ -56,7 +56,7 @@ def timeRainbow(duration, repeats=1):
 
 
 	
-def spotlightMove(duration, repeats=1):
+def spotlightMoveFull(duration, repeats=1):
 	rampDuration = duration/len(leds)
 	print("brightness 1,255")
 	print("fill 1")
@@ -76,20 +76,60 @@ def spotlightMove(duration, repeats=1):
 	print( "# Ramp down spotlight over %f seconds" % (rampDuration) )
 	__rampLedPair(rampDuration, 1, False, True)
 
-def __rampLedPair(duration, brightLedIndex, doBright, doDim):
-	steps = int(duration/0.025)  # 25 msec steps
+def spotlightMoveOuter(duration, repeats=1):
+	rampDuration = duration/len(leds)
+	print("brightness 1,255")
+	print("fill 1")
+
+	print( "#" )
+	print( "# Ramp up spotlight over %f seconds" % (rampDuration) )
+	__rampLedPair(rampDuration, 0, True, False)
+	
+	print( "#" )
+	print( "# sweep spotlight over %f seconds %d times" % (duration,repeats) )
+	print( "do" )
+	for index in xrange(12):
+		__rampLedPair(rampDuration, index+1, True, True, start=0, length=12)
+	print( "loop %d" % repeats )
+	
+	print( "#" )
+	print( "# Ramp down spotlight over %f seconds" % (rampDuration) )
+	__rampLedPair(rampDuration, 1, False, True)
+
+def spotlightMoveInner(duration, repeats=1):
+	rampDuration = duration/len(leds)
+	print("brightness 1,255")
+	print("fill 1")
+
+	print( "#" )
+	print( "# Ramp up spotlight over %f seconds" % (rampDuration) )
+	__rampLedPair(rampDuration, 0, True, False)
+	
+	print( "#" )
+	print( "# sweep spotlight over %f seconds %d times" % (duration,repeats) )
+	print( "do" )
+	for index in xrange(6):
+		__rampLedPair(rampDuration, index+1, True, True, start=12, length=6)
+	print( "loop %d" % repeats )
+	
+	print( "#" )
+	print( "# Ramp down spotlight over %f seconds" % (rampDuration) )
+	__rampLedPair(rampDuration, 1, False, True)
+
+def __rampLedPair(duration, brightLedIndex, doBright, doDim, start=0, length=len(leds) ):
+	steps = int(duration/0.010)  # 25 msec steps
 
 	for index in xrange(steps):
-		outText = "    "
+		outText = "    fill 1;"
 		timeFrac = float(index)/float(steps)
 		
 		if doBright:
-			outText = outText + __getCmdForLEDBrightness(timeFrac, brightLedIndex)
+			outText = outText + __getCmdForLEDBrightness(timeFrac, start + brightLedIndex% length)
 		if doDim:
-			outText = outText + __getCmdForLEDBrightness(1.0-timeFrac, (brightLedIndex-1) % len(leds) )
+			outText = outText + __getCmdForLEDBrightness(1.0-timeFrac, start+(brightLedIndex-1) % length )
 			
 		outText = outText + "render;"
-		outText = outText + "delay 25"
+		outText = outText + "delay 10"
 		print(outText)
 		
 
@@ -124,14 +164,27 @@ def loop(count=0):
 	else:
 		print("loop %d" % count)
 
-if __name__ == "__main__":
+def main():
 	setup();
 	do()
-	spotlightMove(3.0, 4)
+	#~ spotlightMoveInner(3.0, 4)
+	#~ spotlightMoveOuter(3.0, 4)
+	#~ spotlightMoveInner(3.0, 4)
+	spotlightMoveOuter(12.0, 4)
+	#~ spotlightMoveFull(12.0, 4)
 
 	fadeColor(0xff0000, 1.0, True)
 	timeRainbow(5.0, 3)
 	fadeColor(0xff0000, 1.0, False)
+
+	do()
+	fadeColor(0xff0000, 1.0, True)
+	fadeColor(0xff0000, 1.0, False)
+	fadeColor(0x00ff00, 1.0, True)
+	fadeColor(0x00ff00, 1.0, False)
+	fadeColor(0x0000ff, 1.0, True)
+	fadeColor(0x0000ff, 1.0, False)
+	loop(5)
 
 	fadeColor(0xff0000, 1.0, True)
 	fadeColor(0xff0000, 1.0, False)
@@ -146,3 +199,7 @@ if __name__ == "__main__":
 	fadeColor(0xff00ff, 1.0, True)
 	fadeColor(0xff00ff, 1.0, False)
 	loop()
+
+if __name__ == "__main__":
+	main()
+	

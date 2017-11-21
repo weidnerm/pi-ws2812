@@ -1,0 +1,429 @@
+setup channel_1_count=240
+brightness 1,128
+fill 1;render
+do
+    fill 1,FF0000,222,10
+    fill 1,FF0000,111,7
+render
+delay 100
+    fill 1,0042BD,124,5
+    fill 1,FF0000,90,3
+render
+delay 100
+    fill 1,7E0081,159,4
+render
+delay 100
+    fill 1,FF0000,198,6
+render
+delay 100
+    fill 1,C03F00,204,5
+    fill 1,FF0000,189,5
+render
+delay 100
+    fill 1,00C03F,91,6
+render
+delay 100
+    fill 1,00817E,118,9
+render
+delay 100
+    fill 1,BD0042,179,9
+render
+delay 100
+    fill 1,7E0081,142,5
+render
+delay 100
+    fill 1,00C03F,38,8
+    fill 1,3F00C0,47,2
+render
+delay 100
+    fill 1,00FF00,183,2
+render
+delay 100
+    fill 1,0042BD,195,9
+render
+delay 100
+    fill 1,0042BD,187,3
+render
+delay 100
+    fill 1,817E00,96,2
+render
+delay 100
+    fill 1,FF0000,115,9
+render
+delay 100
+    fill 1,FF0000,74,5
+render
+delay 100
+    fill 1,0042BD,221,5
+    fill 1,817E00,93,9
+render
+delay 100
+    fill 1,C03F00,135,10
+    fill 1,C03F00,193,4
+render
+delay 100
+    fill 1,7E0081,154,4
+    fill 1,FF0000,102,4
+render
+delay 100
+    fill 1,817E00,12,1
+render
+delay 100
+    fill 1,7E0081,163,6
+    fill 1,42BD00,17,2
+render
+delay 100
+    fill 1,0042BD,79,7
+render
+delay 100
+    fill 1,00FF00,113,8
+    fill 1,3F00C0,181,4
+render
+delay 100
+    fill 1,0042BD,163,3
+render
+delay 100
+    fill 1,BD0042,4,8
+    fill 1,BD0042,9,7
+render
+delay 100
+    fill 1,00817E,228,1
+render
+delay 100
+    fill 1,817E00,2,7
+    fill 1,BD0042,144,9
+render
+delay 100
+    fill 1,BD0042,155,6
+    fill 1,0000FF,195,7
+render
+delay 100
+    fill 1,3F00C0,71,9
+render
+delay 100
+    fill 1,0000FF,108,8
+render
+delay 100
+    fill 1,42BD00,117,5
+    fill 1,FF0000,133,4
+render
+delay 100
+    fill 1,00817E,30,10
+    fill 1,42BD00,26,5
+render
+delay 100
+    fill 1,00FF00,26,3
+    fill 1,7E0081,79,3
+render
+delay 100
+    fill 1,00FF00,169,8
+    fill 1,00C03F,228,1
+render
+delay 100
+    fill 1,00C03F,108,8
+render
+delay 100
+    fill 1,FF0000,37,1
+render
+delay 100
+    fill 1,00817E,131,5
+    fill 1,00817E,172,8
+render
+delay 100
+    fill 1,3F00C0,48,2
+    fill 1,0042BD,57,9
+render
+delay 100
+    fill 1,00817E,161,5
+render
+delay 100
+    fill 1,00817E,42,7
+    fill 1,3F00C0,66,5
+render
+delay 100
+    fill 1,42BD00,152,10
+render
+delay 100
+    fill 1,C03F00,46,3
+render
+delay 100
+    fill 1,00C03F,179,3
+    fill 1,00FF00,1,7
+render
+delay 100
+    fill 1,42BD00,179,10
+render
+delay 100
+    fill 1,7E0081,31,7
+render
+delay 100
+    fill 1,00FF00,157,2
+render
+delay 100
+    fill 1,3F00C0,227,10
+    fill 1,C03F00,37,2
+render
+delay 100
+    fill 1,FF0000,181,1
+    fill 1,00817E,165,8
+render
+delay 100
+    fill 1,817E00,39,10
+    fill 1,7E0081,185,8
+render
+delay 100
+    fill 1,817E00,48,4
+render
+delay 100
+    fill 1,00FF00,152,6
+    fill 1,817E00,85,9
+render
+delay 100
+    fill 1,00C03F,67,5
+    fill 1,00FF00,185,9
+render
+delay 100
+    fill 1,BD0042,73,1
+    fill 1,7E0081,28,9
+render
+delay 100
+    fill 1,C03F00,158,10
+    fill 1,C03F00,111,10
+render
+delay 100
+    fill 1,3F00C0,19,1
+    fill 1,BD0042,87,4
+render
+delay 100
+    fill 1,BD0042,203,9
+render
+delay 100
+    fill 1,FF0000,183,6
+render
+delay 100
+    fill 1,817E00,207,10
+    fill 1,C03F00,82,1
+render
+delay 100
+    fill 1,BD0042,185,6
+render
+delay 100
+    fill 1,C03F00,66,8
+render
+delay 100
+    fill 1,00FF00,81,5
+    fill 1,0000FF,58,4
+render
+delay 100
+    fill 1,00FF00,159,8
+    fill 1,C03F00,11,7
+render
+delay 100
+    fill 1,0000FF,172,1
+    fill 1,00FF00,42,2
+render
+delay 100
+    fill 1,42BD00,118,9
+    fill 1,FF0000,104,9
+render
+delay 100
+    fill 1,3F00C0,105,6
+    fill 1,0000FF,70,4
+render
+delay 100
+    fill 1,C03F00,205,6
+    fill 1,C03F00,118,6
+render
+delay 100
+    fill 1,FF0000,66,10
+    fill 1,42BD00,161,8
+render
+delay 100
+    fill 1,BD0042,224,3
+    fill 1,FF0000,63,2
+render
+delay 100
+    fill 1,3F00C0,59,10
+render
+delay 100
+    fill 1,0042BD,119,8
+render
+delay 100
+    fill 1,42BD00,114,1
+    fill 1,3F00C0,19,7
+render
+delay 100
+    fill 1,FF0000,176,5
+render
+delay 100
+    fill 1,FF0000,74,1
+render
+delay 100
+    fill 1,7E0081,5,8
+render
+delay 100
+    fill 1,FF0000,56,8
+    fill 1,00817E,12,7
+render
+delay 100
+    fill 1,C03F00,137,10
+render
+delay 100
+    fill 1,00817E,225,7
+    fill 1,7E0081,158,2
+render
+delay 100
+    fill 1,FF0000,153,2
+render
+delay 100
+    fill 1,00FF00,170,9
+    fill 1,817E00,217,7
+render
+delay 100
+    fill 1,0042BD,8,3
+    fill 1,7E0081,66,4
+render
+delay 100
+    fill 1,0000FF,71,8
+    fill 1,00817E,212,2
+render
+delay 100
+    fill 1,3F00C0,64,10
+render
+delay 100
+    fill 1,BD0042,139,6
+render
+delay 100
+    fill 1,42BD00,90,9
+render
+delay 100
+    fill 1,42BD00,79,4
+render
+delay 100
+    fill 1,FF0000,25,5
+render
+delay 100
+    fill 1,817E00,197,8
+render
+delay 100
+    fill 1,7E0081,146,4
+    fill 1,3F00C0,184,7
+render
+delay 100
+    fill 1,00817E,42,5
+render
+delay 100
+    fill 1,C03F00,175,9
+    fill 1,FF0000,60,2
+render
+delay 100
+    fill 1,00817E,3,7
+render
+delay 100
+    fill 1,3F00C0,16,1
+render
+delay 100
+    fill 1,7E0081,112,9
+render
+delay 100
+    fill 1,0042BD,206,10
+    fill 1,7E0081,12,4
+render
+delay 100
+    fill 1,42BD00,229,7
+render
+delay 100
+    fill 1,BD0042,119,1
+    fill 1,FF0000,108,8
+render
+delay 100
+    fill 1,7E0081,200,7
+render
+delay 100
+    fill 1,00FF00,196,4
+render
+delay 100
+    fill 1,3F00C0,95,10
+render
+delay 100
+    fill 1,3F00C0,186,1
+render
+delay 100
+    fill 1,00C03F,86,8
+    fill 1,0000FF,1,8
+render
+delay 100
+    fill 1,3F00C0,76,1
+render
+delay 100
+    fill 1,BD0042,126,7
+    fill 1,0000FF,57,8
+render
+delay 100
+    fill 1,0000FF,33,6
+    fill 1,817E00,50,3
+render
+delay 100
+    fill 1,00FF00,124,9
+render
+delay 100
+    fill 1,00C03F,110,5
+    fill 1,00817E,107,10
+render
+delay 100
+    fill 1,BD0042,203,8
+    fill 1,FF0000,177,9
+render
+delay 100
+    fill 1,00817E,38,2
+    fill 1,0000FF,143,10
+render
+delay 100
+    fill 1,FF0000,147,6
+    fill 1,FF0000,140,10
+render
+delay 100
+    fill 1,0042BD,229,4
+render
+delay 100
+    fill 1,0042BD,42,10
+render
+delay 100
+    fill 1,7E0081,86,6
+    fill 1,00C03F,26,1
+render
+delay 100
+    fill 1,0042BD,116,4
+render
+delay 100
+    fill 1,BD0042,201,5
+    fill 1,817E00,61,8
+render
+delay 100
+    fill 1,BD0042,222,9
+render
+delay 100
+    fill 1,FF0000,37,10
+    fill 1,817E00,91,7
+render
+delay 100
+    fill 1,FF0000,105,10
+    fill 1,7E0081,137,4
+render
+delay 100
+    fill 1,00FF00,76,7
+render
+delay 100
+    fill 1,00817E,15,9
+    fill 1,00FF00,185,10
+render
+delay 100
+    fill 1,00817E,195,1
+render
+delay 100
+do
+    rotate 1,1,0
+    render
+    delay 25
+loop 60
+loop

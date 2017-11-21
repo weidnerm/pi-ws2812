@@ -2,7 +2,7 @@ setup channel_1_count=240
 #https://github.com/tom-2015/rpi-ws2812-server
 brightness 1,128
 # r,g,b
-rainbow 1,14,0,LEN
+rainbow 1,2,0,LEN
 do
     do
         rotate 1,1

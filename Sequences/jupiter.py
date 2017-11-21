@@ -40,7 +40,7 @@ class Twinkler:
 		self.objectList = objectList;
 		self.daysPerTick = daysPerTick;
 		
-		self.center = 80;
+		self.center = 85;
 		
 	def dumpSystem(self):
 		output = [];

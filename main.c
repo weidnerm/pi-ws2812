@@ -28,7 +28,7 @@
  */
 
 
-static char VERSION[] = "testing...";
+//~ static char VERSION[] = "testing...";
 
 #include <stdint.h>
 #include <stdio.h>
@@ -102,7 +102,7 @@ ws2811_t ledstring =
 
 ws2811_led_t *matrix;
 
-static uint8_t running = 1;
+//~ static uint8_t running = 1;
 
 
 

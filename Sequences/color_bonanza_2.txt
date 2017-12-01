@@ -1,0 +1,365 @@
+setup channel_1_count=240
+brightness 1,128
+fill 1;render
+do
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,C03F00,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+    fill 1,817E00,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,00817E,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,C03F00,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,0042BD,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,00817E,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,C03F00,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,00817E,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,C03F00,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,C03F00,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+    fill 1,C03F00,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,00817E,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,00817E,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,00817E,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,0042BD,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,00817E,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,00817E,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,0042BD,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+    fill 1,0042BD,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,42BD00,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,0000FF,0,LEN
+render
+delay 1000
+    fill 1,FF0000,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,817E00,0,LEN
+render
+delay 1000
+    fill 1,00C03F,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,817E00,0,LEN
+render
+delay 1000
+    fill 1,00817E,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,C03F00,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,00FF00,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+    fill 1,BD0042,0,LEN
+render
+delay 1000
+    fill 1,3F00C0,0,LEN
+render
+delay 1000
+    fill 1,7E0081,0,LEN
+render
+delay 1000
+loop

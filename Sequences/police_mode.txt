@@ -1,0 +1,312 @@
+setup channel_1_count=240
+brightness 1,255
+fill 1;render
+do
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,ffffff,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ffffff,54,13; fill 1,000000,68,13; fill 1,ffffff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ffffff,68,13; fill 1,000000,89,13; fill 1,ffffff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,0000ff,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,ff0000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,ff0000,54,13; fill 1,ff0000,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,0000ff,89,13; fill 1,0000ff,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,000000,89,13; fill 1,000000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1;; fill 1,000000,54,13; fill 1,000000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+fill 1; render; delay 50
+fill 1; render; delay 100
+fill 1; render; delay 100
+; fill 1,0000ff,54,13; fill 1,0000ff,68,13; fill 1,0000ff,89,13; fill 1,0000ff,103,13; render; delay 50
+do; rotate 1,2,1,0,LEN; render; loop 120
+; fill 1,ff0000,54,13; fill 1,ff0000,68,13; fill 1,ff0000,89,13; fill 1,ff0000,103,13; render; delay 50
+do; rotate 1,2,0,0,LEN; render; loop 120
+; fill 1,ffffff,54,13; fill 1,ffffff,68,13; fill 1,ffffff,89,13; fill 1,ffffff,103,13; render; delay 50
+do; rotate 1,2,1,0,LEN; render; loop 120
+loop

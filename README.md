@@ -185,6 +185,22 @@ tricolor
     <len>               #number of leds to fill with the given color after start (default all leds)
 ```
 
+* quadcolor command creates a repeating 4 color stripe pattern
+```
+quadcolor
+    <channel>,          #channel to fill leds with color (default 1)
+    <RRGGBB>,           #color 1 to fill (default 000000)
+    <count_1>,          #number of leds at color 2 (default is 0)
+    <RRGGBB>,           #color 2 to fill (default 000000)
+    <count_2>,          #number of leds at color 2 (default is 0)
+    <RRGGBB>,           #color 3 to fill (default 000000)
+    <count_3>,          #number of leds at color 3 (default is 0)
+    <RRGGBB>,           #color 3 to fill (default 000000)
+    <count_4>,          #number of leds at color 4 (default is 0)
+    <start>,            #at which led should we start (default is 0)
+    <len>               #number of leds to fill with the given color after start (default all leds)
+```
+
 * brightness command changes the brightness of the leds without affecting the color value
 ```
 brightness

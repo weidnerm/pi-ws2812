@@ -1,4 +1,4 @@
-setup channel_1_count=240
+setup channel_1_count=300
 brightness 1,128
 #fire
 #fire 1,250,25,15,0,450,10000

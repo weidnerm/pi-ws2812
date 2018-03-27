@@ -1,0 +1,15 @@
+setup channel_1_count=300
+brightness 1,255
+fill 1;render
+
+fill 1,ff0000,0,25
+fill 1,ff0000,150,25
+
+
+do
+    render
+    rotate 1,3,0,0,LEN
+    
+    delay 25
+loop
+        

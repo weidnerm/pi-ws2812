@@ -4,6 +4,46 @@ fill 1
 render
 do
 brightness 1,255
+
+fill 1,000f00,0,12; render; delay 100
+fill 1,001f00,0,12; render; delay 100
+fill 1,002f00,0,12; render; delay 100
+fill 1,003f00,0,12; render; delay 100
+
+do
+    fill 1; fill 1,003f00,0,LEN; render
+    delay 1000
+    
+    do
+        fill 1,ffffff,0,2; render; delay 50
+        fill 1,003f00,0,2; render; delay 50
+    loop 3
+    
+    fill 1,003f00,0,LEN; render; delay 500
+
+    do
+        fill 1,ffffff,4,2; render; delay 50
+        fill 1,003f00,4,2; render; delay 50
+    loop 3
+
+    fill 1,003f00,0,LEN; render; delay 500
+
+    do
+        fill 1,ffffff,8,2; render; delay 50
+        fill 1,003f00,8,2; render; delay 50
+    loop 3
+
+    delay 2000
+
+loop 2
+
+fill 1,003f00,0,12; render; delay 100
+fill 1,002f00,0,12; render; delay 100
+fill 1,001f00,0,12; render; delay 100
+fill 1,000f00,0,12; render; delay 100
+fill 1,000000,0,12; render; delay 100
+
+
 fill 1
 #
 # Ramp up spotlight over 0.631579 seconds
@@ -1129,7 +1169,7 @@ do
     rainbow 1,1,0,1,236,236;rainbow 1,1,1,1,236,236;rainbow 1,1,2,1,236,236;rainbow 1,1,3,1,236,236;rainbow 1,1,4,1,236,236;rainbow 1,1,5,1,236,236;rainbow 1,1,6,1,236,236;rainbow 1,1,7,1,236,236;rainbow 1,1,8,1,236,236;rainbow 1,1,9,1,236,236;rainbow 1,1,10,1,236,236;rainbow 1,1,11,1,236,236;rainbow 1,1,18,1,236,236;rainbow 1,1,13,1,236,236;rainbow 1,1,14,1,236,236;rainbow 1,1,15,1,236,236;rainbow 1,1,16,1,236,236;rainbow 1,1,17,1,236,236;rainbow 1,1,12,1,236,236;render;delay 25
     rainbow 1,1,0,1,238,238;rainbow 1,1,1,1,238,238;rainbow 1,1,2,1,238,238;rainbow 1,1,3,1,238,238;rainbow 1,1,4,1,238,238;rainbow 1,1,5,1,238,238;rainbow 1,1,6,1,238,238;rainbow 1,1,7,1,238,238;rainbow 1,1,8,1,238,238;rainbow 1,1,9,1,238,238;rainbow 1,1,10,1,238,238;rainbow 1,1,11,1,238,238;rainbow 1,1,18,1,238,238;rainbow 1,1,13,1,238,238;rainbow 1,1,14,1,238,238;rainbow 1,1,15,1,238,238;rainbow 1,1,16,1,238,238;rainbow 1,1,17,1,238,238;rainbow 1,1,12,1,238,238;render;delay 25
     rainbow 1,1,0,1,239,239;rainbow 1,1,1,1,239,239;rainbow 1,1,2,1,239,239;rainbow 1,1,3,1,239,239;rainbow 1,1,4,1,239,239;rainbow 1,1,5,1,239,239;rainbow 1,1,6,1,239,239;rainbow 1,1,7,1,239,239;rainbow 1,1,8,1,239,239;rainbow 1,1,9,1,239,239;rainbow 1,1,10,1,239,239;rainbow 1,1,11,1,239,239;rainbow 1,1,18,1,239,239;rainbow 1,1,13,1,239,239;rainbow 1,1,14,1,239,239;rainbow 1,1,15,1,239,239;rainbow 1,1,16,1,239,239;rainbow 1,1,17,1,239,239;rainbow 1,1,12,1,239,239;render;delay 25
-    rainbow 1,1,0,1,240,240;rainbow 1,1,1,1,240,240;rainbow 1,1,2,1,240,240;rainbow 1,1,3,1,240,240;rainbow 1,1,4,1,240,240;rainbow 1,1,5,1,240,240;rainbow 1,1,6,1,240,240;rainbow 1,1,7,1,240,240;rainbow 1,1,8,1,240,240;rainbow 1,1,9,1,240,240;rainbow 1,1,10,1,240,240;rainbow 1,1,11,1,240,240;rainbow 1,1,18,1,240,240;rainbow 1,1,13,1,240,240;rainbow 1,1,14,1,240,240;rainbow 1,1,15,1,240,240;rainbow 1,1,16,1,240,240;rainbow 1,1,17,1,240,240;rainbow 1,1,12,1,240,240;render;delay 25
+    rainbow 1,1,0,1,450,450;rainbow 1,1,1,1,450,450;rainbow 1,1,2,1,450,450;rainbow 1,1,3,1,450,450;rainbow 1,1,4,1,450,450;rainbow 1,1,5,1,450,450;rainbow 1,1,6,1,450,450;rainbow 1,1,7,1,450,450;rainbow 1,1,8,1,450,450;rainbow 1,1,9,1,450,450;rainbow 1,1,10,1,450,450;rainbow 1,1,11,1,450,450;rainbow 1,1,18,1,450,450;rainbow 1,1,13,1,450,450;rainbow 1,1,14,1,450,450;rainbow 1,1,15,1,450,450;rainbow 1,1,16,1,450,450;rainbow 1,1,17,1,450,450;rainbow 1,1,12,1,450,450;render;delay 25
     rainbow 1,1,0,1,241,241;rainbow 1,1,1,1,241,241;rainbow 1,1,2,1,241,241;rainbow 1,1,3,1,241,241;rainbow 1,1,4,1,241,241;rainbow 1,1,5,1,241,241;rainbow 1,1,6,1,241,241;rainbow 1,1,7,1,241,241;rainbow 1,1,8,1,241,241;rainbow 1,1,9,1,241,241;rainbow 1,1,10,1,241,241;rainbow 1,1,11,1,241,241;rainbow 1,1,18,1,241,241;rainbow 1,1,13,1,241,241;rainbow 1,1,14,1,241,241;rainbow 1,1,15,1,241,241;rainbow 1,1,16,1,241,241;rainbow 1,1,17,1,241,241;rainbow 1,1,12,1,241,241;render;delay 25
     rainbow 1,1,0,1,243,243;rainbow 1,1,1,1,243,243;rainbow 1,1,2,1,243,243;rainbow 1,1,3,1,243,243;rainbow 1,1,4,1,243,243;rainbow 1,1,5,1,243,243;rainbow 1,1,6,1,243,243;rainbow 1,1,7,1,243,243;rainbow 1,1,8,1,243,243;rainbow 1,1,9,1,243,243;rainbow 1,1,10,1,243,243;rainbow 1,1,11,1,243,243;rainbow 1,1,18,1,243,243;rainbow 1,1,13,1,243,243;rainbow 1,1,14,1,243,243;rainbow 1,1,15,1,243,243;rainbow 1,1,16,1,243,243;rainbow 1,1,17,1,243,243;rainbow 1,1,12,1,243,243;render;delay 25
     rainbow 1,1,0,1,244,244;rainbow 1,1,1,1,244,244;rainbow 1,1,2,1,244,244;rainbow 1,1,3,1,244,244;rainbow 1,1,4,1,244,244;rainbow 1,1,5,1,244,244;rainbow 1,1,6,1,244,244;rainbow 1,1,7,1,244,244;rainbow 1,1,8,1,244,244;rainbow 1,1,9,1,244,244;rainbow 1,1,10,1,244,244;rainbow 1,1,11,1,244,244;rainbow 1,1,18,1,244,244;rainbow 1,1,13,1,244,244;rainbow 1,1,14,1,244,244;rainbow 1,1,15,1,244,244;rainbow 1,1,16,1,244,244;rainbow 1,1,17,1,244,244;rainbow 1,1,12,1,244,244;render;delay 25

@@ -119,7 +119,42 @@ def get_side_control_text(side, color):
     
     return text
     
+
+def get_color_from_table(side, phase_24_int):
+    table = [
+    {'left' : '000000',  'bottom' : '000000', 'top' : '000000', 'right' : '3f3f3f' }, # 0
+    {'left' : '000000',  'bottom' : '000000', 'top' : '3f3f3f', 'right' : '3f3f3f' }, # 1
+    {'left' : '000000',  'bottom' : '000000', 'top' : '3f3f3f', 'right' : '7f7f7f' }, # 2
+    {'left' : '000000',  'bottom' : '000000', 'top' : '7f7f7f', 'right' : '7f7f7f' }, # 3
+    {'left' : '000000',  'bottom' : '000000', 'top' : '7f7f7f', 'right' : 'ffffff' }, # 4
+    {'left' : '000000',  'bottom' : '000000', 'top' : 'ffffff', 'right' : 'ffffff' }, # 5
+
+    {'left' : '000000',  'bottom' : '3f3f3f', 'top' : 'ffffff', 'right' : 'ffffff' }, # 6
+    {'left' : '3f3f3f',  'bottom' : '3f3f3f', 'top' : 'ffffff', 'right' : 'ffffff' }, # 7
+    {'left' : '3f3f3f',  'bottom' : '7f7f7f', 'top' : 'ffffff', 'right' : 'ffffff' }, # 8
+    {'left' : '7f7f7f',  'bottom' : '7f7f7f', 'top' : 'ffffff', 'right' : 'ffffff' }, # 9
+    {'left' : '7f7f7f',  'bottom' : 'ffffff', 'top' : 'ffffff', 'right' : 'ffffff' }, # 10
+    {'left' : 'ffffff',  'bottom' : 'ffffff', 'top' : 'ffffff', 'right' : 'ffffff' }, # 11
+
+    {'left' : 'ffffff',  'bottom' : 'ffffff', 'top' : 'ffffff', 'right' : '7f7f7f' }, # 12
+    {'left' : 'ffffff',  'bottom' : 'ffffff', 'top' : '7f7f7f', 'right' : '7f7f7f' }, # 13
+    {'left' : 'ffffff',  'bottom' : 'ffffff', 'top' : '7f7f7f', 'right' : '3f3f3f' }, # 14
+    {'left' : 'ffffff',  'bottom' : 'ffffff', 'top' : '3f3f3f', 'right' : '3f3f3f' }, # 15
+    {'left' : 'ffffff',  'bottom' : 'ffffff', 'top' : '3f3f3f', 'right' : '000000' }, # 16
+    {'left' : 'ffffff',  'bottom' : 'ffffff', 'top' : '000000', 'right' : '000000' }, # 17
+
+    {'left' : 'ffffff',  'bottom' : '7f7f7f', 'top' : '000000', 'right' : '000000' }, # 18
+    {'left' : '7f7f7f',  'bottom' : '7f7f7f', 'top' : '000000', 'right' : '000000' }, # 19
+    {'left' : '7f7f7f',  'bottom' : '3f3f3f', 'top' : '000000', 'right' : '000000' }, # 20
+    {'left' : '3f3f3f',  'bottom' : '3f3f3f', 'top' : '000000', 'right' : '000000' }, # 21
+    {'left' : '3f3f3f',  'bottom' : '000000', 'top' : '000000', 'right' : '000000' }, # 22
+    {'left' : '000000',  'bottom' : '000000', 'top' : '000000', 'right' : '000000' }, # 23
+    ]
+    color = table[phase_24_int][side]
     
+    return color
+    
+
 def get_baseline_file():
     # ~ setup channel_1_count=53
     # ~ brightness 1,128
@@ -136,26 +171,36 @@ today = time.time()
 localtime = time.localtime(today)
 year = localtime.tm_year
 month = localtime.tm_mon
-day = localtime.tm_mday+7
+day = localtime.tm_mday
 phase = get_phase_on_day(year, month, day)
+day = int(phase * 24)
 
-print(year, month, day, phase)
+print(year, month, day, phase, day)
 
 
 text = get_baseline_file()
 
 # ~ for day in range(24):
-day = int(phase * 24)
-    
-fraction = day/24.0
-text.append('fill 1')  # all off
-text.append( get_side_control_text('right', get_color_text(255,255,255, get_channel_brightness('right', day))) )
-text.append( get_side_control_text('top', get_color_text(255,255,255, get_channel_brightness('top', day))) )
-text.append( get_side_control_text('left', get_color_text(255,255,255, get_channel_brightness('left', day))) )
-text.append( get_side_control_text('bottom', get_color_text(255,255,255, get_channel_brightness('bottom', day))) )
 
-text.append('render')  # draw it
-text.append('delay 100')  # wait a bit
+if day == 23: # special alien party
+    
+    text.append('rainbow 1,1,0,53')
+
+    text.append('do')
+    text.append('    rotate 1,1,-1  ')
+    text.append('    render')
+    text.append('    delay 100')
+    text.append('loop') 
+    
+else:  # normal
+    text.append('fill 1')  # all off
+    text.append( get_side_control_text('right', get_color_from_table('right', day)))
+    text.append( get_side_control_text('top', get_color_from_table('top', day)))
+    text.append( get_side_control_text('left', get_color_from_table('left', day)))
+    text.append( get_side_control_text('bottom', get_color_from_table('bottom', day)))
+
+    text.append('render')  # draw it
+    text.append('delay 200')  # wait a bit
 
 
 

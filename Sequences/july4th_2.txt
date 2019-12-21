@@ -1,8 +1,8 @@
-setup channel_1_count=240
+setup channel_1_count=97
 #https://github.com/tom-2015/rpi-ws2812-server
-brightness 1,32
+brightness 1,128
 # r,g,b
-tricolor 1,ff0000,5,ffffff,5,0000ff,5,0,LEN
+tricolor 1,ff0000,5,7f7f7f,5,0000ff,5,0,LEN
 render
 
 do

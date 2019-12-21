@@ -1,0 +1,7 @@
+setup channel_1_count=100
+#https://github.com/tom-2015/rpi-ws2812-server
+brightness 1,255
+# r,g,b
+
+fill 1,0000ff,0,LEN
+render

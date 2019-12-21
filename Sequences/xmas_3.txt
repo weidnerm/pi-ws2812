@@ -1,4 +1,4 @@
-setup channel_1_count=240
+setup channel_1_count=97
 #https://github.com/tom-2015/rpi-ws2812-server
 brightness 1,255
 # r,g,b
@@ -6,12 +6,12 @@ fill 1
 render
 do
 do
-   rotate 1,6,0,0,240,ff0000
+   rotate 1,6,0,0,97,ff0000
    render
    delay 25
 loop 40
 do
-   rotate 1,6,0,0,240,000000
+   rotate 1,6,0,0,97,000000
    render
    delay 25
 loop 40

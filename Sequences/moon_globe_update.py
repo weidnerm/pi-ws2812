@@ -20,13 +20,13 @@ def get_globe_color(moon_alt_degs, sun_alt_degs, hour, minute, wday):
     print('get_globe_color(moon_alt_degs=%f, sun_alt_degs=%f, hour=%d, minute=%d, wday=%d)' % (moon_alt_degs, sun_alt_degs, hour, minute, wday) )
 
     allowed_range = [
-        [0,  16.5, 22.5], # monday
-        [1,  16.5, 22.5], # tuesday
-        [2,  16.5, 22.5], # wednesday
-        [3,  16.5, 22.5], # thursday
-        [4,  16.5, 22.5], # friday
-        [5,  9, 22.5], # saturday
-        [6,  9, 22.5], # sunday
+        [0,  8.5, 22.5], # monday
+        [1,  8.5, 22.5], # tuesday
+        [2,  8.5, 22.5], # wednesday
+        [3,  8.5, 22.5], # thursday
+        [4,  8.5, 23.5], # friday
+        [5,  9.0, 23.5], # saturday
+        [6,  9.0, 22.5], # sunday
     ]
     
     time_now_float = hour+minute/60.0-1  # (subtract a minute to avoid race conditions where triggers match thresholds
@@ -101,12 +101,12 @@ minute = localtime.tm_min
 wday = localtime.tm_wday # 0=monday
 
 
-get_globe_color(5, 5, 20, 0, 0)
+#~ get_globe_color(52, -9, 20, 0, 0)
 
 
 text = get_baseline_file()
 
-#~ text.append( get_globe_color(moon_alt_degs, sun_alt_degs, hour, minute, wday))
+text.append( get_globe_color(moon_alt_degs, sun_alt_degs, hour, minute, wday))
 
 text.append('render')  # draw it
 text.append('delay 200')  # wait a bit

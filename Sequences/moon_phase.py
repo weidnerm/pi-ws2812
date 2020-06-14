@@ -166,23 +166,189 @@ def get_baseline_file():
     
     return base
     
+def pulse_red():
+    start = 10
+    brightness = start
+    rate = 0.07
+    dir_rate = rate
+    delay = 25
+    
+    text.append('do')
+    while(brightness < 255):
+        brightness = (1+dir_rate)*brightness
+        if brightness > 255:
+            brightness = 255
+        text.append('    fill 1,%02x0000,0,53;render;delay %d' % (int(brightness), delay))  # all off
+    while(brightness > start):
+        brightness = (1-dir_rate)*brightness
+        text.append('    fill 1,%02x0000,0,53;render;delay %d' % (int(brightness), delay))  # all off
+    text.append('loop') 
+
+def pulse_red_and_green(delay):
+    start = 10
+    brightness = start
+    rate = 0.15
+    dir_rate = rate
+    
+    text.append('do')
+    while(brightness < 255):
+        brightness = (1+dir_rate)*brightness
+        if brightness > 255:
+            brightness = 255
+        text.append('    fill 1,%02x0000,0,53;render;delay %d' % (int(brightness), delay))  # all off
+    while(brightness > start):
+        brightness = (1-dir_rate)*brightness
+        text.append('    fill 1,%02x0000,0,53;render;delay %d' % (int(brightness), delay))  # all off
+    text.append('loop 1') 
+    brightness = start
+    text.append('do')
+    while(brightness < 255):
+        brightness = (1+dir_rate)*brightness
+        if brightness > 255:
+            brightness = 255
+        text.append('    fill 1,00%02x00,0,53;render;delay %d' % (int(brightness), delay))  # all off
+    while(brightness > start):
+        brightness = (1-dir_rate)*brightness
+        text.append('    fill 1,00%02x00,0,53;render;delay %d' % (int(brightness), delay))  # all off
+    text.append('loop 1') 
+    text.append('loop ') 
+
+def rotate_two_points(color,delay):
+
+    text.append('fill 1,%s,0,8' %(color))  # a few red
+    text.append('fill 1,%s,26,8' %(color))  # a few red
+    
+    text.append('do')
+    text.append('    rotate 1,1,-1  ')
+    text.append('    render')
+    text.append('    delay %d' %(delay))
+    text.append('loop') 
+
+def rotate_fourth_of_july(delay):
+
+    text.append('fill 1,%s,0,8' %('ff0000'))  # a few red
+    text.append('fill 1,%s,18,8' %('ffffff'))  # a few red
+    text.append('fill 1,%s,36,8' %('0000ff'))  # a few red
+    
+    text.append('do')
+    text.append('    rotate 1,1,-1  ')
+    text.append('    render')
+    text.append('    delay %d' %(delay))
+    text.append('loop') 
+
+def rotate_xmas(delay):
+
+    text.append('fill 1,%s,0,20' %('ff0000'))  # a few red
+    text.append('fill 1,%s,26,20' %('00ff00'))  # a few red
+    
+    text.append('do')
+    text.append('    rotate 1,1,-1  ')
+    text.append('    render')
+    text.append('    delay %d' %(delay))
+    text.append('loop') 
+
+
 
 today = time.time()
 localtime = time.localtime(today)
 year = localtime.tm_year
 month = localtime.tm_mon
 day = localtime.tm_mday
+hour = localtime.tm_hour
+minute = localtime.tm_min
+second = localtime.tm_sec
 phase = get_phase_on_day(year, month, day)
-day = int(phase * 24)
+day_of_moon_phase = int(phase * 24)
 
-print(year, month, day, phase, day)
+print(year, month, day, phase, day_of_moon_phase)
 
+
+moon = ephem.Moon()
+sun = ephem.Sun()
+observer = ephem.city("Miami")
+# ~ observer.elevation = -6371000  # place the observer at the center of the Earth
+observer.pressure = 0          # disable atmospheric refraction
+
+curtime = datetime.datetime(year, month, day, hour, minute, second)
+# ~ curtime = datetime.datetime(2020, 11, 29, 0, 0, 0)
+# ~ curtime = datetime.datetime(2020, 6, 5, 0, 0, 0)
+# ~ curtime = datetime.datetime(2020, 7, 20, 0, 0, 0)
+# ~ curtime = datetime.datetime(2020, 7, 5, 0, 0, 0)
+# ~ curtime = datetime.datetime(2020, 11, 29, 0, 0, 0)
+# ~ curtime = datetime.datetime(2020, 12, 14, 0, 0, 0)
+# ~ curtime = datetime.datetime(2021, 5, 26, 0, 0, 0)
+# ~ curtime = datetime.datetime(2021, 11, 19, 0, 0, 0)
+# ~ curtime = datetime.datetime(2023, 10, 14, 0, 0, 0)
+
+sep_min = 360
+sep_max = 0
+moon_alt_max = 0
+moon_alt_min = 0
+for index in range(25):
+    observer.date = curtime
+
+    # computer the position of the sun and the moon with respect to the observer
+    moon.compute(observer)
+    sun.compute(observer)
+
+    # calculate the separation between the moon and the sun, convert
+    # it from radians to degrees
+    sep = abs((float(ephem.separation(moon, sun)) / 0.01745329252) )
+    if sep>sep_max:
+        sep_max = sep
+        moon_alt_max = moon.alt/ 0.01745329252
+    if sep<sep_min:
+        sep_min = sep
+        moon_alt_min = moon.alt/ 0.01745329252
+    curtime += datetime.timedelta(hours = 1)
+print('sep_max=%s  sep_min=%s  moon_alt_max=%f  moon_alt_min=%f' % (sep_max,sep_min,moon_alt_max,moon_alt_min) )
 
 text = get_baseline_file()
 
 # ~ for day in range(24):
 
-if day == 23: # special alien party
+if ((month==2) and (day==14)): # tammy
+    rotate_two_points('ff00ff',100) # purple
+    
+elif ((month==9) and (day==19)): # courtney
+    rotate_two_points('ffc000',100) # yellow
+    
+elif ((month==11) and (day==12)): # tiffany
+    rotate_two_points('ff8080',100) # pink
+    
+elif ((month==9) and (day==12)): # mike
+    rotate_two_points('00ffff',100) # cyan
+    
+elif ((month==4) and (day==13)): # andrew
+    rotate_two_points('00ff00',100) # green
+    
+elif ((month==7) and (day==4)): # 4th of july
+    rotate_fourth_of_july(100) # red white blue
+
+elif ((month==3) and (day==17)): # st pats
+    rotate_two_points('00ff00',100) # green
+
+elif ((month==12) and (day==25)): # xmas
+    rotate_xmas(100) # red green
+
+# ~ elif ((month==5) and (day==25)):
+    # ~ rotate_two_points('ffc000',100) # yellow
+    
+    
+    
+elif (sep_max>177.5):  # eclipse where moon in earths shadow
+    if moon_alt_max>0:  # its visible. spin fast
+        rotate_two_points('ff0000',25) # red
+    else:
+        rotate_two_points('ff0000',100) # red
+
+elif (sep_min<0.9):  # eclipse where moon covers sun
+    if moon_alt_min>0:  # its visible. spin fast
+        rotate_two_points('ffffff',25) # white
+    else:
+        rotate_two_points('ffffff',100) # white
+    
+elif day_of_moon_phase == 23: # special alien party
     
     text.append('rainbow 1,1,0,53')
 
@@ -192,12 +358,13 @@ if day == 23: # special alien party
     text.append('    delay 100')
     text.append('loop') 
     
+
 else:  # normal
     text.append('fill 1')  # all off
-    text.append( get_side_control_text('right', get_color_from_table('right', day)))
-    text.append( get_side_control_text('top', get_color_from_table('top', day)))
-    text.append( get_side_control_text('left', get_color_from_table('left', day)))
-    text.append( get_side_control_text('bottom', get_color_from_table('bottom', day)))
+    text.append( get_side_control_text('right', get_color_from_table('right', day_of_moon_phase)))
+    text.append( get_side_control_text('top', get_color_from_table('top', day_of_moon_phase)))
+    text.append( get_side_control_text('left', get_color_from_table('left', day_of_moon_phase)))
+    text.append( get_side_control_text('bottom', get_color_from_table('bottom', day_of_moon_phase)))
 
     text.append('render')  # draw it
     text.append('delay 200')  # wait a bit

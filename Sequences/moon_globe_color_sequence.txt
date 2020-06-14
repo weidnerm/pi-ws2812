@@ -5,14 +5,20 @@ fill 1;render
 do
     candycane 1,000000,1,ff4000,1,0,19
     render
-    delay 1000
-    candycane 1,7f7f7f,1,000000,1,0,19
-    render
-    delay 1000
+    delay 3000
     candycane 1,7f7f7f,1,ff4000,1,0,19
     render
-    delay 1000
+    delay 3000
+    candycane 1,7f7f7f,1,000000,1,0,19
+    render
+    delay 3000
+    candycane 1,7f7f7f,1,00007f,1,0,19
+    render
+    delay 3000
     candycane 1,000000,1,000000,1,0,19
     render
     delay 1000
 loop
+
+
+

@@ -9,7 +9,7 @@ import atexit
 import signal
 #~ import struct
 #~ import binascii
-#~ import time
+import time
 
 myThread = None
 
@@ -104,14 +104,20 @@ class Application(tk.Frame):
 
         if myThread != None:
             print("Stop Thread %s" % (self.sequenceList[seqIndex]))
-            myThread.send_signal(signal.SIGINT)  
-            #~ killCommandProc = subprocess.Popen("\"sudo kill $(ps -ef | grep sudo | grep test| grep -v /bin/sh | awk '{print($2)}')\"", stderr=subprocess.PIPE, shell=True)
-            #~ killCommandProc = subprocess.Popen("echo $(ps -ef | grep sudo | grep test| grep -v /bin/sh )", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+            # ~ myThread.send_signal(signal.SIGINT)  
+            # ~ command = './kill_it.sh %d' % (myThread.pid)
+            command = 'sudo killall test'
+            print("kill command=%s" % command)
+            
+            # ~ print("Starting Kill Thread")
+            # ~ t = threading.Thread(target=self.command_thread2, name="Kill Thread", args=(command,))
+            # ~ t.start()
 
-            #~ killCommandProc.wait()  # will block here.
-            #~ stdoutdata, stderrdata = killCommandProc.communicate()  # will block here.
-            #~ print stdoutdata , stderrdata
-          
+            t = subprocess.Popen("exec "+command, stderr=subprocess.PIPE, shell=True)
+            t.wait()  # will block here.
+            stdoutdata, stderrdata = t.communicate()  # will block here.
+            print stderrdata
+
         else:
             self.buttonList[seqIndex].configure(bg = "red")
             self.buttonList[seqIndex].configure(activebackground = "red")
@@ -139,6 +145,19 @@ class Application(tk.Frame):
 
         print("Thread ending")
         myThread = None
+
+    def command_thread2(self, command):
+
+        print "do stuff"
+
+        # vrlinux = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
+        t = subprocess.Popen("exec "+command, stderr=subprocess.PIPE, shell=True)
+
+        t.wait()  # will block here.
+        stdoutdata, stderrdata = t.communicate()  # will block here.
+        print stderrdata
+        print("Thread 2 ending")
+
 
     def periodicEventHandler(self):
         self.after(100,self.periodicEventHandler); # poll every 100msec

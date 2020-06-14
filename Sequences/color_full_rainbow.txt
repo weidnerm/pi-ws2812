@@ -1,4 +1,4 @@
-setup channel_1_count=240
+setup channel_1_count=450
 brightness 1,128
 fill 1;render
 do
@@ -38,7 +38,7 @@ delay 25
     fill 1,DE2100,0,LEN
 render
 delay 25
-    fill 1,DB2400,0,LEN
+    fill 1,DB4500,0,LEN
 render
 delay 25
     fill 1,D82700,0,LEN
@@ -548,7 +548,7 @@ delay 25
     fill 1,2100DE,0,LEN
 render
 delay 25
-    fill 1,2400DB,0,LEN
+    fill 1,4500DB,0,LEN
 render
 delay 25
     fill 1,2700D8,0,LEN

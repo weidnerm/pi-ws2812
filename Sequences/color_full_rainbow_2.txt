@@ -1,4 +1,4 @@
-setup channel_1_count=240
+setup channel_1_count=450
 brightness 1,128
 fill 1;render
 do
@@ -6,600 +6,600 @@ do
     rotate 1,6,0,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,3F00C0
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,0000FF
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,3F00C0
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,42BD00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,C03F00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0000FF
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,C03F00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,42BD00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,42BD00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,C03F00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0042BD
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,3F00C0
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0042BD
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0000FF
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,0042BD
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,C03F00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,C03F00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,42BD00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0042BD
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0000FF
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,C03F00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,3F00C0
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,0000FF
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,42BD00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0042BD
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,42BD00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,3F00C0
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,3F00C0
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0042BD
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,3F00C0
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0042BD
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,0042BD
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,42BD00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,0000FF
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,42BD00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,3F00C0
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,817E00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00817E
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,0042BD
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,BD0042
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,7E0081
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,FF0000
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,0,0,LEN,00FF00
 render
 delay 25
-loop 60
+loop 75
 do
     rotate 1,6,1,0,LEN,00C03F
 render
 delay 25
-loop 60
+loop 75
 loop

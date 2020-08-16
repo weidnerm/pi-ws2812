@@ -1,0 +1,12 @@
+setup channel_1_count=51
+brightness 1,64
+fill 1;render
+rainbow 1,1,0,7
+rainbow 1,1,7,44
+
+do
+    render
+    delay 100
+    rotate 1,1,0,0,7
+    rotate 1,1,0,7,44
+loop 1000

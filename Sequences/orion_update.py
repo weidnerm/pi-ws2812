@@ -6,7 +6,95 @@ import ephem
 
 class Orion():
     def __init__(self):
-        self.text = []
+        self.morse_brightness = 0x20
+        self.brightness_indexes = {1:0x40,  'A':0x10, 'B':0x20, 'C':0x40, 'D':0x80, 'E':0xff, 'F':-255}
+        self.morse = {
+            'a' : '.-',
+            'b' : '-...',
+            'c' : '-.-.',
+            'd' : '-..',
+            'e' : '.',
+            'f' : '..-.',
+            'g' : '--.',
+            'h' : '....',
+            'i' : '..',
+            'j' : '.---',
+            'k' : '-.-',
+            'l' : '.-..',
+            'm' : '--',
+            'n' : '-.',
+            'o' : '---',
+            'p' : '.--.',
+            'q' : '--.-',
+            'r' : '.-.',
+            's' : '...',
+            't' : '-',
+            'u' : '..-',
+            'v' : '...-',
+            'w' : '.--',
+            'x' : '-..-',
+            'y' : '-.--',
+            'z' : '--..',
+            ' ' : ' '
+                }
+            
+        self.messages_morse = {}
+        self.messages = [
+                            { #'date' : '', 'time': '', 
+                             'messages' :
+                                {#6: {'text': 'sos ABCDEEEEEEEEEFFFFFFFFFFF'},
+                                 2: {'text':'hi     hi'},
+                                 1: {'text':'    hi'} } },
+        
+                        ]
+        
+        slowness_factor=2  # how many 100ms intervals per morse time tick
+        for batch_index in range(len(self.messages)):
+            for star_num in self.messages[batch_index]['messages']:
+                message = self.messages[batch_index]['messages'][star_num]['text']
+                
+                temp_morse = []
+                
+                for letter_index in range(len(message)):
+                    letter = message[letter_index]
+                    
+                    if letter == ' ':
+                        temp_morse += [0]*4*slowness_factor  # inter word gap
+
+                    elif letter == 'A':
+                        temp_morse += ['A']*2
+
+                    elif letter == 'B':
+                        temp_morse += ['B']*2
+
+                    elif letter == 'C':
+                        temp_morse += ['C']*2
+
+                    elif letter == 'D':
+                        temp_morse += ['D']*2
+
+                    elif letter == 'E':
+                        temp_morse += ['E']*2
+
+                    elif letter == 'F':
+                        temp_morse += ['F']*2
+
+                    else:
+                        for digit_index in range(len(self.morse[letter])):
+                            digit = self.morse[letter][digit_index]
+                            
+                            if digit == '.':
+                                temp_morse += [1]*slowness_factor
+                            elif digit == '-':
+                                temp_morse += [1]*3*slowness_factor
+                                
+                            temp_morse += [0]*slowness_factor  # inter digit gap
+                           
+                        temp_morse += [0]*2*slowness_factor  # inter letter gap 2+1 = 3
+                    
+                self.messages[batch_index]['messages'][star_num]['morse'] = temp_morse
+
+        print(self.messages)
         
     def init_base_brightness(self):
         self.star_rgbs = [
@@ -30,7 +118,7 @@ class Orion():
         self.text = base
         
     def write_orion_stars(self):
-        # ~ self.text.append('')
+        self.text.append('')
         
         for index in range(7):
             text = 'fill 1,%02x%02x%02x,%d,1' % (self.star_rgbs[index][0], self.star_rgbs[index][1], self.star_rgbs[index][2], index)
@@ -51,21 +139,100 @@ class Orion():
         fh.write('\n'.join(self.text)+'\n')
         fh.close()    
         
+    def get_twinkle_offset(self, phase):
+        return_value = 0
+        
+        multiples = 8
+        phase_len=4
+        phase_period = 4*phase_len
+        slope=2
+        
+        if (phase > 0) and (phase < multiples*phase_period):
+            phase = phase % phase_period
+        
+        
+        if (phase >= 0) and (phase < phase_len):
+            return_value = slope*phase
+            
+        elif (phase >= phase_len) and (phase < phase_len*3):
+            return_value = 2*slope*phase_len - slope*phase
+            
+        elif (phase >= phase_len*3) and (phase < phase_len*4):
+            return_value = -4*slope*phase_len + slope*phase
+            
+        return return_value
+            
     def twinkle_stars_for_a_while(self, secs):
         elapsed = 0
         phase=0
         while(elapsed < secs*1000):
             self.init_base_brightness()
-            for index in range(7):
-                colorIndex = (index+phase)%3
-                self.star_rgbs[index][colorIndex] += 8
-                self.text.append('fill 1,%02x%02x%02x,%d,1' % (self.star_rgbs[index][0], self.star_rgbs[index][1], self.star_rgbs[index][2], index))
-            delay=500
+            
+            for star_index in range(7):
+                star = self.star_rgbs[star_index]
+                
+                batch_index=0
+                if star_index in self.messages[batch_index]['messages']:
+                    message = self.messages[batch_index]['messages'][star_index]['morse']
+                
+                
+                    if phase < len(message):
+                        digit = message[phase]
+                        if digit in self.brightness_indexes:
+                            offset = self.brightness_indexes[digit]
+                            star[0] += offset
+                            star[1] += offset
+                            star[2] += offset
+                
+                
+                for colorindex in range(3):
+                    star[colorindex] += self.get_twinkle_offset( -13+phase+colorindex*4 + star_index )
+                
+                self.format_star(star, star_index)
+                # ~ self.text.append('fill 1,%02x%02x%02x,%d,1' % (star[0], star[1], star[2], star_index))
+            delay=200
             self.render_and_wait(delay)
             elapsed += delay
                 
             phase += 1
-                
+            
+    def format_star(self, star, star_index):
+        red   = star[0]
+        green = star[1]
+        blue  = star[2]
+        
+        if red > 0xff:
+            red = 0xff
+        elif red < 0:
+            red = 0
+        if green > 0xff:
+            green = 0xff
+        elif green < 0:
+            green = 0
+        if blue > 0xff:
+            blue = 0xff
+        elif blue < 0:
+            blue = 0
+            
+        self.text.append('fill 1,%02x%02x%02x,%d,1' % (red, green, blue, star_index))
+
+
+    #returns a color from a 'color wheel' where wheelpos is the 'angle' 0-255
+    def deg2color(self, WheelPos):
+        if(WheelPos < 85):
+            return_val = [255 - WheelPos * 3,WheelPos * 3 , 0];
+        elif(WheelPos < 170):
+            WheelPos -= 85;
+            return_val = [0, 255 - WheelPos * 3, WheelPos * 3];
+        else:
+            WheelPos -= 170;
+            return_val = [WheelPos * 3, 0, 255 - WheelPos * 3];
+
+        max_brightness = 0x40
+        return_val = [ int(return_val[0]*max_brightness/256),  int(return_val[1]*max_brightness/256),  int(return_val[2]*max_brightness/256)]
+        
+        return return_val
+
         
     # ~ def get_globe_color(self, moon_alt_degs, sun_alt_degs, hour, minute, wday):
         # ~ colorcmd = 'candycane 1,000000,1,000000,1,0,19'
@@ -186,12 +353,16 @@ class Orion():
 
 def main():
     myOrion = Orion()
+    
     myOrion.init_base_brightness()
     myOrion.get_baseline_file()
+    
     myOrion.write_orion_stars()
     myOrion.write_backlight()
     myOrion.render_and_wait(0)
-    myOrion.twinkle_stars_for_a_while(20)
+    
+    myOrion.twinkle_stars_for_a_while(60)
+    
     myOrion.write_and_close_file()
 
 

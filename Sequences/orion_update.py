@@ -6,8 +6,13 @@ import ephem
 
 class Orion():
     def __init__(self):
-        self.morse_brightness = 0x20
-        self.brightness_indexes = {1:0x40,  'A':0x10, 'B':0x20, 'C':0x40, 'D':0x80, 'E':0xff, 'F':-255}
+        self.brightness_indexes = {1:0x10,  'A':0x10, 'B':0x20, 'C':0x40, 'D':0x80, 'E':0xff, 'F':-255}
+        self.backligtht_rgb_settings = {
+            'W': [0xff, 0, 0],
+            'X': [0, 0x7f, 0],
+            'Y': [0, 0, 0xff],
+            'Z': [0, 0, 0],
+            }
         self.morse = {
             'a' : '.-',
             'b' : '-...',
@@ -40,13 +45,25 @@ class Orion():
             
         self.messages_morse = {}
         self.messages = [
-                            { #'date' : '', 'time': '', 
-                             'messages' :
-                                {#6: {'text': 'sos ABCDEEEEEEEEEFFFFFFFFFFF'},
-                                 2: {'text':'hi     hi'},
-                                 1: {'text':'    hi'} } },
-        
+            { 'month' : [], 'day': [], 'hour': [], 'minute': [0,10,20], 'wday': [], 'messages' : {
+                 2: {'text':'hi     hi'},
+                 1: {'text':'    hi'} } },
+            { 'month' : [], 'day': [], 'hour': [], 'minute': [30,40,50], 'wday': [], 'messages' : {
+                 6: {'text':'hello hello'} } },
+            { 'month' : [], 'day': [], 'hour': [22], 'minute': [0], 'wday': [], 'messages' : {
+                 6: {'text': 'Wsos ABCDEEEEEEEEEEEEEEEEEEFZFFFFFFFFFFFFFFFFFFFF'} } },
+            { 'month' : [9], 'day': [12], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+                 0: {'text': 'happy birthday mike'} } },
+            { 'month' : [9], 'day': [19], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+                 0: {'text': 'happy birthday courtney'} } },
+            { 'month' : [11], 'day': [12], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+                 0: {'text': 'happy birthday tiffany'} } },
+            { 'month' : [2], 'day': [14], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+                 0: {'text': 'happy birthday tammy'} } },
+            { 'month' : [4], 'day': [13], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+                 0: {'text': 'happy birthday andrew'} } },
                         ]
+    
         
         slowness_factor=2  # how many 100ms intervals per morse time tick
         for batch_index in range(len(self.messages)):
@@ -61,23 +78,11 @@ class Orion():
                     if letter == ' ':
                         temp_morse += [0]*4*slowness_factor  # inter word gap
 
-                    elif letter == 'A':
-                        temp_morse += ['A']*2
+                    elif (letter in ['A', 'B', 'C', 'D', 'E', 'F']):
+                        temp_morse += [letter]*2
 
-                    elif letter == 'B':
-                        temp_morse += ['B']*2
-
-                    elif letter == 'C':
-                        temp_morse += ['C']*2
-
-                    elif letter == 'D':
-                        temp_morse += ['D']*2
-
-                    elif letter == 'E':
-                        temp_morse += ['E']*2
-
-                    elif letter == 'F':
-                        temp_morse += ['F']*2
+                    elif (letter in ['W', 'X', 'Y', 'Z']):
+                        temp_morse += [letter]
 
                     else:
                         for digit_index in range(len(self.morse[letter])):
@@ -95,7 +100,56 @@ class Orion():
                 self.messages[batch_index]['messages'][star_num]['morse'] = temp_morse
 
         print(self.messages)
+
+        self.allowed_range = [
+                [0,  8.5, 22.5], # monday
+                [1,  8.5, 22.5], # tuesday
+                [2,  8.5, 22.5], # wednesday
+                [3,  8.5, 22.5], # thursday
+                [4,  8.5, 23.5], # friday
+                [5,  9.0, 23.5], # saturday
+                [6,  9.0, 23.5], # sunday
+            ]
+
+
+    def get_active_messages(self):
         
+        tm_mon = self.localtime.tm_mon
+        tm_mday = self.localtime.tm_mday
+        tm_hour = self.localtime.tm_hour
+        tm_min = self.localtime.tm_min
+        tm_wday = self.localtime.tm_wday
+        self.active_messages = {}
+        
+        for entry_index in range(len(self.messages)):
+            entry = self.messages[entry_index]
+            
+            # ~ { 'month' : [], 'day': [], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+            if (entry['month'] == []) or (tm_mon in entry['month'] ):
+                if (entry['day'] == []) or (tm_mday in entry['day'] ):
+                    if (entry['hour'] == []) or (tm_hour in entry['hour'] ):
+                        if (entry['minute'] == []) or (tm_min in entry['minute'] ):
+                            if (entry['wday'] == []) or (tm_wday in entry['wday'] ):
+                                for key in entry['messages']:
+                                    self.active_messages[key] = entry['messages'][key]
+                        
+        return self.active_messages
+        
+             # ~ hour = self.localtime.tm_hour
+        # ~ minute = self.localtime.tm_min
+        # ~ wday = self.localtime.tm_wday # 0=monday
+        # ~ month = self.localtime.tm_mon
+        # ~ day = self.localtime.tm_mday
+        
+        # ~ self.messages = [
+                            # ~ { #'date' : '', 'time': '', 
+                             # ~ 'messages' :
+                                # ~ {
+                                 # ~ 6: {'text': 'sos ABCDEEEEEEEEEEEEEEEEEEFFFFFFFFFFFFFFFFFFFFF'},
+                                 # ~ 2: {'text':'hi     hi'},
+                                 # ~ 1: {'text':'    hi'} } },
+        
+                        
     def init_base_brightness(self):
         self.star_rgbs = [
             [16,16,48], # rigel_0_rgb     
@@ -106,7 +160,7 @@ class Orion():
             [16,16,16], # bellatrix_5_rgb 
             [32,16,16]  # betelgeuse_6_rgb
             ] #
-        self.backligtht_rgb = [0,0,0]
+        self.backligtht_rgb = [0, 0,0]
        
     def get_baseline_file(self):
         base = []
@@ -124,6 +178,10 @@ class Orion():
             text = 'fill 1,%02x%02x%02x,%d,1' % (self.star_rgbs[index][0], self.star_rgbs[index][1], self.star_rgbs[index][2], index)
             self.text.append(text)
             
+    def turn_all_off(self):
+        text = 'fill 1,000000,0,LEN'
+        self.text.append(text)
+
     def write_backlight(self):
         text = 'fill 1,%02x%02x%02x,7,44' % (self.backligtht_rgb[0], self.backligtht_rgb[1], self.backligtht_rgb[2])
         self.text.append(text)
@@ -142,9 +200,9 @@ class Orion():
     def get_twinkle_offset(self, phase):
         return_value = 0
         
-        multiples = 8
         phase_len=4
         phase_period = 4*phase_len
+        multiples = int( self.animation_time*1000/ (phase_period*200)) - 1
         slope=2
         
         if (phase > 0) and (phase < multiples*phase_period):
@@ -163,6 +221,7 @@ class Orion():
         return return_value
             
     def twinkle_stars_for_a_while(self, secs):
+        self.animation_time = secs
         elapsed = 0
         phase=0
         while(elapsed < secs*1000):
@@ -171,10 +230,9 @@ class Orion():
             for star_index in range(7):
                 star = self.star_rgbs[star_index]
                 
-                batch_index=0
-                if star_index in self.messages[batch_index]['messages']:
-                    message = self.messages[batch_index]['messages'][star_index]['morse']
-                
+                self.get_active_messages()
+                if star_index in self.active_messages:
+                    message = self.active_messages[star_index]['morse']
                 
                     if phase < len(message):
                         digit = message[phase]
@@ -183,7 +241,9 @@ class Orion():
                             star[0] += offset
                             star[1] += offset
                             star[2] += offset
-                
+                        elif digit in self.backligtht_rgb_settings:
+                            self.backligtht_rgb = self.backligtht_rgb_settings[digit]
+                            self.write_backlight()
                 
                 for colorindex in range(3):
                     star[colorindex] += self.get_twinkle_offset( -13+phase+colorindex*4 + star_index )
@@ -348,7 +408,33 @@ class Orion():
 
 
 
+    def setup_star_patterns(self):
 
+        today = time.time()
+        self.localtime = time.localtime(today)
+        hour = self.localtime.tm_hour
+        minute = self.localtime.tm_min
+        wday = self.localtime.tm_wday # 0=monday
+        month = self.localtime.tm_mon
+        day = self.localtime.tm_mday
+        time_now_float = hour+minute/60.0-1.0/60.0  # (subtract a minute to avoid race conditions where triggers match thresholds
+        print('%d/%2d %d:%02d' % (month,day,hour,minute))
+    
+        is_on = False
+        for entry in self.allowed_range:
+            if ((wday == entry[0]) and (time_now_float >= entry[1]) and (time_now_float <= entry[2])):
+                is_on = True
+        
+        if is_on == False:
+            self.turn_all_off()
+            self.render_and_wait(0)
+
+        else:
+            self.write_orion_stars()
+            self.write_backlight()
+            self.render_and_wait(0)
+            
+            self.twinkle_stars_for_a_while(240)
 
 
 def main():
@@ -357,11 +443,7 @@ def main():
     myOrion.init_base_brightness()
     myOrion.get_baseline_file()
     
-    myOrion.write_orion_stars()
-    myOrion.write_backlight()
-    myOrion.render_and_wait(0)
-    
-    myOrion.twinkle_stars_for_a_while(60)
+    myOrion.setup_star_patterns()
     
     myOrion.write_and_close_file()
 

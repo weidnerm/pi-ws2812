@@ -49,19 +49,23 @@ class Orion():
                  2: {'text':'hi     hi'},
                  1: {'text':'    hi'} } },
             { 'month' : [], 'day': [], 'hour': [], 'minute': [30,40,50], 'wday': [], 'messages' : {
-                 6: {'text':'hello hello'} } },
+                 5: {'text':'hello hello'} } },
             { 'month' : [], 'day': [], 'hour': [22], 'minute': [0], 'wday': [], 'messages' : {
                  6: {'text': 'Wsos ABCDEEEEEEEEEEEEEEEEEEFZFFFFFFFFFFFFFFFFFFFF'} } },
-            { 'month' : [9], 'day': [12], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+            { 'month' : [9], 'day': [12], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday mike'} } },
-            { 'month' : [9], 'day': [19], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+            { 'month' : [9], 'day': [19], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday courtney'} } },
-            { 'month' : [11], 'day': [12], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+            { 'month' : [11], 'day': [12], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday tiffany'} } },
-            { 'month' : [2], 'day': [14], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+            { 'month' : [2], 'day': [14], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday tammy'} } },
-            { 'month' : [4], 'day': [13], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
+            { 'month' : [4], 'day': [13], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday andrew'} } },
+            { 'month' : [6], 'day': [14], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
+                 0: {'text': 'happy birthday paige'} } },
+            { 'month' : [12], 'day': [28], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
+                 0: {'text': 'happy birthday jennifer'} } },
                         ]
     
         
@@ -120,6 +124,7 @@ class Orion():
         tm_min = self.localtime.tm_min
         tm_wday = self.localtime.tm_wday
         self.active_messages = {}
+        bday = 0
         
         for entry_index in range(len(self.messages)):
             entry = self.messages[entry_index]
@@ -132,8 +137,10 @@ class Orion():
                             if (entry['wday'] == []) or (tm_wday in entry['wday'] ):
                                 for key in entry['messages']:
                                     self.active_messages[key] = entry['messages'][key]
+                                if 'bday' in entry:
+                                    bday = 1
                         
-        return self.active_messages
+        return bday
         
              # ~ hour = self.localtime.tm_hour
         # ~ minute = self.localtime.tm_min
@@ -166,11 +173,28 @@ class Orion():
         base = []
         
         base.append('setup channel_1_count=51')
-        base.append('brightness 1,128')
+        base.append(self.get_default_brightness())
         base.append('')
         
         self.text = base
         
+    def get_default_brightness(self):
+        return 'brightness 1,128'
+    
+    def birthday_swirl(self):
+  
+        self.text.append('fill 1')
+        self.text.append('brightness 1,32')
+        self.text.append('rainbow 1,7,0,LEN')
+        self.text.append('do')
+        self.text.append('    rotate 1,1,1,0,LEN')
+        self.text.append('    render')
+        self.text.append('    delay 100')
+        self.text.append('loop 600')
+        self.text.append(self.get_default_brightness())
+        self.text.append('fill 1')
+        self.text.append('')
+    
     def write_orion_stars(self):
         self.text.append('')
         
@@ -224,13 +248,17 @@ class Orion():
         self.animation_time = secs
         elapsed = 0
         phase=0
+
+        bday = self.get_active_messages()
+        if bday == 1:
+            self.birthday_swirl()
+                    
         while(elapsed < secs*1000):
             self.init_base_brightness()
             
             for star_index in range(7):
                 star = self.star_rgbs[star_index]
                 
-                self.get_active_messages()
                 if star_index in self.active_messages:
                     message = self.active_messages[star_index]['morse']
                 

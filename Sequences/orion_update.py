@@ -64,7 +64,7 @@ class Orion():
                  0: {'text': 'happy birthday andrew'} } },
             { 'month' : [6], 'day': [14], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday paige'} } },
-            { 'month' : [12], 'day': [28], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
+            { 'month' : [8], 'day': [29], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday jennifer'} } },
                         ]
     
@@ -172,7 +172,7 @@ class Orion():
     def get_baseline_file(self):
         base = []
         
-        base.append('setup channel_1_count=51')
+        base.append('setup channel_1_count=57')
         base.append(self.get_default_brightness())
         base.append('')
         
@@ -207,7 +207,7 @@ class Orion():
         self.text.append(text)
 
     def write_backlight(self):
-        text = 'fill 1,%02x%02x%02x,7,44' % (self.backligtht_rgb[0], self.backligtht_rgb[1], self.backligtht_rgb[2])
+        text = 'fill 1,%02x%02x%02x,7,50' % (self.backligtht_rgb[0], self.backligtht_rgb[1], self.backligtht_rgb[2])
         self.text.append(text)
         
     def render_and_wait(self, delay):

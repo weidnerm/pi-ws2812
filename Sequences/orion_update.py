@@ -2,7 +2,7 @@
 import datetime
 import time
 import ephem
-
+import sys
 
 class Orion():
     def __init__(self):
@@ -46,10 +46,11 @@ class Orion():
         self.messages_morse = {}
         self.messages = [
             { 'month' : [], 'day': [], 'hour': [], 'minute': [0,10,20], 'wday': [], 'messages' : {
-                 2: {'text':'hi     hi'},
-                 1: {'text':'    hi'} } },
+                 2: {'text':'hi        hi'},
+                 1: {'text':'     hi        hi'} } },
             { 'month' : [], 'day': [], 'hour': [], 'minute': [30,40,50], 'wday': [], 'messages' : {
-                 5: {'text':'hello hello'} } },
+                 3: {'text':'hi        hi'},
+                 5: {'text':'     hi        hi'} } },
             { 'month' : [], 'day': [], 'hour': [22], 'minute': [0], 'wday': [], 'messages' : {
                  6: {'text': 'Wsos ABCDEEEEEEEEEEEEEEEEEEFZFFFFFFFFFFFFFFFFFFFF'} } },
             { 'month' : [9], 'day': [12], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
@@ -64,7 +65,7 @@ class Orion():
                  0: {'text': 'happy birthday andrew'} } },
             { 'month' : [6], 'day': [14], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday paige'} } },
-            { 'month' : [8], 'day': [29], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
+            { 'month' : [12], 'day': [28], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday jennifer'} } },
                         ]
     
@@ -103,7 +104,7 @@ class Orion():
                     
                 self.messages[batch_index]['messages'][star_num]['morse'] = temp_morse
 
-        print(self.messages)
+        # ~ print(self.messages)
 
         self.allowed_range = [
                 [0,  8.5, 22.5], # monday
@@ -139,6 +140,14 @@ class Orion():
                                     self.active_messages[key] = entry['messages'][key]
                                 if 'bday' in entry:
                                     bday = 1
+        if len(sys.argv) >= 2:
+            index = int(sys.argv[1])
+            entry = self.messages[index]
+            for key in entry['messages']:
+                self.active_messages[key] = entry['messages'][key]
+            if 'bday' in entry:
+                bday = 1
+             
                         
         return bday
         

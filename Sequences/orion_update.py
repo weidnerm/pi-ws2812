@@ -45,10 +45,13 @@ class Orion():
             
         self.messages_morse = {}
         self.messages = [
-            { 'month' : [], 'day': [], 'hour': [], 'minute': [0,10,20], 'wday': [], 'messages' : {
+            { 'month' : [], 'day': [], 'hour': [], 'minute': [0,30], 'wday': [], 'messages' : {
                  2: {'text':'hi        hi'},
                  1: {'text':'     hi        hi'} } },
-            { 'month' : [], 'day': [], 'hour': [], 'minute': [30,40,50], 'wday': [], 'messages' : {
+            { 'month' : [], 'day': [], 'hour': [], 'minute': [10,40], 'wday': [], 'messages' : {
+                 4: {'text':'hi        hi'},
+                 0: {'text':'     hi        hi'} } },
+            { 'month' : [], 'day': [], 'hour': [], 'minute': [20,50], 'wday': [], 'messages' : {
                  3: {'text':'hi        hi'},
                  5: {'text':'     hi        hi'} } },
             { 'month' : [], 'day': [], 'hour': [22], 'minute': [0], 'wday': [], 'messages' : {

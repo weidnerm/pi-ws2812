@@ -70,6 +70,10 @@ class Orion():
                  0: {'text': 'happy birthday paige'} } },
             { 'month' : [12], 'day': [28], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday jennifer'} } },
+            { 'month' : [2], 'day': [7], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
+                 0: {'text': 'happy birthday margie'} } },
+            { 'month' : [10], 'day': [13], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
+                 0: {'text': 'happy birthday dee'} } },
                         ]
     
         

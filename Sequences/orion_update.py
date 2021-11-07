@@ -3,9 +3,14 @@ import datetime
 import time
 import ephem
 import sys
+import RPi.GPIO as GPIO
 
 class Orion():
     def __init__(self):
+
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(8, GPIO.OUT)
+
         self.brightness_indexes = {1:0x10,  'A':0x10, 'B':0x20, 'C':0x40, 'D':0x80, 'E':0xff, 'F':-255}
         self.backligtht_rgb_settings = {
             'W': [0xff, 0, 0],
@@ -42,7 +47,7 @@ class Orion():
             'z' : '--..',
             ' ' : ' '
                 }
-            
+
         self.messages_morse = {}
         self.messages = [
             { 'month' : [], 'day': [], 'hour': [], 'minute': [0,30], 'wday': [], 'messages' : {
@@ -75,18 +80,18 @@ class Orion():
             { 'month' : [10], 'day': [13], 'hour': [], 'minute': [], 'wday': [], 'bday':1, 'messages' : {
                  0: {'text': 'happy birthday dee'} } },
                         ]
-    
-        
+
+
         slowness_factor=2  # how many 100ms intervals per morse time tick
         for batch_index in range(len(self.messages)):
             for star_num in self.messages[batch_index]['messages']:
                 message = self.messages[batch_index]['messages'][star_num]['text']
-                
+
                 temp_morse = []
-                
+
                 for letter_index in range(len(message)):
                     letter = message[letter_index]
-                    
+
                     if letter == ' ':
                         temp_morse += [0]*4*slowness_factor  # inter word gap
 
@@ -99,16 +104,16 @@ class Orion():
                     else:
                         for digit_index in range(len(self.morse[letter])):
                             digit = self.morse[letter][digit_index]
-                            
+
                             if digit == '.':
                                 temp_morse += [1]*slowness_factor
                             elif digit == '-':
                                 temp_morse += [1]*3*slowness_factor
-                                
+
                             temp_morse += [0]*slowness_factor  # inter digit gap
-                           
+
                         temp_morse += [0]*2*slowness_factor  # inter letter gap 2+1 = 3
-                    
+
                 self.messages[batch_index]['messages'][star_num]['morse'] = temp_morse
 
         # ~ print(self.messages)
@@ -125,7 +130,7 @@ class Orion():
 
 
     def get_active_messages(self):
-        
+
         tm_mon = self.localtime.tm_mon
         tm_mday = self.localtime.tm_mday
         tm_hour = self.localtime.tm_hour
@@ -133,10 +138,10 @@ class Orion():
         tm_wday = self.localtime.tm_wday
         self.active_messages = {}
         bday = 0
-        
+
         for entry_index in range(len(self.messages)):
             entry = self.messages[entry_index]
-            
+
             # ~ { 'month' : [], 'day': [], 'hour': [], 'minute': [], 'wday': [], 'messages' : {
             if (entry['month'] == []) or (tm_mon in entry['month'] ):
                 if (entry['day'] == []) or (tm_mday in entry['day'] ):
@@ -154,51 +159,51 @@ class Orion():
                 self.active_messages[key] = entry['messages'][key]
             if 'bday' in entry:
                 bday = 1
-             
-                        
+
+
         return bday
-        
+
              # ~ hour = self.localtime.tm_hour
         # ~ minute = self.localtime.tm_min
         # ~ wday = self.localtime.tm_wday # 0=monday
         # ~ month = self.localtime.tm_mon
         # ~ day = self.localtime.tm_mday
-        
+
         # ~ self.messages = [
-                            # ~ { #'date' : '', 'time': '', 
+                            # ~ { #'date' : '', 'time': '',
                              # ~ 'messages' :
                                 # ~ {
                                  # ~ 6: {'text': 'sos ABCDEEEEEEEEEEEEEEEEEEFFFFFFFFFFFFFFFFFFFFF'},
                                  # ~ 2: {'text':'hi     hi'},
                                  # ~ 1: {'text':'    hi'} } },
-        
-                        
+
+
     def init_base_brightness(self):
         self.star_rgbs = [
-            [16,16,48], # rigel_0_rgb     
-            [16,16,16], # saiph_1_rgb     
-            [16,16,16], # alnitak_2_rgb   
-            [16,16,16], # alnilam_3_rgb   
-            [16,16,16], # mintaka_4_rgb   
-            [16,16,16], # bellatrix_5_rgb 
+            [16,16,48], # rigel_0_rgb
+            [16,16,16], # saiph_1_rgb
+            [16,16,16], # alnitak_2_rgb
+            [16,16,16], # alnilam_3_rgb
+            [16,16,16], # mintaka_4_rgb
+            [16,16,16], # bellatrix_5_rgb
             [32,16,16]  # betelgeuse_6_rgb
             ] #
         self.backligtht_rgb = [0, 0,0]
-       
+
     def get_baseline_file(self):
         base = []
-        
+
         base.append('setup channel_1_count=57')
         base.append(self.get_default_brightness())
         base.append('')
-        
+
         self.text = base
-        
+
     def get_default_brightness(self):
         return 'brightness 1,128'
-    
+
     def birthday_swirl(self):
-  
+
         self.text.append('fill 1')
         self.text.append('brightness 1,32')
         self.text.append('rainbow 1,7,0,LEN')
@@ -210,14 +215,14 @@ class Orion():
         self.text.append(self.get_default_brightness())
         self.text.append('fill 1')
         self.text.append('')
-    
+
     def write_orion_stars(self):
         self.text.append('')
-        
+
         for index in range(7):
             text = 'fill 1,%02x%02x%02x,%d,1' % (self.star_rgbs[index][0], self.star_rgbs[index][1], self.star_rgbs[index][2], index)
             self.text.append(text)
-            
+
     def turn_all_off(self):
         text = 'fill 1,000000,0,LEN'
         self.text.append(text)
@@ -225,41 +230,41 @@ class Orion():
     def write_backlight(self):
         text = 'fill 1,%02x%02x%02x,7,50' % (self.backligtht_rgb[0], self.backligtht_rgb[1], self.backligtht_rgb[2])
         self.text.append(text)
-        
+
     def render_and_wait(self, delay):
         self.text.append('render')
         if delay != 0:
             self.text.append('delay %d' % (delay))
-        
-        
+
+
     def write_and_close_file(self):
         fh = open('orion_temp.sh', 'w')
         fh.write('\n'.join(self.text)+'\n')
-        fh.close()    
-        
+        fh.close()
+
     def get_twinkle_offset(self, phase):
         return_value = 0
-        
+
         phase_len=4
         phase_period = 4*phase_len
         multiples = int( self.animation_time*1000/ (phase_period*200)) - 1
         slope=2
-        
+
         if (phase > 0) and (phase < multiples*phase_period):
             phase = phase % phase_period
-        
-        
+
+
         if (phase >= 0) and (phase < phase_len):
             return_value = slope*phase
-            
+
         elif (phase >= phase_len) and (phase < phase_len*3):
             return_value = 2*slope*phase_len - slope*phase
-            
+
         elif (phase >= phase_len*3) and (phase < phase_len*4):
             return_value = -4*slope*phase_len + slope*phase
-            
+
         return return_value
-            
+
     def twinkle_stars_for_a_while(self, secs):
         self.animation_time = secs
         elapsed = 0
@@ -268,16 +273,16 @@ class Orion():
         bday = self.get_active_messages()
         if bday == 1:
             self.birthday_swirl()
-                    
+
         while(elapsed < secs*1000):
             self.init_base_brightness()
-            
+
             for star_index in range(7):
                 star = self.star_rgbs[star_index]
-                
+
                 if star_index in self.active_messages:
                     message = self.active_messages[star_index]['morse']
-                
+
                     if phase < len(message):
                         digit = message[phase]
                         if digit in self.brightness_indexes:
@@ -288,23 +293,23 @@ class Orion():
                         elif digit in self.backligtht_rgb_settings:
                             self.backligtht_rgb = self.backligtht_rgb_settings[digit]
                             self.write_backlight()
-                
+
                 for colorindex in range(3):
                     star[colorindex] += self.get_twinkle_offset( -13+phase+colorindex*4 + star_index )
-                
+
                 self.format_star(star, star_index)
                 # ~ self.text.append('fill 1,%02x%02x%02x,%d,1' % (star[0], star[1], star[2], star_index))
             delay=200
             self.render_and_wait(delay)
             elapsed += delay
-                
+
             phase += 1
-            
+
     def format_star(self, star, star_index):
         red   = star[0]
         green = star[1]
         blue  = star[2]
-        
+
         if red > 0xff:
             red = 0xff
         elif red < 0:
@@ -317,7 +322,7 @@ class Orion():
             blue = 0xff
         elif blue < 0:
             blue = 0
-            
+
         self.text.append('fill 1,%02x%02x%02x,%d,1' % (red, green, blue, star_index))
 
 
@@ -334,13 +339,13 @@ class Orion():
 
         max_brightness = 0x40
         return_val = [ int(return_val[0]*max_brightness/256),  int(return_val[1]*max_brightness/256),  int(return_val[2]*max_brightness/256)]
-        
+
         return return_val
 
-        
+
     # ~ def get_globe_color(self, moon_alt_degs, sun_alt_degs, hour, minute, wday):
         # ~ colorcmd = 'candycane 1,000000,1,000000,1,0,19'
-        
+
         # ~ print('get_globe_color(moon_alt_degs=%f, sun_alt_degs=%f, hour=%d, minute=%d, wday=%d)' % (moon_alt_degs, sun_alt_degs, hour, minute, wday) )
 
         # ~ allowed_range = [
@@ -352,14 +357,14 @@ class Orion():
             # ~ [5,  9.0, 23.5], # saturday
             # ~ [6,  9.0, 22.5], # sunday
         # ~ ]
-        
+
         # ~ time_now_float = hour+minute/60.0-1.0/60.0  # (subtract a minute to avoid race conditions where triggers match thresholds
-        
+
         # ~ is_on = False
         # ~ for entry in allowed_range:
             # ~ if ((wday == entry[0]) and (time_now_float >= entry[1]) and (time_now_float <= entry[2])):
                 # ~ is_on = True
-        
+
         # ~ if is_on == False:
             # ~ print('Off hours. no entries for wday=%d %02d:%02d = %f' % (wday, hour, minute, time_now_float))
             # ~ colorcmd = 'candycane 1,000000,1,000000,1,0,19' # off
@@ -398,7 +403,7 @@ class Orion():
     # ~ spica = ephem.star('Spica')
     # ~ antares = ephem.star('Antares')
     # ~ pollux = ephem.star('Pollux')
-        
+
 
 # ~ today = time.time()
 # ~ gmtime = time.gmtime(today)
@@ -463,34 +468,115 @@ class Orion():
         day = self.localtime.tm_mday
         time_now_float = hour+minute/60.0-1.0/60.0  # (subtract a minute to avoid race conditions where triggers match thresholds
         print('%d/%2d %d:%02d' % (month,day,hour,minute))
-    
+
         is_on = False
         for entry in self.allowed_range:
             if ((wday == entry[0]) and (time_now_float >= entry[1]) and (time_now_float <= entry[2])):
                 is_on = True
-        
+
         if is_on == False:
+            # ~ GPIO.output(8, GPIO.HIGH)
             self.turn_all_off()
             self.render_and_wait(0)
 
         else:
+            # ~ GPIO.output(8, GPIO.LOW)
             self.write_orion_stars()
             self.write_backlight()
             self.render_and_wait(0)
-            
+
             self.twinkle_stars_for_a_while(240)
+
+
+    def handle_UV_illuminator(self):
+
+        #
+        # figure out if its within the allowed time window
+        #
+
+        self.clock_allowed_range = [
+            [0,  8.5, 23.999], # monday
+            [1,  8.5, 23.999], # tuesday
+            [2,  8.5, 23.999], # wednesday
+            [3,  8.5, 23.999], # thursday
+            [4,  8.5, 23.999], # friday
+            [5,  9.0, 23.999], # saturday
+            [6,  9.0, 23.999], # sunday
+
+            [0,  0.0, 0.1], # monday
+            [1,  0.0, 0.1], # tuesday
+            [2,  0.0, 0.1], # wednesday
+            [3,  0.0, 0.1], # thursday
+            [4,  0.0, 0.1], # friday
+            [5,  0.0, 0.1], # saturday
+            [6,  0.0, 0.1], # sunday
+        ]
+
+        today = time.time()
+        self.localtime = time.localtime(today)
+        hour = self.localtime.tm_hour
+        minute = self.localtime.tm_min
+        wday = self.localtime.tm_wday # 0=monday
+        month = self.localtime.tm_mon
+        day = self.localtime.tm_mday
+        time_now_float = hour+minute/60.0-1.0/60.0  # (subtract a minute to avoid race conditions where triggers match thresholds
+        year = self.localtime.tm_year
+        second = self.localtime.tm_sec
+
+        print('%d/%2d %d:%02d' % (month,day,hour,minute))
+
+        is_on_clock = False
+        for entry in self.allowed_range:
+            if ((wday == entry[0]) and (time_now_float >= entry[1]) and (time_now_float <= entry[2])):
+                is_on_clock = True
+
+
+        #
+        # figure out sun position to know when its dark
+        #
+
+        sun = ephem.Sun()
+        observer = ephem.city("Miami")
+        observer.pressure = 0          # disable atmospheric refraction
+
+        curtime = datetime.datetime.utcnow()
+
+        observer.date = curtime
+
+        # computer the position of the sun and the moon with respect to the observer
+        sun.compute(observer)
+
+        sun_alt_degs = sun.alt/ 0.01745329252
+        print("sun alt = %f" % (sun_alt_degs))
+
+        is_dark_outside = False
+        if sun_alt_degs < 0:
+            is_dark_outside = True
+
+        #
+        # turn UV LED on if its dark outside and its allowed based on clock.
+        if (is_dark_outside == True) and (is_on_clock == True):
+            GPIO.output(8, GPIO.LOW)
+            print('UV Illuminators On')
+        else:
+            GPIO.output(8, GPIO.HIGH)
+            print('UV Illuminators Off')
+
+
+
 
 
 def main():
     myOrion = Orion()
-    
+
     myOrion.init_base_brightness()
     myOrion.get_baseline_file()
-    
+
     myOrion.setup_star_patterns()
-    
+
     myOrion.write_and_close_file()
 
+    myOrion.handle_UV_illuminator()
 
 if __name__ == "__main__":
     main()

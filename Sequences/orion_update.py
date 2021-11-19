@@ -503,13 +503,13 @@ class Orion():
             [5,  9.0, 23.999], # saturday
             [6,  9.0, 23.999], # sunday
 
-            [0,  0.0, 0.1], # monday
-            [1,  0.0, 0.1], # tuesday
-            [2,  0.0, 0.1], # wednesday
-            [3,  0.0, 0.1], # thursday
-            [4,  0.0, 0.1], # friday
-            [5,  0.0, 0.1], # saturday
-            [6,  0.0, 0.1], # sunday
+            [0,  0.0, 0.5], # monday
+            [1,  0.0, 0.5], # tuesday
+            [2,  0.0, 0.5], # wednesday
+            [3,  0.0, 0.5], # thursday
+            [4,  0.0, 0.5], # friday
+            [5,  0.0, 0.5], # saturday
+            [6,  0.0, 0.5], # sunday
         ]
 
         today = time.time()
@@ -523,12 +523,15 @@ class Orion():
         year = self.localtime.tm_year
         second = self.localtime.tm_sec
 
-        print('%d/%2d %d:%02d' % (month,day,hour,minute))
+        print('%d/%2d %d:%02d   wday=%d' % (month,day,hour,minute,wday))
 
         is_on_clock = False
-        for entry in self.allowed_range:
+        for entry in self.clock_allowed_range:
             if ((wday == entry[0]) and (time_now_float >= entry[1]) and (time_now_float <= entry[2])):
                 is_on_clock = True
+                print("clock match for %s" % (entry))
+                break
+        print("time_now_float=%f" % (time_now_float))
 
 
         #
@@ -552,6 +555,7 @@ class Orion():
         is_dark_outside = False
         if sun_alt_degs < 0:
             is_dark_outside = True
+        print("is_dark_outside=%s" % (is_dark_outside))
 
         #
         # turn UV LED on if its dark outside and its allowed based on clock.

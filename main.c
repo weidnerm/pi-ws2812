@@ -54,6 +54,7 @@
 #include "version.h"
 
 #include "ws2811.h"
+#include <sys/sysmacros.h>
 
 
 #define ARRAY_SIZE(stuff)                        (sizeof(stuff) / sizeof(stuff[0]))
@@ -66,7 +67,7 @@
 //#define STRIP_TYPE                             WS2811_STRIP_GBR       // WS2812/SK6812RGB integrated chip+leds
 //#define STRIP_TYPE                             SK6812_STRIP_RGBW      // SK6812RGBW (NOT SK6812RGB)
 
-#define WIDTH                                    450
+#define WIDTH                                    600
 #define HEIGHT                                   1
 #define LED_COUNT                                (WIDTH * HEIGHT)
 

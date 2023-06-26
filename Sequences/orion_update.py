@@ -10,7 +10,19 @@ class Orion():
 
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(8, GPIO.OUT)
+        
+        self.init_base_brightness()
 
+        self.orion_primary_stars_start = 0
+        self.orion_primary_stars_count = len(self.star_rgbs)
+        self.orion_secondary_stars_start = self.orion_primary_stars_start + self.orion_primary_stars_count
+        self.orion_secondary_stars_count = len(self.secondary_star_rgbs)
+        self.orion_secondary_stars_end = self.orion_secondary_stars_start + self.orion_secondary_stars_count
+        self.backlight_start = self.orion_secondary_stars_end
+        self.backlight_count = 50
+        self.backlight_end = self.backlight_start + self.backlight_count
+        self.total_leds = self.orion_primary_stars_count + self.backlight_count + self.orion_secondary_stars_count
+        
         self.brightness_indexes = {1:0x10,  'A':0x10, 'B':0x20, 'C':0x40, 'D':0x80, 'E':0xff, 'F':-255}
         self.backligtht_rgb_settings = {
             'W': [0xff, 0, 0],
@@ -53,9 +65,12 @@ class Orion():
             { 'month' : [], 'day': [], 'hour': [], 'minute': [0,30], 'wday': [], 'messages' : {
                  2: {'text':'hi        hi'},
                  1: {'text':'     hi        hi'} } },
-            { 'month' : [], 'day': [], 'hour': [], 'minute': [10,40], 'wday': [], 'messages' : {
+            { 'month' : [], 'day': [], 'hour': [], 'minute': [10], 'wday': [], 'messages' : {
                  4: {'text':'hi        hi'},
                  0: {'text':'     hi        hi'} } },
+            { 'month' : [], 'day': [], 'hour': [], 'minute': [40], 'wday': [], 'messages' : {
+                 12: {'text':'hi        hi'},
+                 13: {'text':'     hi        hi'} } },
             { 'month' : [], 'day': [], 'hour': [], 'minute': [20,50], 'wday': [], 'messages' : {
                  3: {'text':'hi        hi'},
                  5: {'text':'     hi        hi'} } },
@@ -180,20 +195,37 @@ class Orion():
 
     def init_base_brightness(self):
         self.star_rgbs = [
-            [16,16,48], # rigel_0_rgb
-            [16,16,16], # saiph_1_rgb
-            [16,16,16], # alnitak_2_rgb
-            [16,16,16], # alnilam_3_rgb
-            [16,16,16], # mintaka_4_rgb
-            [16,16,16], # bellatrix_5_rgb
-            [32,16,16]  # betelgeuse_6_rgb
+            [16,16,48], # rigel_0_rgb    beta
+            [16,16,16], # saiph_1_rgb     Kappa
+            [16,16,16], # alnitak_2_rgb    zeta
+            [16,16,16], # alnilam_3_rgb   epsilon
+            [16,16,16], # mintaka_4_rgb    delta
+            [16,16,16], # bellatrix_5_rgb   gamma
+            [32,16,16]  # betelgeuse_6_rgb  alpha
+            ] #
+        self.secondary_star_rgbs = [
+            [16,16,16], # lambda
+            [16,16,16], # Xi
+            [16,16,16], # Nu
+            [16,16,16], # Chi 2
+            [16,16,16], # Chi 1
+            [16,16,16], # 11 orionis
+            [16,16,16], # Omicron 2
+            [16,16,16], # Pi 1
+            [16,16,16], # Pi 2
+            [16,16,16], # Pi 3
+            [16,16,16], # Pi 4
+            [16,16,16], # Pi 5
+            [16,16,16], # Pi 6
+            [16,16,16], # M42
+            [16,16,16], # Omega
             ] #
         self.backligtht_rgb = [0, 0,0]
 
     def get_baseline_file(self):
         base = []
 
-        base.append('setup channel_1_count=57')
+        base.append('setup channel_1_count=%d' % (self.total_leds))
         base.append(self.get_default_brightness())
         base.append('')
 
@@ -206,7 +238,7 @@ class Orion():
 
         self.text.append('fill 1')
         self.text.append('brightness 1,32')
-        self.text.append('rainbow 1,7,0,LEN')
+        self.text.append('rainbow 1,9,0,LEN')
         self.text.append('do')
         self.text.append('    rotate 1,1,1,0,LEN')
         self.text.append('    render')
@@ -219,8 +251,12 @@ class Orion():
     def write_orion_stars(self):
         self.text.append('')
 
-        for index in range(7):
-            text = 'fill 1,%02x%02x%02x,%d,1' % (self.star_rgbs[index][0], self.star_rgbs[index][1], self.star_rgbs[index][2], index)
+        for index in range(self.orion_primary_stars_count):
+            text = 'fill 1,%02x%02x%02x,%d,1' % (self.star_rgbs[index][0], self.star_rgbs[index][1], self.star_rgbs[index][2], index+self.orion_primary_stars_start)
+            self.text.append(text)
+        for index in range(self.orion_secondary_stars_count):
+            # note that red and green channels are swapped for the leds used in secondary stars
+            text = 'fill 1,%02x%02x%02x,%d,1' % (self.secondary_star_rgbs[index][1], self.secondary_star_rgbs[index][0], self.secondary_star_rgbs[index][2], index+self.orion_secondary_stars_start)
             self.text.append(text)
 
     def turn_all_off(self):
@@ -228,7 +264,8 @@ class Orion():
         self.text.append(text)
 
     def write_backlight(self):
-        text = 'fill 1,%02x%02x%02x,7,50' % (self.backligtht_rgb[0], self.backligtht_rgb[1], self.backligtht_rgb[2])
+        text = 'fill 1,%02x%02x%02x,%d,%d' % (self.backligtht_rgb[0], self.backligtht_rgb[1], self.backligtht_rgb[2], 
+                self.backlight_start, self.backlight_count)
         self.text.append(text)
 
     def render_and_wait(self, delay):
@@ -277,8 +314,11 @@ class Orion():
         while(elapsed < secs*1000):
             self.init_base_brightness()
 
-            for star_index in range(7):
-                star = self.star_rgbs[star_index]
+            for star_index in range(self.orion_primary_stars_start, self.orion_secondary_stars_end):
+                if star_index < self.orion_secondary_stars_start:
+                    star = self.star_rgbs[star_index]
+                else:
+                    star = self.secondary_star_rgbs[star_index-self.orion_secondary_stars_start]
 
                 if star_index in self.active_messages:
                     message = self.active_messages[star_index]['morse']
@@ -580,7 +620,7 @@ def main():
 
     myOrion.write_and_close_file()
 
-    myOrion.handle_UV_illuminator()
+    # ~ myOrion.handle_UV_illuminator()
 
 if __name__ == "__main__":
     main()

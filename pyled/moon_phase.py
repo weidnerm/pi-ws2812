@@ -7,6 +7,7 @@ from rpi_ws281x import *
 import paho.mqtt.client as mqtt
 import netrc
 import os
+import json
 
 # LED strip configuration:
 LED_COUNT      = 53     # Number of LED pixels.
@@ -64,15 +65,15 @@ def on_unsubscribe(client, userdata, mid, reason_code_list, properties):
     client.disconnect()
 
 def on_message(client, userdata, message):
-    print('on_message reached')
+    print('on_message reached   topic=%s  message=%s' % (message.topic, message.payload))
     # userdata is the structure we choose to provide, here it's a list()
     userdata.append(message.payload)
     # We only want to process 10 messages
-    if len(userdata) >= 10:
+    if len(userdata) >= 40:
         client.unsubscribe("$SYS/#")
 
 def on_connect(client, userdata, flags, reason_code, properties):
-    print('on_connect reached')
+    print('on_connect reached.  flags=%s  reason_code=%s  properties=%s' % (flags, reason_code, properties))
     if reason_code.is_failure:
         print(f"Failed to connect: {reason_code}. loop_forever() will retry connection")
     else:
@@ -80,14 +81,25 @@ def on_connect(client, userdata, flags, reason_code, properties):
         # our subscribed is persisted across reconnections.
         client.subscribe("$SYS/#")
 
+def on_publish(client, userdata, mid, reason_code, properties):
+    # reason_code and properties will only be present in MQTTv5. It's always unset in MQTTv3
+    print('on_publish reached.  mid=%s  reason_code=%s  properties=%s' % (mid, reason_code, properties))
+    # ~ try:
+        # ~ userdata.remove(mid)
+    # ~ except KeyError:
+        # ~ print("on_publish() is called with a mid not present in unacked_publish")
+        # ~ print("This is due to an unavoidable race-condition:")
+        # ~ print("* publish() return the mid of the message sent.")
+        # ~ print("* mid from publish() is added to unacked_publish by the main thread")
+        # ~ print("* on_publish() is called by the loop_start thread")
+        # ~ print("While unlikely (because on_publish() will be called after a network round-trip),")
+        # ~ print(" this is a race-condition that COULD happen")
+        # ~ print("")
+        # ~ print("The best solution to avoid race-condition is using the msg_info from publish()")
+        # ~ print("We could also try using a list of acknowledged mid rather than removing from pending list,")
+        # ~ print("but remember that mid could be re-used !")
 
-mqtt_discovery_payload = {
-    "name":"Apollo Buzz Aldrin Moon Footprint Replica",
-    "unique_id":"moonfoot001",
-    "state_topic":"stat/moonfoot001/state"
-        }
-    
-def mqtt_connect():
+def mqtt_connect(disconnect):
     username, _, password = get_credentials('homeassistant.local')
     # connect to MQTT Broker and set callback for incoming messages
     mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
@@ -96,30 +108,40 @@ def mqtt_connect():
     mqttc.on_message = on_message
     mqttc.on_subscribe = on_subscribe
     mqttc.on_unsubscribe = on_unsubscribe
+    mqttc.on_publish = on_publish
 
     mqttc.user_data_set([])
     mqttc.connect("homeassistant.local")
-    mqttc.loop_forever()
+
+    # ~ # subscribe to topics
+    # ~ mqttc.subscribe("xx/xx/xx")
+    
+    
+    mqtt_discovery_payload = {
+        "name": "Buzz Aldrin Footprint",
+        "unique_id": "moonfoot001",
+        "state_topic": "stat/moonfoot001/state"
+    }
+    
+    mqttc.loop_start()
+
+    
+    # publish a message
+    if disconnect == True:
+        ret_config = mqttc.publish("homeassistant/sensor/moonfoot001/config", '', True)
+    else:
+        ret_config = mqttc.publish("homeassistant/sensor/moonfoot001/config", json.dumps(mqtt_discovery_payload), True)
+    
+    time.sleep(1)
+
+    # ~ mqttc.loop_forever()
     print(f"Received the following message: {mqttc.user_data_get()}")
 
+    ret_config.wait_for_publish()
 
 
-    # ~ client.on_connect=on_connect
-    # ~ client.on_message=on_message
-    # ~ client.connect('homeassistant.local', port=1883)
-    
-    # ~ # subscribe to topics
-    # ~ client.subscribe("xx/xx/xx")
-    
-    # ~ # publish a message
-    # ~ ret = client.publish"stat/parking/xxxxon_message", "xxx")
-    
-
-
-
-
-
-
+    mqttc.disconnect()
+    mqttc.loop_stop()
 
 
 
@@ -366,7 +388,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
 
-    mqtt_connect()
+    mqtt_connect(args.disconnect)
 
 
 

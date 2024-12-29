@@ -38,12 +38,12 @@ def get_moons_in_year(year):
 of either the form (DATE,'full') or the form (DATE,'new')"""
     moons=[]
 
-    date=ephem.Date(datetime.date(year,01,01))
+    date=ephem.Date(datetime.date(year,1,1))
     while date.datetime().year==year:
         date=ephem.next_full_moon(date)
         moons.append( (date,'full') )
 
-    date=ephem.Date(datetime.date(year,01,01))
+    date=ephem.Date(datetime.date(year,1,1))
     while date.datetime().year==year:
         date=ephem.next_new_moon(date)
         moons.append( (date,'new') )
@@ -130,7 +130,34 @@ def get_side_control_text(side, color):
     
     return text
     
+def set_side_control_text(side, color):
 
+    # ~ fill 1,404040,14,12 # top 
+    # ~ fill 1,ffffff,26,15 # right
+    # ~ fill 1,000000,0,14 # left
+    # ~ fill 1,000000,41,12 # bottom
+
+    if side=='left':
+        start=0
+        len=14
+    elif side=='top':
+        start=14
+        len=12
+    elif side=='right':
+        start=26
+        len=15
+    else:
+        start=41
+        len=12
+
+    text = 'fill 1,%s,%d,%d # %s' % (color, start, len, side)
+    
+    colorObj = Color(int(color[0:2],16), int(color[2:4],16), int(color[4:6],16)) 
+    for i in range(start,start+len):
+        strip.setPixelColor(i, colorObj)
+    strip.show()
+
+    
 def get_color_from_table(side, phase_24_int):
     table = [
     {'left' : '000000',  'bottom' : '000000', 'top' : '000000', 'right' : '3f3f3f' }, # 0
@@ -259,7 +286,7 @@ def rotate_xmas(delay):
     text.append('loop') 
 
 
-# Define functions which animate LEDs in various ways.
+# ~ # Define functions which animate LEDs in various ways.
 def colorWipe(strip, color, wait_ms=50):
     """Wipe color across display a pixel at a time."""
     for i in range(strip.numPixels()):
@@ -275,7 +302,7 @@ strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, 
 strip.begin()
 
 
-colorWipe(strip, Color(255,0,0), wait_ms=50)
+# ~ colorWipe(strip, Color(0,0,255), wait_ms=50)
 
 
 today = time.time()
@@ -390,14 +417,15 @@ elif day_of_moon_phase == 23: # special alien party
 
 else:  # normal
     text.append('fill 1')  # all off
-    text.append( get_side_control_text('right', get_color_from_table('right', day_of_moon_phase)))
-    text.append( get_side_control_text('top', get_color_from_table('top', day_of_moon_phase)))
-    text.append( get_side_control_text('left', get_color_from_table('left', day_of_moon_phase)))
-    text.append( get_side_control_text('bottom', get_color_from_table('bottom', day_of_moon_phase)))
+    text.append( set_side_control_text('right', get_color_from_table('right', day_of_moon_phase)))
+    text.append( set_side_control_text('top', get_color_from_table('top', day_of_moon_phase)))
+    text.append( set_side_control_text('left', get_color_from_table('left', day_of_moon_phase)))
+    text.append( set_side_control_text('bottom', get_color_from_table('bottom', day_of_moon_phase)))
 
     text.append('render')  # draw it
     text.append('delay 200')  # wait a bit
-
+    # ~ strip.setPixelColor(i, color)
+    # ~ strip.show()
 
 
 fh = open('moon_temp.sh', 'w')

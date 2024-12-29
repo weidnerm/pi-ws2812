@@ -7,3 +7,4 @@ newtest
 *.swp
 **/moon_temp.sh
 **/.venv
+version.h

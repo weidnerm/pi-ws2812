@@ -5,6 +5,7 @@ python3 -m venv .venv
 .venv/bin/pip3 install rpi_ws281x
 .venv/bin/pip3 install adafruit-circuitpython-neopixel
 .venv/bin/pip3 install --force-reinstall adafruit-blinka
+.venv/bin/pip3 install ephem
 
 sudo vi /boot/firmware/config.txt
 	update to 

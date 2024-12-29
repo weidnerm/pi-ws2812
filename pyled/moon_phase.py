@@ -8,6 +8,7 @@ import paho.mqtt.client as mqtt
 import netrc
 import os
 import json
+import socket
 
 # LED strip configuration:
 LED_COUNT      = 53     # Number of LED pixels.
@@ -62,7 +63,7 @@ def on_unsubscribe(client, userdata, mid, reason_code_list, properties):
         print("unsubscribe succeeded (if SUBACK is received in MQTTv3 it success)")
     else:
         print(f"Broker replied with failure: {reason_code_list[0]}")
-    client.disconnect()
+    # ~ client.disconnect()
 
 def on_message(client, userdata, message):
     print('on_message reached   topic=%s  message=%s' % (message.topic, message.payload))
@@ -117,27 +118,61 @@ def mqtt_connect(disconnect):
     # ~ mqttc.subscribe("xx/xx/xx")
     
     
-    mqtt_discovery_payload = {
-        "name": "Buzz Aldrin Footprint",
-        "unique_id": "moonfoot001",
-        "state_topic": "stat/moonfoot001/state"
+    mqtt_discovery_payload_1 = {
+        "name": "state",
+        "unique_id": "moonfoot001_1",
+        "state_topic": "stat/moonfoot001/state",
+        "icon": "mdi:foot-print",
+        "device": {
+            "name": "Buzz Aldrin Footprint",
+            "identifiers": "moonfoot_aaea6e",
+            "mf": "Michael Weidner",
+            "model": "Apollo Shadowbox",
+            "sw": "2.00",
+            "hw": "2.00",
+            }
+    }
+    mqtt_discovery_payload_2 = {
+        "name": "ipaddress",
+        "unique_id": "moonfoot001_2",
+        "state_topic": "stat/moonfoot001/ipaddress",
+        "icon": "mdi:ip-network",
+        "device": {
+            "name": "Buzz Aldrin Footprint",
+            "identifiers": "moonfoot_aaea6e",
+            }
     }
     
     mqttc.loop_start()
 
     
     # publish a message
+    ret_config_2 = None
     if disconnect == True:
-        ret_config = mqttc.publish("homeassistant/sensor/moonfoot001/config", '', True)
+        ret_config_1 = mqttc.publish("homeassistant/sensor/moonfoot001_1/config", '', True)
+        ret_config_2 = mqttc.publish("homeassistant/sensor/moonfoot001_2/config", '', True)
     else:
-        ret_config = mqttc.publish("homeassistant/sensor/moonfoot001/config", json.dumps(mqtt_discovery_payload), True)
+        ret_config_1 = mqttc.publish("homeassistant/sensor/moonfoot001_1/config", json.dumps(mqtt_discovery_payload_1), True)
+        ret_config_2 = mqttc.publish("homeassistant/sensor/moonfoot001_2/config", json.dumps(mqtt_discovery_payload_2), True)
     
     time.sleep(1)
 
     # ~ mqttc.loop_forever()
     print(f"Received the following message: {mqttc.user_data_get()}")
 
-    ret_config.wait_for_publish()
+    ret_config_1.wait_for_publish()
+    if ret_config_2:
+        ret_config_2.wait_for_publish()
+
+
+    ret_state_1 = mqttc.publish("stat/moonfoot001/state", 'off', True)
+    
+    hostname = socket.gethostname() # get our hostname
+    IPAddr = socket.gethostbyname(hostname+'.local')
+    ret_state_2 = mqttc.publish("stat/moonfoot001/ipaddress", IPAddr, True)
+
+    ret_state_1.wait_for_publish()
+    ret_state_2.wait_for_publish()
 
 
     mqttc.disconnect()

@@ -4,6 +4,9 @@ import time
 import ephem
 import argparse
 from rpi_ws281x import *
+import paho.mqtt.client as mqtt
+import netrc
+import os
 
 # LED strip configuration:
 LED_COUNT      = 53     # Number of LED pixels.
@@ -14,6 +17,113 @@ LED_DMA        = 10      # DMA channel to use for generating a signal (try 10)
 LED_BRIGHTNESS = 128      # Set to 0 for darkest and 255 for brightest
 LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
 LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
+
+
+
+def read_netrc(filename=None):
+    """Reads a .netrc file and returns a dictionary of hosts and their credentials."""
+    if filename is None:
+        filename = os.path.expanduser("/home/pi/.netrc")
+
+    try:
+        auth = netrc.netrc(filename)
+        hosts = {}
+        for host in auth.hosts:
+            hosts[host] = auth.authenticators(host)
+        return hosts
+    except netrc.NetrcParseError as e:
+        print(f"Error parsing netrc file: {e}")
+        return {}
+
+
+def get_credentials(machine):
+    credentials = read_netrc()
+    if machine in credentials:
+        print(credentials)
+    return credentials[machine] # username, _ , password
+    
+
+    
+def on_subscribe(client, userdata, mid, reason_code_list, properties):
+    print('on_subscribe reached')
+    # Since we subscribed only for a single channel, reason_code_list contains
+    # a single entry
+    if reason_code_list[0].is_failure:
+        print(f"Broker rejected you subscription: {reason_code_list[0]}")
+    else:
+        print(f"Broker granted the following QoS: {reason_code_list[0].value}")
+
+def on_unsubscribe(client, userdata, mid, reason_code_list, properties):
+    print('on_unsubscribe reached')
+    # Be careful, the reason_code_list is only present in MQTTv5.
+    # In MQTTv3 it will always be empty
+    if len(reason_code_list) == 0 or not reason_code_list[0].is_failure:
+        print("unsubscribe succeeded (if SUBACK is received in MQTTv3 it success)")
+    else:
+        print(f"Broker replied with failure: {reason_code_list[0]}")
+    client.disconnect()
+
+def on_message(client, userdata, message):
+    print('on_message reached')
+    # userdata is the structure we choose to provide, here it's a list()
+    userdata.append(message.payload)
+    # We only want to process 10 messages
+    if len(userdata) >= 10:
+        client.unsubscribe("$SYS/#")
+
+def on_connect(client, userdata, flags, reason_code, properties):
+    print('on_connect reached')
+    if reason_code.is_failure:
+        print(f"Failed to connect: {reason_code}. loop_forever() will retry connection")
+    else:
+        # we should always subscribe from on_connect callback to be sure
+        # our subscribed is persisted across reconnections.
+        client.subscribe("$SYS/#")
+
+
+mqtt_discovery_payload = {
+    "name":"Apollo Buzz Aldrin Moon Footprint Replica",
+    "unique_id":"moonfoot001",
+    "state_topic":"stat/moonfoot001/state"
+        }
+    
+def mqtt_connect():
+    username, _, password = get_credentials('homeassistant.local')
+    # connect to MQTT Broker and set callback for incoming messages
+    mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+    mqttc.username_pw_set(username=username, password=password)
+    mqttc.on_connect = on_connect
+    mqttc.on_message = on_message
+    mqttc.on_subscribe = on_subscribe
+    mqttc.on_unsubscribe = on_unsubscribe
+
+    mqttc.user_data_set([])
+    mqttc.connect("homeassistant.local")
+    mqttc.loop_forever()
+    print(f"Received the following message: {mqttc.user_data_get()}")
+
+
+
+    # ~ client.on_connect=on_connect
+    # ~ client.on_message=on_message
+    # ~ client.connect('homeassistant.local', port=1883)
+    
+    # ~ # subscribe to topics
+    # ~ client.subscribe("xx/xx/xx")
+    
+    # ~ # publish a message
+    # ~ ret = client.publish"stat/parking/xxxxon_message", "xxx")
+    
+
+
+
+
+
+
+
+
+
+
 
 def get_phase_on_day(year,month,day):
     """Returns a floating-point number from 0-1. where 0=new, 0.5=full, 1=new"""
@@ -252,7 +362,17 @@ if __name__ == '__main__':
     # Process arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--clear', action='store_true', help='clear the display on exit')
+    parser.add_argument('-dc', '--disconnect', action='store_true', help='unregister from homeassistant MQTT')
     args = parser.parse_args()
+
+
+    mqtt_connect()
+
+
+
+
+
+
 
     # Create NeoPixel object with appropriate configuration.
     strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)

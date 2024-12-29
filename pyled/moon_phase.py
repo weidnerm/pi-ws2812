@@ -2,6 +2,7 @@
 import datetime
 import time
 import ephem
+import argparse
 from rpi_ws281x import *
 
 # LED strip configuration:
@@ -128,7 +129,18 @@ def set_side_control_text(side, color):
         strip.setPixelColor(i, colorObj)
     strip.show()
 
-    
+# returns a color from a 'color wheel' where wheelpos is the 'angle' 0-255
+def deg2color(wheelPos):
+    if(wheelPos < 85):
+        return Color(255 - wheelPos * 3,wheelPos * 3 , 0);
+    elif(wheelPos < 170):
+        wheelPos -= 85;
+        return Color(0, 255 - wheelPos * 3, wheelPos * 3);
+    else:
+        wheelPos -= 170;
+        return Color(wheelPos * 3, 0, 255 - wheelPos * 3);
+
+
 def get_color_from_table(side, phase_24_int):
     table = [
     {'left' : '000000',  'bottom' : '000000', 'top' : '000000', 'right' : '3f3f3f' }, # 0
@@ -175,7 +187,7 @@ def get_baseline_file():
     
     return base
 
-def rotate_two_points(color,delay):
+def rotate_color_segments(colors, delay, num_points=8):
 
     # ~ text.append('fill 1,%s,0,8' %(color))  # a few red
     # ~ text.append('fill 1,%s,26,8' %(color))  # a few red
@@ -187,42 +199,44 @@ def rotate_two_points(color,delay):
     # ~ text.append('loop') 
     
     offset = 0
-    color1Obj = Color(int(color[0:2],16), int(color[2:4],16), int(color[4:6],16)) 
+    colorObjs = []
+    for color in colors:
+        colorObjs.append(Color(int(color[0:2],16), int(color[2:4],16), int(color[4:6],16)) )
+    if len(colors) == 1:  # single color.  propagate to two
+        colorObjs.append(colorObjs[0])
+        colorsplit = 26
+    elif len(colors) >= 2:
+        colorsplit = int(53/len(colors))
     colorOff = Color(0,0,0) 
     while True:
         for i in range(53):
             strip.setPixelColor(i, colorOff)
-        for i in range(8):
-            strip.setPixelColor((0+i+offset)%53, color1Obj)
-        for i in range(8):
-            strip.setPixelColor((26+i+offset)%53, color1Obj)
+        for i in range(num_points):
+            strip.setPixelColor((0+i+offset)%53, colorObjs[0])
+        for i in range(num_points):
+            strip.setPixelColor((colorsplit+i+offset)%53, colorObjs[1])
+        if len(colorObjs) >= 3:
+            for i in range(num_points):
+                strip.setPixelColor((colorsplit*2+i+offset)%53, colorObjs[2])
         offset = offset + 1
         time.sleep(0.1)
         strip.show()
 
+def rotating_rainbow(delay):
+    offset = 0
+    while True:
+        for i in range(53):
+            strip.setPixelColor((i+offset)%53, deg2color(int(i*256/53)))
+        
+        offset = offset + 1
+        time.sleep(0.1)
+        strip.show()
 
-def rotate_fourth_of_july(delay):
-
-    text.append('fill 1,%s,0,8' %('ff0000'))  # a few red
-    text.append('fill 1,%s,18,8' %('ffffff'))  # a few red
-    text.append('fill 1,%s,36,8' %('0000ff'))  # a few red
-    
-    text.append('do')
-    text.append('    rotate 1,1,-1  ')
-    text.append('    render')
-    text.append('    delay %d' %(delay))
-    text.append('loop') 
-
-def rotate_xmas(delay):
-
-    text.append('fill 1,%s,0,20' %('ff0000'))  # a few red
-    text.append('fill 1,%s,26,20' %('00ff00'))  # a few red
-    
-    text.append('do')
-    text.append('    rotate 1,1,-1  ')
-    text.append('    render')
-    text.append('    delay %d' %(delay))
-    text.append('loop') 
+def turn_off():
+    off = Color(0,0,0)
+    for i in range(53):
+        strip.setPixelColor(i, off)
+    strip.show()
 
 
 # ~ # Define functions which animate LEDs in various ways.
@@ -235,6 +249,11 @@ def colorWipe(strip, color, wait_ms=50):
 
 # Main program logic follows:
 if __name__ == '__main__':
+    # Process arguments
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-c', '--clear', action='store_true', help='clear the display on exit')
+    args = parser.parse_args()
+
     # Create NeoPixel object with appropriate configuration.
     strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
     # Intialize the library (must be called once before other functions).
@@ -300,75 +319,61 @@ if __name__ == '__main__':
     text = get_baseline_file()
 
     # ~ for day in range(24):
+    if args.clear == True:
+        turn_off()
 
-    # ~ if ((month==2) and (day==14)): # tammy
-    if True:
-        rotate_two_points('ff00ff',100) # purple
+    elif ((month==2) and (day==14)): # tammy
+        rotate_color_segments(['ff00ff'],100) # purple
         
     elif ((month==9) and (day==19)): # courtney
-        rotate_two_points('ffc000',100) # yellow
+        rotate_color_segments(['ffc000'],100) # yellow
         
     elif ((month==11) and (day==12)): # tiffany
-        rotate_two_points('ff8080',100) # pink
+        rotate_color_segments(['ff8080'],100) # pink
         
     elif ((month==9) and (day==12)): # mike
-        rotate_two_points('00ffff',100) # cyan
+        rotate_color_segments(['00ffff'],100) # cyan
         
     elif ((month==4) and (day==13)): # andrew
-        rotate_two_points('00ff00',100) # green
+        rotate_color_segments(['00ff00'],100) # green
         
     elif ((month==7) and (day==4)): # 4th of july
-        rotate_fourth_of_july(100) # red white blue
+        rotate_color_segments(['ff0000','ffffff','0000ff'],100) # red white blue
 
     elif ((month==3) and (day==17)): # st pats
-        rotate_two_points('00ff00',100) # green
+        rotate_color_segments(['00ff00'],100) # green
 
     elif ((month==12) and (day==25)): # xmas
-        rotate_xmas(100) # red green
+        rotate_color_segments(['ff0000','00ff00'],100,num_points=20) # red green
 
     # ~ elif ((month==5) and (day==25)):
-        # ~ rotate_two_points('ffc000',100) # yellow
+        # ~ rotate_color_segments('ffc000',100) # yellow
         
         
         
     elif (sep_max>177.5):  # eclipse where moon in earths shadow
         if moon_alt_max>0:  # its visible. spin fast
-            rotate_two_points('ff0000',25) # red
+            rotate_color_segments(['ff0000'],25) # red
         else:
-            rotate_two_points('ff0000',100) # red
+            rotate_color_segments(['ff0000'],100) # red
 
     elif (sep_min<0.9):  # eclipse where moon covers sun
         if moon_alt_min>0:  # its visible. spin fast
-            rotate_two_points('ffffff',25) # white
+            rotate_color_segments(['ffffff'],25) # white
         else:
-            rotate_two_points('ffffff',100) # white
+            rotate_color_segments(['ffffff'],100) # white
         
     elif day_of_moon_phase == 23: # special alien party
-        
-        text.append('rainbow 1,1,0,53')
+        rotating_rainbow(100)
 
-        text.append('do')
-        text.append('    rotate 1,1,-1  ')
-        text.append('    render')
-        text.append('    delay 100')
-        text.append('loop') 
-        
 
     else:  # normal
-        text.append('fill 1')  # all off
-        text.append( set_side_control_text('right', get_color_from_table('right', day_of_moon_phase)))
-        text.append( set_side_control_text('top', get_color_from_table('top', day_of_moon_phase)))
-        text.append( set_side_control_text('left', get_color_from_table('left', day_of_moon_phase)))
-        text.append( set_side_control_text('bottom', get_color_from_table('bottom', day_of_moon_phase)))
-
-        text.append('render')  # draw it
-        text.append('delay 200')  # wait a bit
-        # ~ strip.setPixelColor(i, color)
-        # ~ strip.show()
+        set_side_control_text('right', get_color_from_table('right', day_of_moon_phase))
+        set_side_control_text('top', get_color_from_table('top', day_of_moon_phase))
+        set_side_control_text('left', get_color_from_table('left', day_of_moon_phase))
+        set_side_control_text('bottom', get_color_from_table('bottom', day_of_moon_phase))
 
 
-    # ~ fh = open('moon_temp.sh', 'w')
-    # ~ fh.write('\n'.join(text)+'\n')
-    # ~ fh.close()
+
 
 

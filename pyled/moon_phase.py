@@ -9,6 +9,7 @@ import netrc
 import os
 import json
 import socket
+import sys
 
 # LED strip configuration:
 LED_COUNT      = 53     # Number of LED pixels.
@@ -100,7 +101,7 @@ def on_publish(client, userdata, mid, reason_code, properties):
         # ~ print("We could also try using a list of acknowledged mid rather than removing from pending list,")
         # ~ print("but remember that mid could be re-used !")
 
-def mqtt_connect(disconnect):
+def mqtt_connect(state, disconnect=False):
     username, _, password = get_credentials('homeassistant.local')
     # connect to MQTT Broker and set callback for incoming messages
     mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
@@ -165,7 +166,7 @@ def mqtt_connect(disconnect):
         ret_config_2.wait_for_publish()
 
 
-    ret_state_1 = mqttc.publish("stat/moonfoot001/state", 'off', True)
+    ret_state_1 = mqttc.publish("stat/moonfoot001/state", state, True)
     
     hostname = socket.gethostname() # get our hostname
     IPAddr = socket.gethostbyname(hostname+'.local')
@@ -423,7 +424,11 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
 
-    mqtt_connect(args.disconnect)
+    if args.disconnect == True: 
+        # remove device from home assistant.  allows config to be changed on next powerup.
+        mqtt_connect(True, "")
+        sys.exit()
+
 
 
 
@@ -497,30 +502,39 @@ if __name__ == '__main__':
 
     # ~ for day in range(24):
     if args.clear == True:
+        mqtt_connect("off")
         turn_off()
 
     elif ((month==2) and (day==14)): # tammy
+        mqtt_connect("Tammy Birthday")
         rotate_color_segments(['ff00ff'],100) # purple
         
     elif ((month==9) and (day==19)): # courtney
+        mqtt_connect("Courtney Birthday")
         rotate_color_segments(['ffc000'],100) # yellow
         
     elif ((month==11) and (day==12)): # tiffany
+        mqtt_connect("Tiffany Birthday")
         rotate_color_segments(['ff8080'],100) # pink
         
     elif ((month==9) and (day==12)): # mike
+        mqtt_connect("Mike Birthday")
         rotate_color_segments(['00ffff'],100) # cyan
         
     elif ((month==4) and (day==13)): # andrew
+        mqtt_connect("Andrew Birthday")
         rotate_color_segments(['00ff00'],100) # green
         
     elif ((month==7) and (day==4)): # 4th of july
+        mqtt_connect("Happy 4th")
         rotate_color_segments(['ff0000','ffffff','0000ff'],100) # red white blue
 
     elif ((month==3) and (day==17)): # st pats
+        mqtt_connect("Happy St. Pats")
         rotate_color_segments(['00ff00'],100) # green
 
     elif ((month==12) and (day==25)): # xmas
+        mqtt_connect("Merry Christmas")
         rotate_color_segments(['ff0000','00ff00'],100,num_points=20) # red green
 
     # ~ elif ((month==5) and (day==25)):
@@ -530,21 +544,28 @@ if __name__ == '__main__':
         
     elif (sep_max>177.5):  # eclipse where moon in earths shadow
         if moon_alt_max>0:  # its visible. spin fast
+            mqtt_connect("Lunar Eclipse - visible")
             rotate_color_segments(['ff0000'],25) # red
         else:
+            mqtt_connect("Lunar Eclipse - invisible")
             rotate_color_segments(['ff0000'],100) # red
 
     elif (sep_min<0.9):  # eclipse where moon covers sun
         if moon_alt_min>0:  # its visible. spin fast
+            mqtt_connect("Solar Eclipse - visible")
             rotate_color_segments(['ffffff'],25) # white
         else:
+            mqtt_connect("Solar Eclipse - invisible")
             rotate_color_segments(['ffffff'],100) # white
         
     elif day_of_moon_phase == 23: # special alien party
+        mqtt_connect("New Moon")
         rotating_rainbow(100)
 
 
     else:  # normal
+        phase_day = int(phase*28+0.5)
+        mqtt_connect("phase %s/28" % phase_day)
         set_side_control_text('right', get_color_from_table('right', day_of_moon_phase))
         set_side_control_text('top', get_color_from_table('top', day_of_moon_phase))
         set_side_control_text('left', get_color_from_table('left', day_of_moon_phase))

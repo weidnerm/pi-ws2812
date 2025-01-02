@@ -29,7 +29,7 @@ def get_globe_color(moon_alt_degs, sun_alt_degs, hour, minute, wday):
         [6,  9.0, 22.5], # sunday
     ]
     
-    time_now_float = hour+minute/60.0-1  # (subtract a minute to avoid race conditions where triggers match thresholds
+    time_now_float = hour+minute/60.0-1.0/60.0  # (subtract a minute to avoid race conditions where triggers match thresholds
     
     is_on = False
     for entry in allowed_range:

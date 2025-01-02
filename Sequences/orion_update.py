@@ -69,8 +69,10 @@ class Orion():
                  4: {'text':'hi        hi'},
                  0: {'text':'     hi        hi'} } },
             { 'month' : [], 'day': [], 'hour': [], 'minute': [40], 'wday': [], 'messages' : {
-                 12: {'text':'hi        hi'},
-                 13: {'text':'     hi        hi'} } },
+                 12: {'text':'hi '},
+                 13: {'text':'    hi'},
+                 14: {'text':'         hi'},
+                 15: {'text':'              hi'} } },
             { 'month' : [], 'day': [], 'hour': [], 'minute': [20,50], 'wday': [], 'messages' : {
                  3: {'text':'hi        hi'},
                  5: {'text':'     hi        hi'} } },

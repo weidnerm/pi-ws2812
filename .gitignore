@@ -5,3 +5,6 @@ newtest
 *.o
 *.a
 *.swp
+**/moon_temp.sh
+**/.venv
+version.h

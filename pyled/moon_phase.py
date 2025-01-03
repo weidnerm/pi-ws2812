@@ -10,6 +10,7 @@ import os
 import json
 import socket
 import sys
+import traceback
 
 # LED strip configuration:
 LED_COUNT      = 53     # Number of LED pixels.
@@ -113,7 +114,11 @@ def mqtt_connect(state, disconnect=False):
     mqttc.on_publish = on_publish
 
     mqttc.user_data_set([])
-    mqttc.connect("homeassistant.local")
+    try:
+        mqttc.connect("homeassistant.local")
+    except:
+        exception_text = traceback.format_exc()
+        print(exception_text)
 
     # ~ # subscribe to topics
     # ~ mqttc.subscribe("xx/xx/xx")
@@ -150,34 +155,50 @@ def mqtt_connect(state, disconnect=False):
     # publish a message
     ret_config_2 = None
     if disconnect == True:
-        ret_config_1 = mqttc.publish("homeassistant/sensor/moonfoot001_1/config", '', True)
-        ret_config_2 = mqttc.publish("homeassistant/sensor/moonfoot001_2/config", '', True)
+        try:
+            ret_config_1 = mqttc.publish("homeassistant/sensor/moonfoot001_1/config", '', True)
+            ret_config_2 = mqttc.publish("homeassistant/sensor/moonfoot001_2/config", '', True)
+        except:
+            exception_text = traceback.format_exc()
+            print(exception_text)
     else:
-        ret_config_1 = mqttc.publish("homeassistant/sensor/moonfoot001_1/config", json.dumps(mqtt_discovery_payload_1), True)
-        ret_config_2 = mqttc.publish("homeassistant/sensor/moonfoot001_2/config", json.dumps(mqtt_discovery_payload_2), True)
+        try:
+            ret_config_1 = mqttc.publish("homeassistant/sensor/moonfoot001_1/config", json.dumps(mqtt_discovery_payload_1), True)
+            ret_config_2 = mqttc.publish("homeassistant/sensor/moonfoot001_2/config", json.dumps(mqtt_discovery_payload_2), True)
+        except:
+            exception_text = traceback.format_exc()
+            print(exception_text)
     
     time.sleep(1)
 
     # ~ mqttc.loop_forever()
-    print(f"Received the following message: {mqttc.user_data_get()}")
+    try:
+        print(f"Received the following message: {mqttc.user_data_get()}")
+    except:
+        exception_text = traceback.format_exc()
+        print(exception_text)
 
     ret_config_1.wait_for_publish()
     if ret_config_2:
         ret_config_2.wait_for_publish()
 
 
-    ret_state_1 = mqttc.publish("stat/moonfoot001/state", state, True)
+    try:
+        ret_state_1 = mqttc.publish("stat/moonfoot001/state", state, True)
     
-    hostname = socket.gethostname() # get our hostname
-    IPAddr = socket.gethostbyname(hostname+'.local')
-    ret_state_2 = mqttc.publish("stat/moonfoot001/ipaddress", IPAddr, True)
+        hostname = socket.gethostname() # get our hostname
+        IPAddr = socket.gethostbyname(hostname+'.local')
+        ret_state_2 = mqttc.publish("stat/moonfoot001/ipaddress", IPAddr, True)
 
-    ret_state_1.wait_for_publish()
-    ret_state_2.wait_for_publish()
+        ret_state_1.wait_for_publish()
+        ret_state_2.wait_for_publish()
 
 
-    mqttc.disconnect()
-    mqttc.loop_stop()
+        mqttc.disconnect()
+        mqttc.loop_stop()
+    except:
+        exception_text = traceback.format_exc()
+        print(exception_text)
 
 
 
@@ -420,11 +441,11 @@ if __name__ == '__main__':
     # Process arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--clear', action='store_true', help='clear the display on exit')
-    parser.add_argument('-dc', '--disconnect', action='store_true', help='unregister from homeassistant MQTT')
+    parser.add_argument('-ud', '--undiscover', action='store_true', help='unregister from homeassistant MQTT')
     args = parser.parse_args()
 
 
-    if args.disconnect == True: 
+    if args.undiscover == True: 
         # remove device from home assistant.  allows config to be changed on next powerup.
         mqtt_connect(True, "")
         sys.exit()
